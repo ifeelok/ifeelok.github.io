@@ -4,6 +4,1765 @@
   
     
     <entry>
+      <title><![CDATA[3、python内置类型]]></title>
+      <url>https://ifeelok.github.io/2017/02/19/python-03/</url>
+      <content type="html"><![CDATA[<p>基本的内置类型为：numerics、sequences、mappings、files、classes、instances、exceptions</p>
+<a id="more"></a>
+<h3 id="Numeric-Types-—-int-float-long-complex"><a href="#Numeric-Types-—-int-float-long-complex" class="headerlink" title="Numeric Types — int, float, long, complex"></a>Numeric Types — int, float, long, complex</h3><p><strong>All built-in numeric types support the following operations.</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Operation</th>
+<th style="text-align:left">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">x + y</td>
+<td style="text-align:left">sum of x and y</td>
+</tr>
+<tr>
+<td style="text-align:left">x - y</td>
+<td style="text-align:left">difference of x and y</td>
+</tr>
+<tr>
+<td style="text-align:left">x * y</td>
+<td style="text-align:left">product of x and y</td>
+</tr>
+<tr>
+<td style="text-align:left">x / y</td>
+<td style="text-align:left">quotient of x and y (1)</td>
+</tr>
+<tr>
+<td style="text-align:left">x // y</td>
+<td style="text-align:left">(floored) quotient of x and y</td>
+</tr>
+<tr>
+<td style="text-align:left">x % y</td>
+<td style="text-align:left">remainder of x / y</td>
+</tr>
+<tr>
+<td style="text-align:left">-x</td>
+<td style="text-align:left">x negated</td>
+</tr>
+<tr>
+<td style="text-align:left">+x</td>
+<td style="text-align:left">x unchanged</td>
+</tr>
+<tr>
+<td style="text-align:left">abs(x)</td>
+<td style="text-align:left">absolute value or magnitude of x</td>
+</tr>
+<tr>
+<td style="text-align:left">int(x)</td>
+<td style="text-align:left">x converted to integer</td>
+</tr>
+<tr>
+<td style="text-align:left">long(x)</td>
+<td style="text-align:left">x converted to long integer</td>
+</tr>
+<tr>
+<td style="text-align:left">float(x)</td>
+<td style="text-align:left">x converted to floating point</td>
+</tr>
+<tr>
+<td style="text-align:left">complex(re,im)</td>
+<td style="text-align:left">a complex number with real part re, imaginary part im. im defaults to zero.</td>
+</tr>
+<tr>
+<td style="text-align:left">c.conjugate()</td>
+<td style="text-align:left">conjugate of the complex number c. (Identity on real numbers)</td>
+</tr>
+<tr>
+<td style="text-align:left">divmod(x, y)</td>
+<td style="text-align:left">the pair (x // y, x % y)</td>
+</tr>
+<tr>
+<td style="text-align:left">pow(x, y)</td>
+<td style="text-align:left">x to the power y</td>
+</tr>
+<tr>
+<td style="text-align:left">x ** y</td>
+<td style="text-align:left">x to the power y</td>
+</tr>
+</tbody>
+</table>
+<p><em>Deprecated since version 2.3: The floor division operator, the modulo operator, and the divmod() function are no longer defined for complex numbers. Instead, convert to a floating point number using the abs() function if appropriate.</em></p>
+<p><strong>All numbers.Real types (int, long, and float) also include the following operations:</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Operation</th>
+<th style="text-align:left">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Item One</td>
+<td style="text-align:left">Item Two</td>
+</tr>
+<tr>
+<td style="text-align:left">math.trunc(x)</td>
+<td style="text-align:left">x truncated to Integral</td>
+</tr>
+<tr>
+<td style="text-align:left">round(x[, n])</td>
+<td style="text-align:left">x rounded to n digits, rounding ties away from zero. If n is omitted, it defaults to 0.</td>
+</tr>
+<tr>
+<td style="text-align:left">math.floor(x)</td>
+<td style="text-align:left">the greatest integral float &lt;= x</td>
+</tr>
+<tr>
+<td style="text-align:left">math.ceil(x)</td>
+<td style="text-align:left">the least integral float &gt;= x</td>
+</tr>
+</tbody>
+</table>
+<h4 id="Bitwise-Operations-on-Integer-Types"><a href="#Bitwise-Operations-on-Integer-Types" class="headerlink" title="Bitwise Operations on Integer Types"></a>Bitwise Operations on Integer Types</h4><table>
+<thead>
+<tr>
+<th style="text-align:left">Operation</th>
+<th style="text-align:left">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">x &#124; y</td>
+<td style="text-align:left">bitwise or of x and y</td>
+</tr>
+<tr>
+<td style="text-align:left">x ^ y</td>
+<td style="text-align:left">bitwise exclusive or of x and y</td>
+</tr>
+<tr>
+<td style="text-align:left">x &amp; y</td>
+<td style="text-align:left">bitwise and of x and y</td>
+</tr>
+<tr>
+<td style="text-align:left">x &lt;&lt; n</td>
+<td style="text-align:left">x shifted left by n bits</td>
+</tr>
+<tr>
+<td style="text-align:left">x &gt;&gt; n</td>
+<td style="text-align:left">x shifted right by n bits</td>
+</tr>
+<tr>
+<td style="text-align:left">~x</td>
+<td style="text-align:left">the bits of x inverted</td>
+</tr>
+</tbody>
+</table>
+<h4 id="Additional-Methods-on-Integer-Types"><a href="#Additional-Methods-on-Integer-Types" class="headerlink" title="Additional Methods on Integer Types"></a>Additional Methods on Integer Types</h4><ul>
+<li>int.bit_length()</li>
+<li>long.bit_length()</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; n = -37</div><div class="line">&gt;&gt;&gt; bin(n)</div><div class="line">&apos;-0b100101&apos;</div><div class="line">&gt;&gt;&gt; n.bit_length()</div><div class="line">6</div></pre></td></tr></table></figure>
+<h4 id="Additional-Methods-on-Float"><a href="#Additional-Methods-on-Float" class="headerlink" title="Additional Methods on Float"></a>Additional Methods on Float</h4><ul>
+<li><p>float.as_integer_ratio()</p>
+<blockquote>
+<p>Return a pair of integers whose ratio is exactly equal to the original float and with a positive denominator. Raises OverflowError on infinities and a ValueError on NaNs.</p>
+</blockquote>
+</li>
+<li><p>float.is_integer()</p>
+<blockquote>
+<p>Return True if the float instance is finite with integral value, and False otherwise</p>
+</blockquote>
+</li>
+<li><p>float.hex()</p>
+<blockquote>
+<p>Return a representation of a floating-point number as a hexadecimal string. For finite floating-point numbers, this representation will always include a leading 0x and a trailing p and exponent.</p>
+</blockquote>
+</li>
+<li><p>float.fromhex(s)</p>
+<blockquote>
+<p>Class method to return the float represented by a hexadecimal string s. The string s may have leading and trailing whitespace.</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="Iterator-Types"><a href="#Iterator-Types" class="headerlink" title="Iterator Types"></a>Iterator Types</h3><p>Python supports a concept of iteration over containers. This is implemented using two distinct methods; these are used to allow user-defined classes to support iteration. <strong>Sequences</strong>, described below in more detail, always support the iteration methods.</p>
+<p><em>One method needs to be defined for container objects to provide iteration support:</em></p>
+<p><code>container.__iter__()</code></p>
+<p><em>The iterator objects themselves are required to support the following two methods, which together form the iterator protocol:</em></p>
+<p><code>iterator.__iter__()</code></p>
+<blockquote>
+<p>Return the iterator object itself. This is required to allow both containers and iterators to be used with the for and in statements. This method corresponds to the tp_iter slot of the type structure for Python objects in the Python/C API.</p>
+</blockquote>
+<p><code>iterator.next()</code></p>
+<blockquote>
+<p>Return the next item from the container. If there are no further items, raise the StopIteration exception. This method corresponds to the tp_iternext slot of the type structure for Python objects in the Python/C API.</p>
+</blockquote>
+<h3 id="Sequence-Types-—-str-unicode-list-tuple-bytearray-buffer-xrange"><a href="#Sequence-Types-—-str-unicode-list-tuple-bytearray-buffer-xrange" class="headerlink" title="Sequence Types — str, unicode, list, tuple, bytearray, buffer, xrange"></a>Sequence Types — str, unicode, list, tuple, bytearray, buffer, xrange</h3><p><em>This table lists the sequence operations sorted in ascending priority. In the table, s and t are sequences of the same type; n, i and j are integers:</em></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Operation</th>
+<th style="text-align:left">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">x in s</td>
+<td style="text-align:left">True if an item of s is equal to x, else False</td>
+</tr>
+<tr>
+<td style="text-align:left">x not in s</td>
+<td style="text-align:left">False if an item of s is equal to x, else True</td>
+</tr>
+<tr>
+<td style="text-align:left">s + t</td>
+<td style="text-align:left">the concatenation of s and t</td>
+</tr>
+<tr>
+<td style="text-align:left">s <em> n, n </em> s</td>
+<td style="text-align:left">equivalent to adding s to itself n times</td>
+</tr>
+<tr>
+<td style="text-align:left">s[i]</td>
+<td style="text-align:left">ith item of s, origin 0</td>
+</tr>
+<tr>
+<td style="text-align:left">s[i:j]</td>
+<td style="text-align:left">slice of s from i to j</td>
+</tr>
+<tr>
+<td style="text-align:left">s[i:j:k]</td>
+<td style="text-align:left">slice of s from i to j with step k</td>
+</tr>
+<tr>
+<td style="text-align:left">len(s)</td>
+<td style="text-align:left">length of s</td>
+</tr>
+<tr>
+<td style="text-align:left">min(s)</td>
+<td style="text-align:left">smallest item of s</td>
+</tr>
+<tr>
+<td style="text-align:left">max(s)</td>
+<td style="text-align:left">largest item of s</td>
+</tr>
+<tr>
+<td style="text-align:left">s.index(x)</td>
+<td style="text-align:left">index of the first occurrence of x in s</td>
+</tr>
+<tr>
+<td style="text-align:left">s.count(x)</td>
+<td style="text-align:left">total number of occurrences of x in s</td>
+</tr>
+</tbody>
+</table>
+<h3 id="String-Methods"><a href="#String-Methods" class="headerlink" title="String Methods"></a>String Methods</h3><p><a href="/2017/02/19/python-02/#more">String Methods</a></p>
+<h3 id="XRange-Type"><a href="#XRange-Type" class="headerlink" title="XRange Type"></a>XRange Type</h3><p>The xrange type is an immutable sequence which is commonly used for looping. The advantage of the xrange type is that an xrange object will always take the same amount of memory, no matter the size of the range it represents. There are no consistent performance advantages.</p>
+<p>XRange objects have very little behavior: they only support indexing, iteration, and the len() function</p>
+<h3 id="Mutable-Sequence-Types"><a href="#Mutable-Sequence-Types" class="headerlink" title="Mutable Sequence Types"></a>Mutable Sequence Types</h3><p><em>List and bytearray objects support additional operations that allow in-place modification of the object. Other mutable sequence types (when added to the language) should also support these operations. Strings and tuples are immutable sequence types: such objects cannot be modified once created. The following operations are defined on mutable sequence types (where x is an arbitrary object):</em></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">operations</th>
+<th style="text-align:left">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Item One</td>
+<td style="text-align:left">Item Two</td>
+</tr>
+<tr>
+<td style="text-align:left">s[i] = x</td>
+<td style="text-align:left">item i of s is replaced by x</td>
+</tr>
+<tr>
+<td style="text-align:left">s[i:j] = t</td>
+<td style="text-align:left">slice of s from i to j is replaced by the contents of the iterable t</td>
+</tr>
+<tr>
+<td style="text-align:left">del s[i:j]</td>
+<td style="text-align:left">same as s[i:j] = []</td>
+</tr>
+<tr>
+<td style="text-align:left">s[i:j:k] = t</td>
+<td style="text-align:left">the elements of s[i:j:k] are replaced by those of t</td>
+</tr>
+<tr>
+<td style="text-align:left">del s[i:j:k]</td>
+<td style="text-align:left">removes the elements of s[i:j:k] from the list</td>
+</tr>
+<tr>
+<td style="text-align:left">s.append(x)</td>
+<td style="text-align:left">same as s[len(s):len(s)] = [x]</td>
+</tr>
+<tr>
+<td style="text-align:left">s.extend(x)</td>
+<td style="text-align:left">or s += t for the most part the same as s[len(s):len(s)] = x</td>
+</tr>
+<tr>
+<td style="text-align:left">s *= n</td>
+<td style="text-align:left">updates s with its contents repeated n times</td>
+</tr>
+<tr>
+<td style="text-align:left">s.count(x)</td>
+<td style="text-align:left">return number of i‘s for which s[i] == x</td>
+</tr>
+<tr>
+<td style="text-align:left">s.index(x[, i[, j]])</td>
+<td style="text-align:left">return smallest k such that s[k] == x and i &lt;= k &lt; j</td>
+</tr>
+<tr>
+<td style="text-align:left">s.insert(i, x)</td>
+<td style="text-align:left">same as s[i:i] = [x]</td>
+</tr>
+<tr>
+<td style="text-align:left">s.pop([i])</td>
+<td style="text-align:left">same as x = s[i]; del s[i]; return x</td>
+</tr>
+<tr>
+<td style="text-align:left">s.remove(x)</td>
+<td style="text-align:left">same as del s[s.index(x)]</td>
+</tr>
+<tr>
+<td style="text-align:left">s.reverse()</td>
+<td style="text-align:left">reverses the items of s in place</td>
+</tr>
+<tr>
+<td style="text-align:left">s.sort([cmp[, key[, reverse]]])</td>
+<td style="text-align:left">sort the items of s in place</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Set-Types-—-set-frozenset"><a href="#Set-Types-—-set-frozenset" class="headerlink" title="Set Types — set, frozenset"></a>Set Types — set, frozenset</h3><p>A set object is an unordered collection of distinct hashable objects.</p>
+<p>There are currently two built-in set types, set and frozenset. The set type is mutable — the contents can be changed using methods like add() and remove(). Since it is mutable, it has no hash value and cannot be used as either a dictionary key or as an element of another set. The frozenset type is immutable and hashable — its contents cannot be altered after it is created; it can therefore be used as a dictionary key or as an element of another set.</p>
+<p><em>Instances of set and frozenset provide the following operations:</em></p>
+<p>len(s)</p>
+<blockquote>
+<p>Return the cardinality of set s.</p>
+</blockquote>
+<p>x in s</p>
+<blockquote>
+<p>Test x for membership in s.</p>
+</blockquote>
+<p>x not in s</p>
+<blockquote>
+<p>Test x for non-membership in s.</p>
+</blockquote>
+<p>isdisjoint(other)</p>
+<blockquote>
+<p>Return True if the set has no elements in common with other. Sets are disjoint if and only if their intersection is the empty set.</p>
+</blockquote>
+<p>issubset(other)</p>
+<blockquote>
+<p>set &lt;= other<br>Test whether every element in the set is in other.</p>
+</blockquote>
+<p>set &lt; other</p>
+<blockquote>
+<p>Test whether the set is a proper subset of other, that is, set &lt;= other and set != other.</p>
+</blockquote>
+<p>issuperset(other)</p>
+<blockquote>
+<p>set &gt;= other<br>Test whether every element in other is in the set.</p>
+</blockquote>
+<p>set &gt; other</p>
+<blockquote>
+<p>Test whether the set is a proper superset of other, that is, set &gt;= other and set != other.</p>
+</blockquote>
+<p>union(other, …)</p>
+<blockquote>
+<p>set | other | …<br>Return a new set with elements from the set and all others.</p>
+</blockquote>
+<p>intersection(other, …)</p>
+<blockquote>
+<p>set &amp; other &amp; …<br>Return a new set with elements common to the set and all others.</p>
+</blockquote>
+<p>difference(other, …)</p>
+<blockquote>
+<p>set - other - …<br>Return a new set with elements in the set that are not in the others.</p>
+</blockquote>
+<p>symmetric_difference(other)</p>
+<blockquote>
+<p>set ^ other<br>Return a new set with elements in either the set or other but not both.</p>
+</blockquote>
+<p>copy()</p>
+<blockquote>
+<p>Return a new set with a shallow copy of s.</p>
+</blockquote>
+<p><em>The following table lists operations available for set that do not apply to immutable instances of frozenset:</em></p>
+<p>update(other, …)</p>
+<blockquote>
+<p>set |= other | …<br>Update the set, adding elements from all others.</p>
+</blockquote>
+<p>intersection_update(other, …)</p>
+<blockquote>
+<p>set &amp;= other &amp; …<br>Update the set, keeping only elements found in it and all others.</p>
+</blockquote>
+<p>difference_update(other, …)</p>
+<blockquote>
+<p>set -= other | …<br>Update the set, removing elements found in others.</p>
+</blockquote>
+<p>symmetric_difference_update(other)</p>
+<blockquote>
+<p>set ^= other<br>Update the set, keeping only elements found in either set, but not in both.</p>
+</blockquote>
+<p>add(elem)</p>
+<blockquote>
+<p>Add element elem to the set.</p>
+</blockquote>
+<p>remove(elem)</p>
+<blockquote>
+<p>Remove element elem from the set. Raises KeyError if elem is not contained in the set.</p>
+</blockquote>
+<p>discard(elem)</p>
+<blockquote>
+<p>Remove element elem from the set if it is present.</p>
+</blockquote>
+<p>pop()</p>
+<blockquote>
+<p>Remove and return an arbitrary element from the set. Raises KeyError if the set is empty.</p>
+</blockquote>
+<p>clear()</p>
+<blockquote>
+<p>Remove all elements from the set.</p>
+</blockquote>
+<h3 id="Mapping-Types-—-dict"><a href="#Mapping-Types-—-dict" class="headerlink" title="Mapping Types — dict"></a>Mapping Types — dict</h3><p>A mapping object maps hashable values to arbitrary objects. Mappings are mutable objects. There is currently only one standard mapping type, the dictionary.</p>
+<p><em>These are the operations that dictionaries support:</em></p>
+<p>len(d)</p>
+<blockquote>
+<p>Return the number of items in the dictionary d.</p>
+</blockquote>
+<p>d[key]</p>
+<blockquote>
+<p>Return the item of d with key key. Raises a KeyError if key is not in the map.</p>
+</blockquote>
+<p><strong>If a subclass of dict defines a method <strong>missing</strong>() and key is not present, the d[key] operation calls that method with the key key as argument.</strong></p>
+<p>d[key] = value</p>
+<blockquote>
+<p>Set d[key] to value.</p>
+</blockquote>
+<p>del d[key]</p>
+<blockquote>
+<p>Remove d[key] from d. Raises a KeyError if key is not in the map.</p>
+</blockquote>
+<p>key in d</p>
+<blockquote>
+<p>Return True if d has a key key, else False.</p>
+</blockquote>
+<p>key not in d</p>
+<blockquote>
+<p>Equivalent to not key in d.</p>
+</blockquote>
+<p>iter(d)</p>
+<blockquote>
+<p>Return an iterator over the keys of the dictionary. This is a shortcut for iterkeys().</p>
+</blockquote>
+<p>clear()</p>
+<blockquote>
+<p>Remove all items from the dictionary.</p>
+</blockquote>
+<p>copy()</p>
+<blockquote>
+<p>Return a shallow copy of the dictionary.</p>
+</blockquote>
+<p>fromkeys(seq[, value])</p>
+<blockquote>
+<p>Create a new dictionary with keys from seq and values set to value.</p>
+</blockquote>
+<p><strong>fromkeys() is a class method that returns a new dictionary. value defaults to None.</strong></p>
+<p>get(key[, default])</p>
+<blockquote>
+<p>Return the value for key if key is in the dictionary, else default. If default is not given, it defaults to None, so that this method never raises a KeyError.</p>
+</blockquote>
+<p>has_key(key)</p>
+<blockquote>
+<p>Test for the presence of key in the dictionary. has_key() is deprecated in favor of key in d.</p>
+</blockquote>
+<p>items()</p>
+<blockquote>
+<p>Return a copy of the dictionary’s list of (key, value) pairs.</p>
+</blockquote>
+<p>iteritems()</p>
+<blockquote>
+<p>Return an iterator over the dictionary’s (key, value) pairs. See the note for dict.items().</p>
+</blockquote>
+<p><strong>Using iteritems() while adding or deleting entries in the dictionary may raise a RuntimeError or fail to iterate over all entries.</strong></p>
+<p>iterkeys()</p>
+<blockquote>
+<p>Return an iterator over the dictionary’s keys. See the note for dict.items().</p>
+</blockquote>
+<p><strong>Using iterkeys() while adding or deleting entries in the dictionary may raise a RuntimeError or fail to iterate over all entries.</strong></p>
+<p>itervalues()</p>
+<blockquote>
+<p>Return an iterator over the dictionary’s values. See the note for dict.items().</p>
+</blockquote>
+<p><strong>Using itervalues() while adding or deleting entries in the dictionary may raise a RuntimeError or fail to iterate over all entries.</strong></p>
+<p>keys()</p>
+<blockquote>
+<p>Return a copy of the dictionary’s list of keys. See the note for dict.items().</p>
+</blockquote>
+<p>pop(key[, default])</p>
+<blockquote>
+<p>If key is in the dictionary, remove it and return its value, else return default. If default is not given and key is not in the dictionary, a KeyError is raised.</p>
+</blockquote>
+<p>popitem()</p>
+<blockquote>
+<p>Remove and return an arbitrary (key, value) pair from the dictionary.</p>
+</blockquote>
+<p><strong>popitem() is useful to destructively iterate over a dictionary, as often used in set algorithms. If the dictionary is empty, calling popitem() raises a KeyError.</strong></p>
+<p>setdefault(key[, default])</p>
+<blockquote>
+<p>If key is in the dictionary, return its value. If not, insert key with a value of default and return default. default defaults to None.</p>
+</blockquote>
+<p>update([other])</p>
+<blockquote>
+<p>Update the dictionary with the key/value pairs from other, overwriting existing keys. Return None.</p>
+</blockquote>
+<p><strong>update() accepts either another dictionary object or an iterable of key/value pairs (as tuples or other iterables of length two). If keyword arguments are specified, the dictionary is then updated with those key/value pairs: d.update(red=1, blue=2).</strong></p>
+<p>values()</p>
+<blockquote>
+<p>Return a copy of the dictionary’s list of values. See the note for dict.items().</p>
+</blockquote>
+<p>viewitems()</p>
+<blockquote>
+<p>Return a new view of the dictionary’s items ((key, value) pairs). See below for documentation of view objects.</p>
+</blockquote>
+<p>viewkeys()</p>
+<blockquote>
+<p>Return a new view of the dictionary’s keys. See below for documentation of view objects.</p>
+</blockquote>
+<p>viewvalues()</p>
+<blockquote>
+<p>Return a new view of the dictionary’s values. See below for documentation of view objects.</p>
+</blockquote>
+<h4 id="Dictionary-view-objects"><a href="#Dictionary-view-objects" class="headerlink" title="Dictionary view objects"></a>Dictionary view objects</h4><p>The objects returned by dict.viewkeys(), dict.viewvalues() and dict.viewitems() are view objects. They provide a dynamic view on the dictionary’s entries, which means that when the dictionary changes, the view reflects these changes.</p>
+<p><em>Dictionary views can be iterated over to yield their respective data, and support membership tests:</em></p>
+<p>len(dictview)</p>
+<blockquote>
+<p>Return the number of entries in the dictionary.</p>
+</blockquote>
+<p>iter(dictview)</p>
+<blockquote>
+<p>Return an iterator over the keys, values or items (represented as tuples of (key, value)) in the dictionary.</p>
+</blockquote>
+<p><strong>Keys and values are iterated over in an arbitrary order which is non-random, varies across Python implementations, and depends on the dictionary’s history of insertions and deletions. If keys, values and items views are iterated over with no intervening modifications to the dictionary, the order of items will directly correspond. This allows the creation of (value, key) pairs using zip(): pairs = zip(d.values(), d.keys()). Another way to create the same list is pairs = [(v, k) for (k, v) in d.items()].</strong></p>
+<p><strong>Iterating views while adding or deleting entries in the dictionary may raise a RuntimeError or fail to iterate over all entries.</strong></p>
+<p>x in dictview</p>
+<blockquote>
+<p>Return True if x is in the underlying dictionary’s keys, values or items (in the latter case, x should be a (key, value) tuple).</p>
+</blockquote>
+<p><em>Keys views are set-like since their entries are unique and hashable. If all values are hashable, so that (key, value) pairs are unique and hashable, then the items view is also set-like. (Values views are not treated as set-like since the entries are generally not unique.) Then these set operations are available (“other” refers either to another view or a set):</em></p>
+<p>dictview &amp; other</p>
+<blockquote>
+<p>Return the intersection of the dictview and the other object as a new set.</p>
+</blockquote>
+<p>dictview | other</p>
+<blockquote>
+<p>Return the union of the dictview and the other object as a new set.</p>
+</blockquote>
+<p>dictview - other</p>
+<blockquote>
+<p>Return the difference between the dictview and the other object (all elements in dictview that aren’t in other) as a new set.</p>
+</blockquote>
+<p>dictview ^ other</p>
+<blockquote>
+<p>Return the symmetric difference (all elements either in dictview or other, but not in both) of the dictview and the other object as a new set.</p>
+</blockquote>
+<h3 id="File-Objects"><a href="#File-Objects" class="headerlink" title="File Objects"></a>File Objects</h3><p>File objects are implemented using C’s <strong>stdio</strong> package and can be created with the built-in open() function. File objects are also returned by some other built-in functions and methods, such as <strong>os.popen()</strong> and <strong>os.fdopen()</strong> and the <strong>makefile()</strong> method of socket objects. Temporary files can be created using the <strong>tempfile</strong> module, and high-level file operations such as copying, moving, and deleting files and directories can be achieved with the <strong>shutil</strong> module.</p>
+<p><em>Files have the following methods:</em></p>
+<p>file.close()</p>
+<blockquote>
+<p>Close the file. A closed file cannot be read or written any more. Any operation which requires that the file be open will raise a ValueError after the file has been closed. Calling close() more than once is allowed.</p>
+</blockquote>
+<p><em>As of Python 2.5, you can avoid having to call this method explicitly if you use the with statement. For example, the following code will automatically close f when the with block is exited:</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">with open(&quot;hello.txt&quot;) as f:</div><div class="line">    for line in f:</div><div class="line">        print line,</div></pre></td></tr></table></figure>
+<p>file.flush()</p>
+<blockquote>
+<p>Flush the internal buffer, like stdio‘s fflush(). This may be a no-op on some file-like objects.</p>
+</blockquote>
+<p><strong>flush() does not necessarily write the file’s data to disk. Use flush() followed by os.fsync() to ensure this behavior.</strong></p>
+<p>file.fileno()</p>
+<blockquote>
+<p>Return the integer “file descriptor” that is used by the underlying implementation to request I/O operations from the operating system. This can be useful for other, lower level interfaces that use file descriptors, such as the fcntl module or os.read() and friends.</p>
+</blockquote>
+<p><strong>File-like objects which do not have a real file descriptor should not provide this method!</strong></p>
+<p>file.isatty()</p>
+<blockquote>
+<p>Return True if the file is connected to a tty(-like) device, else False.</p>
+</blockquote>
+<p><strong>If a file-like object is not associated with a real file, this method should not be implemented.</strong></p>
+<p>file.next()</p>
+<blockquote>
+<p>A file object is its own iterator, for example iter(f) returns f (unless f is closed). When a file is used as an iterator, typically in a for loop (for example, for line in f: print line.strip()), the next() method is called repeatedly. This method returns the next input line, or raises StopIteration when EOF is hit when the file is open for reading (behavior is undefined when the file is open for writing). In order to make a for loop the most efficient way of looping over the lines of a file (a very common operation), the next() method uses a hidden read-ahead buffer. As a consequence of using a read-ahead buffer, combining next() with other file methods (like readline()) does not work right. However, using seek() to reposition the file to an absolute position will flush the read-ahead buffer.</p>
+</blockquote>
+<p>file.read([size])</p>
+<blockquote>
+<p>Read at most size bytes from the file (less if the read hits EOF before obtaining size bytes). If the size argument is negative or omitted, read all data until EOF is reached. The bytes are returned as a string object. An empty string is returned when EOF is encountered immediately. (For certain files, like ttys, it makes sense to continue reading after an EOF is hit.) Note that this method may call the underlying C function fread() more than once in an effort to acquire as close to size bytes as possible. Also note that when in non-blocking mode, less data than was requested may be returned, even if no size parameter was given.</p>
+</blockquote>
+<p><strong>This function is simply a wrapper for the underlying fread() C function, and will behave the same in corner cases, such as whether the EOF value is cached.</strong></p>
+<p>file.readline([size])</p>
+<blockquote>
+<p>Read one entire line from the file. A trailing newline character is kept in the string (but may be absent when a file ends with an incomplete line). [6] If the size argument is present and non-negative, it is a maximum byte count (including the trailing newline) and an incomplete line may be returned. When size is not 0, an empty string is returned only when EOF is encountered immediately.</p>
+</blockquote>
+<p><strong>Unlike stdio‘s fgets(), the returned string contains null characters (‘\0’) if they occurred in the input.</strong></p>
+<p>file.readlines([sizehint])</p>
+<blockquote>
+<p>Read until EOF using readline() and return a list containing the lines thus read. If the optional sizehint argument is present, instead of reading up to EOF, whole lines totalling approximately sizehint bytes (possibly after rounding up to an internal buffer size) are read. Objects implementing a file-like interface may choose to ignore sizehint if it cannot be implemented, or cannot be implemented efficiently.</p>
+</blockquote>
+<p>file.seek(offset[, whence])</p>
+<blockquote>
+<p>Set the file’s current position, like stdio‘s fseek(). The whence argument is optional and defaults to os.SEEK_SET or 0 (absolute file positioning); other values are os.SEEK_CUR or 1 (seek relative to the current position) and os.SEEK_END or 2 (seek relative to the file’s end). There is no return value.</p>
+<p>For example, f.seek(2, os.SEEK_CUR) advances the position by two and f.seek(-3, os.SEEK_END) sets the position to the third to last.</p>
+<p>Note that if the file is opened for appending (mode ‘a’ or ‘a+’), any seek() operations will be undone at the next write. If the file is only opened for writing in append mode (mode ‘a’), this method is essentially a no-op, but it remains useful for files opened in append mode with reading enabled (mode ‘a+’). If the file is opened in text mode (without ‘b’), only offsets returned by tell() are legal. Use of other offsets causes undefined behavior.</p>
+<p>Note that not all file objects are seekable.</p>
+</blockquote>
+<p>file.tell()</p>
+<blockquote>
+<p>Return the file’s current position, like stdio‘s ftell().</p>
+</blockquote>
+<p><strong>On Windows, tell() can return illegal values (after an fgets()) when reading files with Unix-style line-endings. Use binary mode (‘rb’) to circumvent this problem.</strong></p>
+<p>file.truncate([size])</p>
+<blockquote>
+<p>Truncate the file’s size. If the optional size argument is present, the file is truncated to (at most) that size. The size defaults to the current position. The current file position is not changed. Note that if a specified size exceeds the file’s current size, the result is platform-dependent: possibilities include that the file may remain unchanged, increase to the specified size as if zero-filled, or increase to the specified size with undefined new content. Availability: Windows, many Unix variants.</p>
+</blockquote>
+<p>file.write(str)</p>
+<blockquote>
+<p>Write a string to the file. There is no return value. Due to buffering, the string may not actually show up in the file until the flush() or close() method is called.</p>
+</blockquote>
+<p>file.writelines(sequence)</p>
+<blockquote>
+<p>Write a sequence of strings to the file. The sequence can be any iterable object producing strings, typically a list of strings. There is no return value. (The name is intended to match readlines(); writelines() does not add line separators.)</p>
+</blockquote>
+<p><em>File objects also offer a number of other interesting attributes. These are not required for file-like objects, but should be implemented if they make sense for the particular object.</em></p>
+<p>file.closed</p>
+<blockquote>
+<p>bool indicating the current state of the file object. This is a read-only attribute; the close() method changes the value. It may not be available on all file-like objects.</p>
+</blockquote>
+<p>file.encoding</p>
+<blockquote>
+<p>The encoding that this file uses. When Unicode strings are written to a file, they will be converted to byte strings using this encoding. In addition, when the file is connected to a terminal, the attribute gives the encoding that the terminal is likely to use (that information might be incorrect if the user has misconfigured the terminal). The attribute is read-only and may not be present on all file-like objects. It may also be None, in which case the file uses the system default encoding for converting Unicode strings.</p>
+</blockquote>
+<p>file.errors</p>
+<blockquote>
+<p>The Unicode error handler used along with the encoding.</p>
+</blockquote>
+<p>file.mode</p>
+<blockquote>
+<p>The I/O mode for the file. If the file was created using the open() built-in function, this will be the value of the mode parameter. This is a read-only attribute and may not be present on all file-like objects.</p>
+</blockquote>
+<p>file.name</p>
+<blockquote>
+<p>If the file object was created using open(), the name of the file. Otherwise, some string that indicates the source of the file object, of the form &lt;…&gt;. This is a read-only attribute and may not be present on all file-like objects.</p>
+</blockquote>
+<p>file.newlines</p>
+<blockquote>
+<p>If Python was built with universal newlines enabled (the default) this read-only attribute exists, and for files opened in universal newline read mode it keeps track of the types of newlines encountered while reading the file. The values it can take are ‘\r’, ‘\n’, ‘\r\n’, None (unknown, no newlines read yet) or a tuple containing all the newline types seen, to indicate that multiple newline conventions were encountered. For files not opened in universal newlines read mode the value of this attribute will be None.</p>
+</blockquote>
+<p>file.softspace</p>
+<blockquote>
+<p>Boolean that indicates whether a space character needs to be printed before another value when using the print statement. Classes that are trying to simulate a file object should also have a writable softspace attribute, which should be initialized to zero. This will be automatic for most classes implemented in Python (care may be needed for objects that override attribute access); types implemented in C will have to provide a writable softspace attribute.</p>
+</blockquote>
+<p><strong>This attribute is not used to control the print statement, but to allow the implementation of print to keep track of its internal state.</strong></p>
+<h3 id="memoryview-type"><a href="#memoryview-type" class="headerlink" title="memoryview type"></a>memoryview type</h3><p>memoryview objects allow Python code to access the internal data of an object that supports the buffer protocol without copying. Memory is generally interpreted as simple bytes.</p>
+<p>Create a memoryview that references obj. obj must support the buffer protocol. Built-in objects that support the buffer protocol include str and bytearray (but not unicode).</p>
+<p>A memoryview has the notion of an element, which is the atomic memory unit handled by the originating object obj. For many simple types such as str and bytearray, an element is a single byte, but other third-party types may expose larger elements.</p>
+<p>len(view) returns the total number of elements in the memoryview, view. The itemsize attribute will give you the number of bytes in a single element.</p>
+<p><em>A memoryview supports slicing to expose its data. Taking a single index will return a single element as a str object. Full slicing will result in a subview:</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; v = memoryview(&apos;abcefg&apos;)</div><div class="line">&gt;&gt;&gt; v[1]</div><div class="line">&apos;b&apos;</div><div class="line">&gt;&gt;&gt; v[-1]</div><div class="line">&apos;g&apos;</div><div class="line">&gt;&gt;&gt; v[1:4]</div><div class="line">&lt;memory at 0x77ab28&gt;</div><div class="line">&gt;&gt;&gt; v[1:4].tobytes()</div><div class="line">&apos;bce&apos;</div></pre></td></tr></table></figure>
+<p><em>If the object the memoryview is over supports changing its data, the memoryview supports slice assignment:</em><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; data = bytearray(&apos;abcefg&apos;)</div><div class="line">&gt;&gt;&gt; v = memoryview(data)</div><div class="line">&gt;&gt;&gt; v.readonly</div><div class="line">False</div><div class="line">&gt;&gt;&gt; v[0] = &apos;z&apos;</div><div class="line">&gt;&gt;&gt; data</div><div class="line">bytearray(b&apos;zbcefg&apos;)</div><div class="line">&gt;&gt;&gt; v[1:4] = &apos;123&apos;</div><div class="line">&gt;&gt;&gt; data</div><div class="line">bytearray(b&apos;z123fg&apos;)</div><div class="line">&gt;&gt;&gt; v[2] = &apos;spam&apos;</div><div class="line">Traceback (most recent call last):</div><div class="line">  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;</div><div class="line">ValueError: cannot modify size of memoryview object</div></pre></td></tr></table></figure></p>
+<p><em>memoryview has two methods:</em></p>
+<p>tobytes()</p>
+<blockquote>
+<p>Return the data in the buffer as a bytestring (an object of class str).<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; m = memoryview(&quot;abc&quot;)</div><div class="line">&gt;&gt;&gt; m.tobytes()</div><div class="line">&apos;abc&apos;</div></pre></td></tr></table></figure></p>
+</blockquote>
+<p>tolist()</p>
+<blockquote>
+<p>Return the data in the buffer as a list of integers.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; memoryview(&quot;abc&quot;).tolist()</div><div class="line">[97, 98, 99]</div></pre></td></tr></table></figure></p>
+</blockquote>
+<p><em>There are also several readonly attributes available:</em></p>
+<p>format</p>
+<blockquote>
+<p>A string containing the format (in struct module style) for each element in the view. This defaults to ‘B’, a simple bytestring.</p>
+</blockquote>
+<p>itemsize</p>
+<blockquote>
+<p>The size in bytes of each element of the memoryview.</p>
+</blockquote>
+<p>shape</p>
+<blockquote>
+<p>A tuple of integers the length of ndim giving the shape of the memory as a N-dimensional array.</p>
+</blockquote>
+<p>ndim</p>
+<blockquote>
+<p>An integer indicating how many dimensions of a multi-dimensional array the memory represents.</p>
+</blockquote>
+<p>strides</p>
+<blockquote>
+<p>A tuple of integers the length of ndim giving the size in bytes to access each element for each dimension of the array.</p>
+</blockquote>
+<p>readonly</p>
+<blockquote>
+<p>A bool indicating whether the memory is read only.</p>
+</blockquote>
+<h3 id="Context-Manager-Types"><a href="#Context-Manager-Types" class="headerlink" title="Context Manager Types"></a>Context Manager Types</h3><p>Python’s with statement supports the concept of a runtime context defined by a context manager. This is implemented using two separate methods that allow user-defined classes to define a runtime context that is entered before the statement body is executed and exited when the statement ends.</p>
+<h3 id="Other-Built-in-Types"><a href="#Other-Built-in-Types" class="headerlink" title="Other Built-in Types"></a>Other Built-in Types</h3><h4 id="Modules"><a href="#Modules" class="headerlink" title="Modules"></a>Modules</h4><h4 id="Classes-and-Class-Instances"><a href="#Classes-and-Class-Instances" class="headerlink" title="Classes and Class Instances"></a>Classes and Class Instances</h4><h4 id="Functions"><a href="#Functions" class="headerlink" title="Functions"></a>Functions</h4><h4 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h4><h4 id="Code-Objects"><a href="#Code-Objects" class="headerlink" title="Code Objects"></a>Code Objects</h4><h4 id="Type-Objects"><a href="#Type-Objects" class="headerlink" title="Type Objects"></a>Type Objects</h4><h4 id="The-Null-Object"><a href="#The-Null-Object" class="headerlink" title="The Null Object"></a>The Null Object</h4><h4 id="The-Ellipsis-Object"><a href="#The-Ellipsis-Object" class="headerlink" title="The Ellipsis Object"></a>The Ellipsis Object</h4><p>This object is used by extended slice notation (see Slicings). It supports no special operations. There is exactly one ellipsis object, named Ellipsis (a built-in name).</p>
+<h4 id="The-NotImplemented-Object"><a href="#The-NotImplemented-Object" class="headerlink" title="The NotImplemented Object"></a>The NotImplemented Object</h4><h4 id="Boolean-Values"><a href="#Boolean-Values" class="headerlink" title="Boolean Values"></a>Boolean Values</h4><h4 id="Internal-Objects"><a href="#Internal-Objects" class="headerlink" title="Internal Objects"></a>Internal Objects</h4><h4 id="Special-Attributes"><a href="#Special-Attributes" class="headerlink" title="Special Attributes"></a>Special Attributes</h4><p>The implementation adds a few special read-only attributes to several object types, where they are relevant. Some of these are not reported by the dir() built-in function.</p>
+<p><code>object.__dict__</code></p>
+<blockquote>
+<p>A dictionary or other mapping object used to store an object’s (writable) attributes.</p>
+</blockquote>
+<p><code>object.__methods__</code></p>
+<blockquote>
+<p>Deprecated since version 2.2: Use the built-in function dir() to get a list of an object’s attributes. This attribute is no longer available.</p>
+</blockquote>
+<p><code>object.__members__</code></p>
+<blockquote>
+<p>Deprecated since version 2.2: Use the built-in function dir() to get a list of an object’s attributes. This attribute is no longer available.</p>
+</blockquote>
+<p><code>instance.__class__</code></p>
+<blockquote>
+<p>The class to which a class instance belongs.</p>
+</blockquote>
+<p><code>class.__bases__</code></p>
+<blockquote>
+<p>The tuple of base classes of a class object.</p>
+</blockquote>
+<p><code>class.__name__</code></p>
+<blockquote>
+<p>The name of the class or type.</p>
+</blockquote>
+<p><em>The following attributes are only supported by new-style classes.</em></p>
+<p><code>class.__mro__</code></p>
+<blockquote>
+<p>This attribute is a tuple of classes that are considered when looking for base classes during method resolution.</p>
+</blockquote>
+<p><code>class.mro()</code></p>
+<blockquote>
+<p>This method can be overridden by a metaclass to customize the method resolution order for its instances. It is called at class instantiation, and its result is stored in __mro__.</p>
+</blockquote>
+<p><code>class.__subclasses__()</code></p>
+<blockquote>
+<p>Each new-style class keeps a list of weak references to its immediate subclasses. This method returns a list of all those references still alive.</p>
+</blockquote>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[2、string模块]]></title>
+      <url>https://ifeelok.github.io/2017/02/19/python-02/</url>
+      <content type="html"><![CDATA[<p>python内置的string类。</p>
+<a id="more"></a>
+<h3 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h3><p>string.ascii_letters</p>
+<blockquote>
+<p>The concatenation of the ascii_lowercase and ascii_uppercase constants described below. This value is not locale-dependent.</p>
+</blockquote>
+<p>string.ascii_lowercase</p>
+<blockquote>
+<p>The lowercase letters ‘abcdefghijklmnopqrstuvwxyz’. This value is not locale-dependent and will not change.</p>
+</blockquote>
+<p>string.ascii_uppercase</p>
+<blockquote>
+<p>The uppercase letters ‘ABCDEFGHIJKLMNOPQRSTUVWXYZ’. This value is not locale-dependent and will not change.</p>
+</blockquote>
+<p>string.digits</p>
+<blockquote>
+<p>The string ‘0123456789’.</p>
+</blockquote>
+<p>string.hexdigits</p>
+<blockquote>
+<p>The string ‘0123456789abcdefABCDEF’.</p>
+</blockquote>
+<p>string.letters</p>
+<blockquote>
+<p>The concatenation of the strings lowercase and uppercase described below. The specific value is locale-dependent, and will be updated when locale.setlocale() is called.</p>
+</blockquote>
+<p>string.lowercase</p>
+<blockquote>
+<p>A string containing all the characters that are considered lowercase letters. On most systems this is the string ‘abcdefghijklmnopqrstuvwxyz’. The specific value is locale-dependent, and will be updated when locale.setlocale() is called.</p>
+</blockquote>
+<p>string.octdigits</p>
+<blockquote>
+<p>The string ‘01234567’.</p>
+</blockquote>
+<p>string.punctuation</p>
+<blockquote>
+<p>String of ASCII characters which are considered punctuation characters in the C locale.</p>
+</blockquote>
+<p>string.printable</p>
+<blockquote>
+<p>String of characters which are considered printable. This is a combination of digits, letters, punctuation, and whitespace.</p>
+</blockquote>
+<p>string.uppercase</p>
+<blockquote>
+<p>A string containing all the characters that are considered uppercase letters. On most systems this is the string ‘ABCDEFGHIJKLMNOPQRSTUVWXYZ’. The specific value is locale-dependent, and will be updated when locale.setlocale() is called.</p>
+</blockquote>
+<p>string.whitespace</p>
+<blockquote>
+<p>A string containing all characters that are considered whitespace. On most systems this includes the characters space, tab, linefeed, return, formfeed, and vertical tab.</p>
+</blockquote>
+<h3 id="format的使用方法"><a href="#format的使用方法" class="headerlink" title="format的使用方法"></a>format的使用方法</h3><p>str.format()方法和Formatter类公用一套语法。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">replacement_field ::=  &quot;&#123;&quot; [field_name] [&quot;!&quot; conversion] [&quot;:&quot; format_spec] &quot;&#125;&quot;</div><div class="line">field_name        ::=  arg_name (&quot;.&quot; attribute_name | &quot;[&quot; element_index &quot;]&quot;)*</div><div class="line">arg_name          ::=  [identifier | integer]</div><div class="line">attribute_name    ::=  identifier</div><div class="line">element_index     ::=  integer | index_string</div><div class="line">index_string      ::=  &lt;any source character except &quot;]&quot;&gt; +</div><div class="line">conversion        ::=  &quot;r&quot; | &quot;s&quot;</div><div class="line">format_spec       ::=  &lt;described in the next section&gt;</div></pre></td></tr></table></figure>
+<hr>
+<p>In most of the cases the syntax is similar to the old %-formatting, with the addition of the {} and with : used instead of %. For example, <code>&#39;%03.2f&#39;</code> can be translated to <code>&#39;{:03.2f}&#39;</code>.</p>
+<p>Accessing arguments by position:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; &apos;&#123;0&#125;, &#123;1&#125;, &#123;2&#125;&apos;.format(&apos;a&apos;, &apos;b&apos;, &apos;c&apos;)</div><div class="line">&apos;a, b, c&apos;</div><div class="line">&gt;&gt;&gt; &apos;&#123;&#125;, &#123;&#125;, &#123;&#125;&apos;.format(&apos;a&apos;, &apos;b&apos;, &apos;c&apos;)  # 2.7+ only</div><div class="line">&apos;a, b, c&apos;</div><div class="line">&gt;&gt;&gt; &apos;&#123;2&#125;, &#123;1&#125;, &#123;0&#125;&apos;.format(&apos;a&apos;, &apos;b&apos;, &apos;c&apos;)</div><div class="line">&apos;c, b, a&apos;</div><div class="line">&gt;&gt;&gt; &apos;&#123;2&#125;, &#123;1&#125;, &#123;0&#125;&apos;.format(*&apos;abc&apos;)      # unpacking argument sequence</div><div class="line">&apos;c, b, a&apos;</div><div class="line">&gt;&gt;&gt; &apos;&#123;0&#125;&#123;1&#125;&#123;0&#125;&apos;.format(&apos;abra&apos;, &apos;cad&apos;)   # arguments&apos; indices can be repeated</div><div class="line">&apos;abracadabra&apos;</div></pre></td></tr></table></figure></p>
+<p>Accessing arguments by name:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; &apos;Coordinates: &#123;latitude&#125;, &#123;longitude&#125;&apos;.format(latitude=&apos;37.24N&apos;, longitude=&apos;-115.81W&apos;)</div><div class="line">&apos;Coordinates: 37.24N, -115.81W&apos;</div><div class="line">&gt;&gt;&gt; coord = &#123;&apos;latitude&apos;: &apos;37.24N&apos;, &apos;longitude&apos;: &apos;-115.81W&apos;&#125;</div><div class="line">&gt;&gt;&gt; &apos;Coordinates: &#123;latitude&#125;, &#123;longitude&#125;&apos;.format(**coord)</div><div class="line">&apos;Coordinates: 37.24N, -115.81W&apos;</div></pre></td></tr></table></figure></p>
+<p>Accessing arguments’ attributes:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; c = 3-5j</div><div class="line">&gt;&gt;&gt; (&apos;The complex number &#123;0&#125; is formed from the real part &#123;0.real&#125; &apos;</div><div class="line">...  &apos;and the imaginary part &#123;0.imag&#125;.&apos;).format(c)</div><div class="line">&apos;The complex number (3-5j) is formed from the real part 3.0 and the imaginary part -5.0.&apos;</div><div class="line">&gt;&gt;&gt; class Point(object):</div><div class="line">...     def __init__(self, x, y):</div><div class="line">...         self.x, self.y = x, y</div><div class="line">...     def __str__(self):</div><div class="line">...         return &apos;Point(&#123;self.x&#125;, &#123;self.y&#125;)&apos;.format(self=self)</div><div class="line">...</div><div class="line">&gt;&gt;&gt; str(Point(4, 2))</div><div class="line">&apos;Point(4, 2)&apos;</div></pre></td></tr></table></figure></p>
+<p>Accessing arguments’ items:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; coord = (3, 5)</div><div class="line">&gt;&gt;&gt; &apos;X: &#123;0[0]&#125;;  Y: &#123;0[1]&#125;&apos;.format(coord)</div><div class="line">&apos;X: 3;  Y: 5&apos;</div></pre></td></tr></table></figure></p>
+<p>Replacing %s and %r(%s不包含引号，%r包含引号):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; &quot;repr() shows quotes: &#123;!r&#125;; str() doesn&apos;t: &#123;!s&#125;&quot;.format(&apos;test1&apos;, &apos;test2&apos;)</div><div class="line">&quot;repr() shows quotes: &apos;test1&apos;; str() doesn&apos;t: test2&quot;</div></pre></td></tr></table></figure></p>
+<p>Aligning the text and specifying a width:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; &apos;&#123;:&lt;30&#125;&apos;.format(&apos;left aligned&apos;)</div><div class="line">&apos;left aligned                  &apos;</div><div class="line">&gt;&gt;&gt; &apos;&#123;:&gt;30&#125;&apos;.format(&apos;right aligned&apos;)</div><div class="line">&apos;                 right aligned&apos;</div><div class="line">&gt;&gt;&gt; &apos;&#123;:^30&#125;&apos;.format(&apos;centered&apos;)</div><div class="line">&apos;           centered           &apos;</div><div class="line">&gt;&gt;&gt; &apos;&#123;:*^30&#125;&apos;.format(&apos;centered&apos;)  # use &apos;*&apos; as a fill char</div><div class="line">&apos;***********centered***********&apos;</div></pre></td></tr></table></figure></p>
+<p>Replacing %+f, %-f, and % f and specifying a sign:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; &apos;&#123;:+f&#125;; &#123;:+f&#125;&apos;.format(3.14, -3.14)  # show it always</div><div class="line">&apos;+3.140000; -3.140000&apos;</div><div class="line">&gt;&gt;&gt; &apos;&#123;: f&#125;; &#123;: f&#125;&apos;.format(3.14, -3.14)  # show a space for positive numbers</div><div class="line">&apos; 3.140000; -3.140000&apos;</div><div class="line">&gt;&gt;&gt; &apos;&#123;:-f&#125;; &#123;:-f&#125;&apos;.format(3.14, -3.14)  # show only the minus -- same as &apos;&#123;:f&#125;; &#123;:f&#125;&apos;</div><div class="line">&apos;3.140000; -3.140000&apos;</div></pre></td></tr></table></figure></p>
+<p>Replacing %x and %o and converting the value to different bases:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; # format also supports binary numbers</div><div class="line">&gt;&gt;&gt; &quot;int: &#123;0:d&#125;;  hex: &#123;0:x&#125;;  oct: &#123;0:o&#125;;  bin: &#123;0:b&#125;&quot;.format(42)</div><div class="line">&apos;int: 42;  hex: 2a;  oct: 52;  bin: 101010&apos;</div><div class="line">&gt;&gt;&gt; # with 0x, 0o, or 0b as prefix:</div><div class="line">&gt;&gt;&gt; &quot;int: &#123;0:d&#125;;  hex: &#123;0:#x&#125;;  oct: &#123;0:#o&#125;;  bin: &#123;0:#b&#125;&quot;.format(42)</div><div class="line">&apos;int: 42;  hex: 0x2a;  oct: 0o52;  bin: 0b101010&apos;</div></pre></td></tr></table></figure></p>
+<p>Using the comma as a thousands separator:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; &apos;&#123;:,&#125;&apos;.format(1234567890)</div><div class="line">&apos;1,234,567,890&apos;</div></pre></td></tr></table></figure></p>
+<p>Expressing a percentage:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; points = 19.5</div><div class="line">&gt;&gt;&gt; total = 22</div><div class="line">&gt;&gt;&gt; &apos;Correct answers: &#123;:.2%&#125;&apos;.format(points/total)</div><div class="line">&apos;Correct answers: 88.64%&apos;</div></pre></td></tr></table></figure></p>
+<p>Using type-specific formatting:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; import datetime</div><div class="line">&gt;&gt;&gt; d = datetime.datetime(2010, 7, 4, 12, 15, 58)</div><div class="line">&gt;&gt;&gt; &apos;&#123;:%Y-%m-%d %H:%M:%S&#125;&apos;.format(d)</div><div class="line">&apos;2010-07-04 12:15:58&apos;</div></pre></td></tr></table></figure></p>
+<p>Nesting arguments and more complex examples:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; for align, text in zip(&apos;&lt;^&gt;&apos;, [&apos;left&apos;, &apos;center&apos;, &apos;right&apos;]):</div><div class="line">...     &apos;&#123;0:&#123;fill&#125;&#123;align&#125;16&#125;&apos;.format(text, fill=align, align=align)</div><div class="line">...</div><div class="line">&apos;left&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&apos;</div><div class="line">&apos;^^^^^center^^^^^&apos;</div><div class="line">&apos;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;right&apos;</div><div class="line">&gt;&gt;&gt;</div><div class="line">&gt;&gt;&gt; octets = [192, 168, 0, 1]</div><div class="line">&gt;&gt;&gt; &apos;&#123;:02X&#125;&#123;:02X&#125;&#123;:02X&#125;&#123;:02X&#125;&apos;.format(*octets)</div><div class="line">&apos;C0A80001&apos;</div><div class="line">&gt;&gt;&gt; int(_, 16)</div><div class="line">3232235521</div><div class="line">&gt;&gt;&gt;</div><div class="line">&gt;&gt;&gt; width = 5</div><div class="line">&gt;&gt;&gt; for num in range(5,12):</div><div class="line">...     for base in &apos;dXob&apos;:</div><div class="line">...         print &apos;&#123;0:&#123;width&#125;&#123;base&#125;&#125;&apos;.format(num, base=base, width=width),</div><div class="line">...     print</div><div class="line">...</div><div class="line">    5     5     5   101</div><div class="line">    6     6     6   110</div><div class="line">    7     7     7   111</div><div class="line">    8     8    10  1000</div><div class="line">    9     9    11  1001</div><div class="line">   10     A    12  1010</div><div class="line">   11     B    13  1011</div></pre></td></tr></table></figure></p>
+<h3 id="Template-strings"><a href="#Template-strings" class="headerlink" title="Template strings"></a>Template strings</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; from string import Template</div><div class="line">&gt;&gt;&gt; s = Template(&apos;$who likes $what&apos;)</div><div class="line">&gt;&gt;&gt; s.substitute(who=&apos;tim&apos;, what=&apos;kung pao&apos;)</div><div class="line">&apos;tim likes kung pao&apos;</div><div class="line">&gt;&gt;&gt; d = dict(who=&apos;tim&apos;)</div><div class="line">&gt;&gt;&gt; Template(&apos;Give $who $100&apos;).substitute(d)</div><div class="line">Traceback (most recent call last):</div><div class="line">...</div><div class="line">ValueError: Invalid placeholder in string: line 1, col 11</div><div class="line">&gt;&gt;&gt; Template(&apos;$who likes $what&apos;).substitute(d)</div><div class="line">Traceback (most recent call last):</div><div class="line">...</div><div class="line">KeyError: &apos;what&apos;</div><div class="line">&gt;&gt;&gt; Template(&apos;$who likes $what&apos;).safe_substitute(d)</div><div class="line">&apos;tim likes $what&apos;</div></pre></td></tr></table></figure>
+<h3 id="String-functions"><a href="#String-functions" class="headerlink" title="String functions"></a>String functions</h3><p>The following functions are available to operate on string and Unicode objects. They are not available as string methods.</p>
+<p>string.capwords(s[, sep])</p>
+<blockquote>
+<p>Split the argument into words using str.split(), capitalize each word using str.capitalize(), and join the capitalized words using str.join(). If the optional second argument sep is absent or None, runs of whitespace characters are replaced by a single space and leading and trailing whitespace are removed, otherwise sep is used to split and join the words.</p>
+</blockquote>
+<p>string.maketrans(from, to)</p>
+<blockquote>
+<p>Return a translation table suitable for passing to translate(), that will map each character in from into the character at the same position in to; from and to must have the same length.</p>
+</blockquote>
+<h3 id="String-metheds"><a href="#String-metheds" class="headerlink" title="String metheds"></a>String metheds</h3><p>str.capitalize()</p>
+<blockquote>
+<p>Return a copy of the string with its first character capitalized and the rest lowercased.</p>
+</blockquote>
+<p><em>For 8-bit strings, this method is locale-dependent.</em></p>
+<p>str.center(width[, fillchar])</p>
+<blockquote>
+<p>Return centered in a string of length width. Padding is done using the specified fillchar (default is a space).</p>
+</blockquote>
+<p><em>Changed in version 2.4: Support for the fillchar argument.</em></p>
+<p>str.count(sub[, start[, end]])</p>
+<blockquote>
+<p>Return the number of non-overlapping occurrences of substring sub in the range [start, end]. Optional arguments start and end are interpreted as in slice notation.</p>
+</blockquote>
+<p>str.decode([encoding[, errors]])</p>
+<blockquote>
+<p>Decodes the string using the codec registered for encoding. encoding defaults to the default string encoding. errors may be given to set a different error handling scheme. The default is ‘strict’, meaning that encoding errors raise UnicodeError. Other possible values are ‘ignore’, ‘replace’ and any other name registered via codecs.register_error(), see section Codec Base Classes.</p>
+</blockquote>
+<p><em>Changed in version 2.3: Support for other error handling schemes added.</em></p>
+<p><em>Changed in version 2.7: Support for keyword arguments added.</em></p>
+<p>str.encode([encoding[, errors]])</p>
+<blockquote>
+<p>Return an encoded version of the string. Default encoding is the current default string encoding. errors may be given to set a different error handling scheme. The default for errors is ‘strict’, meaning that encoding errors raise a UnicodeError. Other possible values are ‘ignore’, ‘replace’, ‘xmlcharrefreplace’, ‘backslashreplace’ and any other name registered via codecs.register_error(), see section Codec Base Classes. For a list of possible encodings, see section Standard Encodings.</p>
+</blockquote>
+<p><em>New in version 2.0.</em></p>
+<p><em>Changed in version 2.3: Support for ‘xmlcharrefreplace’ and ‘backslashreplace’ and other error handling schemes added.</em></p>
+<p><em>Changed in version 2.7: Support for keyword arguments added.</em></p>
+<p>str.endswith(suffix[, start[, end]])</p>
+<blockquote>
+<p>Return True if the string ends with the specified suffix, otherwise return False. suffix can also be a tuple of suffixes to look for. With optional start, test beginning at that position. With optional end, stop comparing at that position.</p>
+</blockquote>
+<p><em>Changed in version 2.5: Accept tuples as suffix.</em></p>
+<p>str.expandtabs([tabsize])</p>
+<blockquote>
+<p>Return a copy of the string where all tab characters are replaced by one or more spaces, depending on the current column and the given tab size. Tab positions occur every tabsize characters (default is 8, giving tab positions at columns 0, 8, 16 and so on). To expand the string, the current column is set to zero and the string is examined character by character. If the character is a tab (\t), one or more space characters are inserted in the result until the current column is equal to the next tab position. (The tab character itself is not copied.) If the character is a newline (\n) or return (\r), it is copied and the current column is reset to zero. Any other character is copied unchanged and the current column is incremented by one regardless of how the character is represented when printed.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; &apos;01\t012\t0123\t01234&apos;.expandtabs()</div><div class="line">&apos;01      012     0123    01234&apos;</div><div class="line">&gt;&gt;&gt; &apos;01\t012\t0123\t01234&apos;.expandtabs(4)</div><div class="line">&apos;01  012 0123    01234&apos;</div></pre></td></tr></table></figure></p>
+</blockquote>
+<p>str.find(sub[, start[, end]])</p>
+<blockquote>
+<p>Return the lowest index in the string where substring sub is found, such that sub is contained in the slice s[start:end]. Optional arguments start and end are interpreted as in slice notation. Return -1 if sub is not found.</p>
+</blockquote>
+<p><strong>Note</strong></p>
+<p><em>The find() method should be used only if you need to know the position of sub.</em></p>
+<p><em>To check if sub is a substring or not, use the in operator:</em><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; &apos;Py&apos; in &apos;Python&apos;</div><div class="line">True</div></pre></td></tr></table></figure></p>
+<p>str.format(*args, **kwargs)</p>
+<blockquote>
+<p>Perform a string formatting operation. The string on which this method is called can contain literal text or replacement fields delimited by braces {}. Each replacement field contains either the numeric index of a positional argument, or the name of a keyword argument. Returns a copy of the string where each replacement field is replaced with the string value of the corresponding argument.</p>
+</blockquote>
+<p>str.index(sub[, start[, end]])</p>
+<blockquote>
+<p>Like find(), but raise ValueError when the substring is not found.</p>
+</blockquote>
+<p>str.isalnum()</p>
+<blockquote>
+<p>Return true if all characters in the string are alphanumeric and there is at least one character, false otherwise.</p>
+</blockquote>
+<p><em>For 8-bit strings, this method is locale-dependent.</em></p>
+<p>str.isalpha()</p>
+<blockquote>
+<p>Return true if all characters in the string are alphabetic and there is at least one character, false otherwise.</p>
+</blockquote>
+<p><em>For 8-bit strings, this method is locale-dependent.</em></p>
+<p>str.isdigit()</p>
+<blockquote>
+<p>Return true if all characters in the string are digits and there is at least one character, false otherwise.</p>
+</blockquote>
+<p><em>For 8-bit strings, this method is locale-dependent.</em></p>
+<p>str.islower()</p>
+<blockquote>
+<p>Return true if all cased characters [4] in the string are lowercase and there is at least one cased character, false otherwise.</p>
+</blockquote>
+<p><em>For 8-bit strings, this method is locale-dependent.</em></p>
+<p>str.isspace()</p>
+<blockquote>
+<p>Return true if there are only whitespace characters in the string and there is at least one character, false otherwise.</p>
+</blockquote>
+<p><em>For 8-bit strings, this method is locale-dependent.</em></p>
+<p>str.istitle()</p>
+<blockquote>
+<p>Return true if the string is a titlecased string and there is at least one character, for example uppercase characters may only follow uncased characters and lowercase characters only cased ones. Return false otherwise.</p>
+</blockquote>
+<p><em>For 8-bit strings, this method is locale-dependent.</em></p>
+<p>str.isupper()</p>
+<blockquote>
+<p>Return true if all cased characters [4] in the string are uppercase and there is at least one cased character, false otherwise.</p>
+</blockquote>
+<p><em>For 8-bit strings, this method is locale-dependent.</em></p>
+<p>str.join(iterable)</p>
+<blockquote>
+<p>Return a string which is the concatenation of the strings in the iterable iterable. The separator between elements is the string providing this method.</p>
+</blockquote>
+<p>str.ljust(width[, fillchar])</p>
+<blockquote>
+<p>Return the string left justified in a string of length width. Padding is done using the specified fillchar (default is a space). The original string is returned if width is less than or equal to len(s).</p>
+</blockquote>
+<p><em>Changed in version 2.4: Support for the fillchar argument.</em></p>
+<p>str.lower()</p>
+<blockquote>
+<p>Return a copy of the string with all the cased characters [4] converted to lowercase.</p>
+</blockquote>
+<p><em>For 8-bit strings, this method is locale-dependent.</em></p>
+<p>str.lstrip([chars])</p>
+<blockquote>
+<p>Return a copy of the string with leading characters removed. The chars argument is a string specifying the set of characters to be removed. If omitted or None, the chars argument defaults to removing whitespace. The chars argument is not a prefix; rather, all combinations of its values are stripped:</p>
+</blockquote>
+<p>str.partition(sep)</p>
+<blockquote>
+<p>Split the string at the first occurrence of sep, and return a 3-tuple containing the part before the separator, the separator itself, and the part after the separator. If the separator is not found, return a 3-tuple containing the string itself, followed by two empty strings.</p>
+</blockquote>
+<p>str.replace(old, new[, count])</p>
+<blockquote>
+<p>Return a copy of the string with all occurrences of substring old replaced by new. If the optional argument count is given, only the first count occurrences are replaced.</p>
+</blockquote>
+<p>str.rfind(sub[, start[, end]])</p>
+<blockquote>
+<p>Return the highest index in the string where substring sub is found, such that sub is contained within s[start:end]. Optional arguments start and end are interpreted as in slice notation. Return -1 on failure.</p>
+</blockquote>
+<p>str.rindex(sub[, start[, end]])</p>
+<blockquote>
+<p>Like rfind() but raises ValueError when the substring sub is not found.</p>
+</blockquote>
+<p>str.rjust(width[, fillchar])</p>
+<blockquote>
+<p>Return the string right justified in a string of length width. Padding is done using the specified fillchar (default is a space). The original string is returned if width is less than or equal to len(s).</p>
+</blockquote>
+<p>str.rpartition(sep)</p>
+<blockquote>
+<p>Split the string at the last occurrence of sep, and return a 3-tuple containing the part before the separator, the separator itself, and the part after the separator. If the separator is not found, return a 3-tuple containing two empty strings, followed by the string itself.</p>
+</blockquote>
+<p>str.rsplit([sep[, maxsplit]])</p>
+<blockquote>
+<p>Return a list of the words in the string, using sep as the delimiter string. If maxsplit is given, at most maxsplit splits are done, the rightmost ones. If sep is not specified or None, any whitespace string is a separator. Except for splitting from the right, rsplit() behaves like split() which is described in detail below.</p>
+</blockquote>
+<p>str.rstrip([chars])</p>
+<blockquote>
+<p>Return a copy of the string with trailing characters removed. The chars argument is a string specifying the set of characters to be removed. If omitted or None, the chars argument defaults to removing whitespace. The chars argument is not a suffix; rather, all combinations of its values are stripped:</p>
+</blockquote>
+<p>str.split([sep[, maxsplit]])</p>
+<blockquote>
+<p>Return a list of the words in the string, using sep as the delimiter string. If maxsplit is given, at most maxsplit splits are done (thus, the list will have at most maxsplit+1 elements). If maxsplit is not specified or -1, then there is no limit on the number of splits (all possible splits are made).</p>
+<p>If sep is given, consecutive delimiters are not grouped together and are deemed to delimit empty strings (for example, ‘1,,2’.split(‘,’) returns [‘1’, ‘’, ‘2’]). The sep argument may consist of multiple characters (for example, ‘1&lt;&gt;2&lt;&gt;3’.split(‘&lt;&gt;’) returns [‘1’, ‘2’, ‘3’]). Splitting an empty string with a specified separator returns [‘’].</p>
+<p>If sep is not specified or is None, a different splitting algorithm is applied: runs of consecutive whitespace are regarded as a single separator, and the result will contain no empty strings at the start or end if the string has leading or trailing whitespace. Consequently, splitting an empty string or a string consisting of just whitespace with a None separator returns [].</p>
+<p>For example, ‘ 1  2   3  ‘.split() returns [‘1’, ‘2’, ‘3’], and ‘  1  2   3  ‘.split(None, 1) returns [‘1’, ‘2   3  ‘].</p>
+</blockquote>
+<p>str.splitlines([keepends])</p>
+<blockquote>
+<p>Return a list of the lines in the string, breaking at line boundaries. This method uses the universal newlines approach to splitting lines. Line breaks are not included in the resulting list unless keepends is given and true.</p>
+<p>For example, ‘ab c\n\nde fg\rkl\r\n’.splitlines() returns [‘ab c’, ‘’, ‘de fg’, ‘kl’], while the same call with splitlines(True) returns [‘ab c\n’, ‘\n’, ‘de fg\r’, ‘kl\r\n’].</p>
+<p>Unlike split() when a delimiter string sep is given, this method returns an empty list for the empty string, and a terminal line break does not result in an extra line.</p>
+</blockquote>
+<p>str.startswith(prefix[, start[, end]])</p>
+<blockquote>
+<p>Return True if string starts with the prefix, otherwise return False. prefix can also be a tuple of prefixes to look for. With optional start, test string beginning at that position. With optional end, stop comparing string at that position.</p>
+</blockquote>
+<p>str.strip([chars])</p>
+<blockquote>
+<p>Return a copy of the string with the leading and trailing characters removed. The chars argument is a string specifying the set of characters to be removed. If omitted or None, the chars argument defaults to removing whitespace. The chars argument is not a prefix or suffix; rather, all combinations of its values are stripped:</p>
+</blockquote>
+<p>str.swapcase()</p>
+<blockquote>
+<p>Return a copy of the string with uppercase characters converted to lowercase and vice versa.</p>
+</blockquote>
+<p><em>For 8-bit strings, this method is locale-dependent.</em></p>
+<p>str.title()</p>
+<blockquote>
+<p>Return a titlecased version of the string where words start with an uppercase character and the remaining characters are lowercase.</p>
+<p>The algorithm uses a simple language-independent definition of a word as groups of consecutive letters. The definition works in many contexts but it means that apostrophes in contractions and possessives form word boundaries, which may not be the desired result:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; &quot;they&apos;re bill&apos;s friends from the UK&quot;.title()</div><div class="line">&quot;They&apos;Re Bill&apos;S Friends From The Uk&quot;</div><div class="line">A workaround for apostrophes can be constructed using regular expressions:</div><div class="line"></div><div class="line">&gt;&gt;&gt; import re</div><div class="line">&gt;&gt;&gt; def titlecase(s):</div><div class="line">...     return re.sub(r&quot;[A-Za-z]+(&apos;[A-Za-z]+)?&quot;,</div><div class="line">...                   lambda mo: mo.group(0)[0].upper() +</div><div class="line">...                              mo.group(0)[1:].lower(),</div><div class="line">...                   s)</div><div class="line">...</div><div class="line">&gt;&gt;&gt; titlecase(&quot;they&apos;re bill&apos;s friends.&quot;)</div><div class="line">&quot;They&apos;re Bill&apos;s Friends.&quot;</div></pre></td></tr></table></figure></p>
+</blockquote>
+<p><em>For 8-bit strings, this method is locale-dependent.</em></p>
+<p>str.translate(table[, deletechars])</p>
+<blockquote>
+<p>Return a copy of the string where all characters occurring in the optional argument deletechars are removed, and the remaining characters have been mapped through the given translation table, which must be a string of length 256.</p>
+<p>You can use the maketrans() helper function in the string module to create a translation table. For string objects, set the table argument to None for translations that only delete characters:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; &apos;read this short text&apos;.translate(None, &apos;aeiou&apos;)</div><div class="line">&apos;rd ths shrt txt&apos;</div></pre></td></tr></table></figure></p>
+<p>For Unicode objects, the translate() method does not accept the optional deletechars argument. Instead, it returns a copy of the s where all characters have been mapped through the given translation table which must be a mapping of Unicode ordinals to Unicode ordinals, Unicode strings or None. Unmapped characters are left untouched. Characters mapped to None are deleted. Note, a more flexible approach is to create a custom character mapping codec using the codecs module (see encodings.cp1251 for an example).</p>
+</blockquote>
+<p>str.upper()</p>
+<blockquote>
+<p>Return a copy of the string with all the cased characters [4] converted to uppercase. Note that str.upper().isupper() might be False if s contains uncased characters or if the Unicode category of the resulting character(s) is not “Lu” (Letter, uppercase), but e.g. “Lt” (Letter, titlecase).</p>
+</blockquote>
+<p><em>For 8-bit strings, this method is locale-dependent.</em></p>
+<p>str.zfill(width)</p>
+<blockquote>
+<p>Return the numeric string left filled with zeros in a string of length width. A sign prefix is handled correctly. The original string is returned if width is less than or equal to len(s).</p>
+</blockquote>
+<p><strong>The following methods are present only on unicode objects:</strong></p>
+<p>unicode.isnumeric()</p>
+<blockquote>
+<p>Return True if there are only numeric characters in S, False otherwise. Numeric characters include digit characters, and all characters that have the Unicode numeric value property, e.g. U+2155, VULGAR FRACTION ONE FIFTH.</p>
+</blockquote>
+<p>unicode.isdecimal()</p>
+<blockquote>
+<p>Return True if there are only decimal characters in S, False otherwise. Decimal characters include digit characters, and all characters that can be used to form decimal-radix numbers, e.g. U+0660, ARABIC-INDIC DIGIT ZERO.</p>
+</blockquote>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[1、python关键词和标识符]]></title>
+      <url>https://ifeelok.github.io/2017/02/19/python-01/</url>
+      <content type="html"><![CDATA[<p>介绍标识符和关键字。</p>
+<a id="more"></a>
+<h3 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h3><blockquote>
+<p>identifier ::=  (letter|”_“) (letter | digit | “_“)*<br>letter     ::=  lowercase | uppercase<br>lowercase  ::=  “a”…”z”<br>uppercase  ::=  “A”…”Z”<br>digit      ::=  “0”…”9”</p>
+</blockquote>
+<h3 id="保留字"><a href="#保留字" class="headerlink" title="保留字"></a>保留字</h3><table>
+<thead>
+<tr>
+<th>One</th>
+<th style="text-align:left">Two</th>
+<th style="text-align:left">Three</th>
+<th style="text-align:left">Four</th>
+<th style="text-align:left">Five</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>and</td>
+<td style="text-align:left">del</td>
+<td style="text-align:left">from</td>
+<td style="text-align:left">not</td>
+<td style="text-align:left">while</td>
+</tr>
+<tr>
+<td>as</td>
+<td style="text-align:left">elif</td>
+<td style="text-align:left">global</td>
+<td style="text-align:left">or</td>
+<td style="text-align:left">with</td>
+</tr>
+<tr>
+<td>assert</td>
+<td style="text-align:left">else</td>
+<td style="text-align:left">if</td>
+<td style="text-align:left">pass</td>
+<td style="text-align:left">yield</td>
+</tr>
+<tr>
+<td>break</td>
+<td style="text-align:left">except</td>
+<td style="text-align:left">import</td>
+<td style="text-align:left">print</td>
+</tr>
+<tr>
+<td>class</td>
+<td style="text-align:left">exec</td>
+<td style="text-align:left">in</td>
+<td style="text-align:left">raise</td>
+</tr>
+<tr>
+<td>continue</td>
+<td style="text-align:left">finally</td>
+<td style="text-align:left">is</td>
+<td style="text-align:left">return</td>
+</tr>
+<tr>
+<td>def</td>
+<td style="text-align:left">for</td>
+<td style="text-align:left">lambda</td>
+<td style="text-align:left">try</td>
+</tr>
+</tbody>
+</table>
+<h3 id="保留的类标识符"><a href="#保留的类标识符" class="headerlink" title="保留的类标识符"></a>保留的类标识符</h3><ul>
+<li>_*</li>
+</ul>
+<blockquote>
+<p>不会被from module import * 导入</p>
+</blockquote>
+<ul>
+<li>__*__</li>
+</ul>
+<blockquote>
+<p>系统定义的名称</p>
+</blockquote>
+<ul>
+<li>__*</li>
+</ul>
+<blockquote>
+<p>类的私有名称</p>
+</blockquote>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[3、r-炼数成金-分布]]></title>
+      <url>https://ifeelok.github.io/2017/02/15/r-04/</url>
+      <content type="html"><![CDATA[<h3 id="R语言的各种分布函数"><a href="#R语言的各种分布函数" class="headerlink" title="R语言的各种分布函数"></a>R语言的各种分布函数</h3><ul>
+<li>rnorm() 高斯(正态分布)</li>
+<li>rexp() 指数</li>
+<li>rgamma()</li>
+<li>rpois() Poisson分布</li>
+<li>rweibull()</li>
+<li>rcauchy()</li>
+<li>rbeta()</li>
+<li>rt()</li>
+<li>rf()</li>
+<li>rchisq()</li>
+<li>rbinom() 二项分布</li>
+<li>rgeom() 几何分布</li>
+<li>rhyper() 超几何分布</li>
+<li>rlogis() logistic分布</li>
+<li>rlnorm() 对数正态</li>
+<li>rnbinom() 负二项</li>
+<li>runif() 均匀</li>
+<li>rwilcox()</li>
+</ul>
+<h3 id="中位数和bai"><a href="#中位数和bai" class="headerlink" title="中位数和bai"></a>中位数和bai</h3>]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[3、r-炼数成金-图]]></title>
+      <url>https://ifeelok.github.io/2017/02/15/r-03/</url>
+      <content type="html"><![CDATA[<p>r中的图。</p>
+<a id="more"></a>
+<h3 id="直方图"><a href="#直方图" class="headerlink" title="直方图"></a>直方图</h3><p>hist(x)</p>
+<h3 id="散点图"><a href="#散点图" class="headerlink" title="散点图"></a>散点图</h3><p>plot(x1, x2)</p>
+<h3 id="柱状图"><a href="#柱状图" class="headerlink" title="柱状图"></a>柱状图</h3><p>barplot(table(x))</p>
+<h3 id="饼图"><a href="#饼图" class="headerlink" title="饼图"></a>饼图</h3><p>pie(table(x))</p>
+<h3 id="箱线图"><a href="#箱线图" class="headerlink" title="箱线图"></a>箱线图</h3><p>boxplot(x1, x2, x3…)</p>
+<h3 id="星象图"><a href="#星象图" class="headerlink" title="星象图"></a>星象图</h3><p>stars(x)</p>
+<h3 id="脸谱图"><a href="#脸谱图" class="headerlink" title="脸谱图"></a>脸谱图</h3><ul>
+<li>安装aplpack包</li>
+<li><p>faces(x)</p>
+</li>
+<li><p>安装TeachingDemos包</p>
+</li>
+<li>faces2(x)</li>
+</ul>
+<h3 id="茎叶图"><a href="#茎叶图" class="headerlink" title="茎叶图"></a>茎叶图</h3><p>stem(x)</p>
+<h3 id="QQ图"><a href="#QQ图" class="headerlink" title="QQ图"></a>QQ图</h3><ul>
+<li>用于判断是否是正态分布</li>
+<li>直线的斜率是标准差，截距是均值</li>
+<li>点的分布越接近直线，则越接近正态分布</li>
+</ul>
+<p>qqnorm(x1)</p>
+<p>qqline(x1)</p>
+<h3 id="连线图"><a href="#连线图" class="headerlink" title="连线图"></a>连线图</h3><p>plot(a, b, type=’l’)</p>
+<h3 id="多条曲线"><a href="#多条曲线" class="headerlink" title="多条曲线"></a>多条曲线</h3><figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">plot(rain$Tokyo, type=<span class="string">'l'</span>, ylim=c(<span class="number">0</span>,<span class="number">300</span>), col=<span class="string">'red'</span>, lwd=<span class="number">2</span>)</div><div class="line">lines(rain$NewYork, type=<span class="string">'l'</span>, col=<span class="string">'blue'</span>, lwd=<span class="number">2</span>)</div></pre></td></tr></table></figure>
+<h3 id="密度图"><a href="#密度图" class="headerlink" title="密度图"></a>密度图</h3><p>plot(density(rnorm(1000)))</p>
+<p><strong>data()列出内置数据集</strong></p>
+<h3 id="向日葵散点图"><a href="#向日葵散点图" class="headerlink" title="向日葵散点图"></a>向日葵散点图</h3><p>在有重叠的地方用一朵向日葵花的花瓣数目表示重叠数据的个数</p>
+<p>sunflowerplot(iris[,3:4])</p>
+<h3 id="散点图集"><a href="#散点图集" class="headerlink" title="散点图集"></a>散点图集</h3><ul>
+<li>遍历样本中全部的变量配对画出二元图</li>
+<li>直观地了解所有变量之间的关系</li>
+</ul>
+<p>pairs(iris[,1:4])</p>
+<ul>
+<li>利用par()在同一个device输出多个散点图</li>
+<li>par()函数博大精深，用于设置绘图参数</li>
+</ul>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">par(mflow=c(<span class="number">3</span>,<span class="number">1</span>))</div><div class="line">plot(x1,x2);plot(x2,x3);plot(x3,x1)</div></pre></td></tr></table></figure>
+<p><strong>colors()函数列出所有能使用的颜色</strong></p>
+<h3 id="三维散点图"><a href="#三维散点图" class="headerlink" title="三维散点图"></a>三维散点图</h3><p><strong>安装scatterplot3d包</strong></p>
+<h3 id="地图"><a href="#地图" class="headerlink" title="地图"></a>地图</h3><p><strong>安装maps包</strong></p>
+<p>map(‘world’, fill=TRUE, col=heat.colors(10))</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[2、r--炼数成金-简单入门]]></title>
+      <url>https://ifeelok.github.io/2017/02/15/r-02/</url>
+      <content type="html"><![CDATA[<p>一些简单的函数。</p>
+<a id="more"></a>
+<h3 id="创建向量和矩阵"><a href="#创建向量和矩阵" class="headerlink" title="创建向量和矩阵"></a>创建向量和矩阵</h3><p><strong>c(), length(), mode(), rbind(), cbind(),which(),sort(),rev(),seq()</strong></p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 创建一个向量</span></div><div class="line">x1 &lt;- c(<span class="number">2</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">8</span>,<span class="number">0</span>)</div><div class="line"><span class="comment"># x1的长度</span></div><div class="line">length(x1)</div><div class="line"><span class="comment"># x1的类型</span></div><div class="line">mode(x1)</div><div class="line"><span class="comment"># 访问第三个元素</span></div><div class="line">x1[<span class="number">3</span>]</div><div class="line"><span class="comment"># 创建x2向量</span></div><div class="line">x2 &lt;- c(<span class="number">1</span>:<span class="number">100</span>)</div><div class="line"><span class="comment"># 以x1和x2为行创建矩阵</span></div><div class="line">rbind(x1, x2)</div><div class="line"><span class="comment"># 以x1, x2为列创建矩阵</span></div><div class="line">cbind(x1, x2)</div></pre></td></tr></table></figure>
+<p><code>1:10-1</code><br><em>每个元素都减一</em></p>
+<p><code>1:20*2+1</code><br><em>每个元素乘以2再加一</em></p>
+<p><code>a[1:5]</code></p>
+<p><code>a[-(1:5)]</code><br><em>除去第1:5个</em></p>
+<p><code>a[c(2,4,7)]</code></p>
+<p><code>a[a&gt;20 &amp; a&lt;40]</code></p>
+<p><code>which(a&gt;5)</code></p>
+<p><code>a[which(a&gt;5)]</code></p>
+<p>``</p>
+<h3 id="平均值、和、连乘、最值、方差、标准差"><a href="#平均值、和、连乘、最值、方差、标准差" class="headerlink" title="平均值、和、连乘、最值、方差、标准差"></a>平均值、和、连乘、最值、方差、标准差</h3><figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">mean(x)</div><div class="line">sum(x)</div><div class="line">max(x)</div><div class="line">min(x)</div><div class="line"><span class="comment"># 连乘</span></div><div class="line">prod(x)</div><div class="line"><span class="comment"># 方差</span></div><div class="line">var(x)</div><div class="line">sd(x)</div></pre></td></tr></table></figure>
+<h3 id="矩阵运算"><a href="#矩阵运算" class="headerlink" title="矩阵运算"></a>矩阵运算</h3><figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 生成矩阵</span></div><div class="line">matrix()</div><div class="line"></div><div class="line"><span class="comment"># 矩阵转置</span></div><div class="line">t()</div><div class="line"></div><div class="line"><span class="comment"># 矩阵相乘</span></div><div class="line">a%*%b</div><div class="line"></div><div class="line"><span class="comment"># 求对角线</span></div><div class="line">diag(x)</div><div class="line"></div><div class="line"><span class="comment"># 对角线矩阵</span></div><div class="line">diag(diag(x))</div><div class="line"></div><div class="line"><span class="comment"># 4阶单位矩阵</span></div><div class="line">diag(<span class="number">4</span>)</div><div class="line"></div><div class="line"><span class="comment"># 正态分布产生随机数</span></div><div class="line">rnorm(<span class="number">16</span>)</div><div class="line"></div><div class="line"><span class="comment"># 逆矩阵</span></div><div class="line">solve(x)</div><div class="line"></div><div class="line"><span class="comment"># 方程组求解</span></div><div class="line">solve(a, b)</div><div class="line"></div><div class="line"><span class="comment"># 矩阵特征值和特征向量</span></div><div class="line">eigen(a)</div></pre></td></tr></table></figure>
+<h3 id="分布函数"><a href="#分布函数" class="headerlink" title="分布函数"></a>分布函数</h3><ul>
+<li>rnorm():正态分布</li>
+<li>rpois():泊松分布</li>
+<li>rexp():指数分布</li>
+<li>rgamma():rgamma分部</li>
+<li>runif():均匀分布</li>
+<li>rbinom():二项分布</li>
+<li>rgeom():几何分布</li>
+</ul>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[1、r-炼数成金-简单介绍]]></title>
+      <url>https://ifeelok.github.io/2017/02/15/r-01/</url>
+      <content type="html"><![CDATA[<p>R是S语言的一种实现，S语言是由AT&amp;T贝尔实验室开发的一种用来进行数据探索、统计分析、作图的解释型语言。</p>
+<a id="more"></a>
+<h3 id="R语言的简单概述"><a href="#R语言的简单概述" class="headerlink" title="R语言的简单概述"></a>R语言的简单概述</h3><p>R用于统计分析、绘图的语言和操作环境。</p>
+<p>功能包括：</p>
+<ul>
+<li>数据存储和处理</li>
+<li>数据预算</li>
+<li>完整连贯的统计分析工具</li>
+<li>优秀的统计制图功能</li>
+<li>简便强大的编程语言</li>
+</ul>
+<h3 id="R的特点"><a href="#R的特点" class="headerlink" title="R的特点"></a>R的特点</h3><ul>
+<li>有效的数据处理和保存机制</li>
+<li>有一整套数组和矩阵的操作运算符</li>
+<li>一系列连贯而又完整的数据分析中间工具</li>
+<li>图形统计</li>
+<li>高效的程序设计语言</li>
+<li>面向对象的编程语言</li>
+<li>和其他编程语言、数据库之间有很好的接口</li>
+<li>自由软件</li>
+<li>丰富的网上资源</li>
+</ul>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[storm简单介绍]]></title>
+      <url>https://ifeelok.github.io/2017/02/14/storm-01/</url>
+      <content type="html"><![CDATA[<p>流式处理三驾马车：</p>
+<ul>
+<li>storm：分布式流式计算框架</li>
+<li>kafka：数据收集缓存</li>
+<li>redis：结果数据、临时数据缓存</li>
+</ul>
+<a id="more"></a>
+<h3 id="离线计算"><a href="#离线计算" class="headerlink" title="离线计算"></a>离线计算</h3><ul>
+<li>批量获取数据</li>
+<li>批量传输数据</li>
+<li>周期性批量计算数据</li>
+<li>数据展示</li>
+</ul>
+<p>代表性技术：sqoop批量导入数据，hdfs批量存储数据，mapreduce批量计算数据，hive批量计算数据，kettle任务调度</p>
+<h3 id="流式计算"><a href="#流式计算" class="headerlink" title="流式计算"></a>流式计算</h3><ul>
+<li>实时数据产生</li>
+<li>实时数据传输</li>
+<li>实时数据计算</li>
+<li>实时数据缓存</li>
+<li>实时数据展示</li>
+</ul>
+<p>代表技术：flume实时获取数据，kafka实时数据存储，storm/jstorm实时数据计算，redis实时结果缓存</p>
+<h3 id="storm和hadoop的区别"><a href="#storm和hadoop的区别" class="headerlink" title="storm和hadoop的区别"></a>storm和hadoop的区别</h3><ul>
+<li>storm实时计算，hadoop离线计算</li>
+<li>storm处理的数据保存在内存中，hadoop处理的数据保存在文件系统中</li>
+<li>storm的数据通过网络传输进来，hadoop的数据保存在磁盘上</li>
+</ul>
+<h3 id="storm和hadoop的编程模型相似"><a href="#storm和hadoop的编程模型相似" class="headerlink" title="storm和hadoop的编程模型相似"></a>storm和hadoop的编程模型相似</h3><blockquote>
+<p>Nimbus     ——    jobtracker(角色)<br>supervisor ——    tasktracker<br>worker     ——    child<br>topology   ——    job(应用名称)<br>spout/bolt ——    mapper/reducer(编程接口)</p>
+</blockquote>
+<h3 id="storm集群搭建"><a href="#storm集群搭建" class="headerlink" title="storm集群搭建"></a>storm集群搭建</h3><p><em>安装zookeeper</em></p>
+<ul>
+<li>下载</li>
+<li>解压(建立软连接)</li>
+<li>修改配置文件</li>
+<li>创建zk的数据目录和日志目录</li>
+<li>在数据目录下创建zk节点的编号</li>
+<li>配置环境变量</li>
+<li>使配置文件生效</li>
+<li>启动zk集群(在每一台机器上启动)</li>
+<li>查看zk状态</li>
+</ul>
+<p><em>步骤</em></p>
+<ul>
+<li>下载</li>
+<li>解压</li>
+<li>配置</li>
+<li>分发</li>
+<li>启动<ul>
+<li>在nimbus.host所属的机器上启动nimbus服务</li>
+<li>在nimbus.host所属的机器上启动ui服务</li>
+<li>在其它节点上启动supervisor服务</li>
+</ul>
+</li>
+</ul>
+<p><em>核心组件</em></p>
+<ul>
+<li>nimbus：资源分配和任务调度</li>
+<li>supervisor：接收nimbus分配的任务，启动和关闭属于自己的worker进程</li>
+<li>worker：运行具体处理组件逻辑的进程</li>
+<li>task：worker中每一个spout/bolt的线程都称为task。在0.8版本后，同一个spout/bolt共享一个物理线程，成为executor。</li>
+</ul>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[3、hdfs的简单学习]]></title>
+      <url>https://ifeelok.github.io/2017/02/11/hadoop-03/</url>
+      <content type="html"><![CDATA[<p>hdfs的学习。</p>
+<a id="more"></a>
+<h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><ul>
+<li>ls</li>
+<li>ls -R</li>
+<li>du</li>
+<li>du -s</li>
+<li>count</li>
+<li>mv</li>
+<li>cp</li>
+<li>rm</li>
+<li>rm -r</li>
+<li>put</li>
+<li>copyFromLocal</li>
+<li>moveFromLocal</li>
+<li>getmerge</li>
+<li>get</li>
+<li>copyToLocal</li>
+<li>moveToLocal</li>
+<li>mkdir</li>
+<li>setrep 修改副本数</li>
+<li>touchz</li>
+<li>stat</li>
+<li>tail</li>
+<li>chown</li>
+<li>chgrp</li>
+<li>chmod</li>
+<li>help</li>
+</ul>
+<h3 id="windows开发环境搭建"><a href="#windows开发环境搭建" class="headerlink" title="windows开发环境搭建"></a>windows开发环境搭建</h3><ul>
+<li>在某个目录下解压一个hadoop的安装包</li>
+<li>将lib和bin目录替换为对应windows版本平台编译的目录</li>
+<li>在windows系统中配置HADOOP_HOME</li>
+<li>在windows系统的path中添加bin目录</li>
+</ul>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[2、hadoop的安装]]></title>
+      <url>https://ifeelok.github.io/2017/02/11/hadoop-02/</url>
+      <content type="html"><![CDATA[<p>hadoop集群安装</p>
+<a id="more"></a>
+<h3 id="虚拟机的安装"><a href="#虚拟机的安装" class="headerlink" title="虚拟机的安装"></a>虚拟机的安装</h3><ul>
+<li>安装centos 选中server版本</li>
+<li>虚拟机复制三份，删除目录中的*.lck文件</li>
+</ul>
+<p><strong>配置网卡步骤：</strong></p>
+<p>第一步：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ifconfig <span class="_">-a</span></div></pre></td></tr></table></figure></p>
+<p>找到网卡的硬件地址</p>
+<p>第二步：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /etc/sysconfig/network-scripts/</div><div class="line">cp ifcfg-eth0 ifcfg-eth1</div><div class="line"><span class="comment"># 修改DEVICE和HWADDR</span></div><div class="line">vi ifcfg-eth1</div><div class="line">service network restart</div></pre></td></tr></table></figure></p>
+<p><strong>修改yum源</strong></p>
+<p><strong>关闭防火墙</strong></p>
+<p>1、永久生效</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">chkconfig iptables on</div><div class="line">chkconfig iptables off</div></pre></td></tr></table></figure>
+<p>2、临时生效</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">service iptables start</div><div class="line">service iptables stop</div></pre></td></tr></table></figure>
+<h3 id="hadoop集群安装"><a href="#hadoop集群安装" class="headerlink" title="hadoop集群安装"></a>hadoop集群安装</h3><h4 id="编译hadoop源代码"><a href="#编译hadoop源代码" class="headerlink" title="编译hadoop源代码"></a>编译hadoop源代码</h4><p>因为hadoop为32位，生产环境服务器为64位，需要在本地编译使用。使用maven编译。</p>
+<h4 id="修改hostname"><a href="#修改hostname" class="headerlink" title="修改hostname"></a>修改hostname</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vi /etc/sysconfig/network</div></pre></td></tr></table></figure>
+<p>修改HOSTNAME=hadoop01</p>
+<p>三台机器都要修改，分别位hadoop01/02/03</p>
+<p><em>修改之后要重启</em></p>
+<p><code>reboot</code></p>
+<h4 id="修改hosts"><a href="#修改hosts" class="headerlink" title="修改hosts"></a>修改hosts</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vi /etc/hosts</div></pre></td></tr></table></figure>
+<blockquote>
+<p>192.168.0.1 hadoop-node-01 hadoop01<br>192.168.0.2 hadoop-node-02 hadoop02<br>192.168.0.3 hadoop-node-03 hadoop03</p>
+</blockquote>
+<h4 id="配置免密码登陆"><a href="#配置免密码登陆" class="headerlink" title="配置免密码登陆"></a>配置免密码登陆</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 生成id_rsa-私钥，id_rsa.pub-公钥</span></div><div class="line">ssh-keygen -t rsa</div><div class="line"><span class="comment"># 拷贝公钥到别的机器上</span></div><div class="line">ssh-copy-id hadoop02</div><div class="line">ssh-copy-id hadoop03</div></pre></td></tr></table></figure>
+<h4 id="hadoop安装"><a href="#hadoop安装" class="headerlink" title="hadoop安装"></a>hadoop安装</h4><h5 id="目录划分"><a href="#目录划分" class="headerlink" title="目录划分"></a>目录划分</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 数据</span></div><div class="line">/<span class="built_in">export</span>/data</div><div class="line"><span class="comment"># 解压包</span></div><div class="line">/<span class="built_in">export</span>/servers</div><div class="line"><span class="comment"># 安装包</span></div><div class="line">/<span class="built_in">export</span>/software</div><div class="line"></div><div class="line">mv hadoop-2.6.2.tar.gz /<span class="built_in">export</span>/software</div><div class="line"><span class="built_in">cd</span> /<span class="built_in">export</span>/software</div><div class="line">tar -zxvf hadoop-2.6.2.tar.gz -C /<span class="built_in">export</span>/servers/</div><div class="line"><span class="built_in">cd</span> /<span class="built_in">export</span>/servers</div><div class="line"><span class="comment"># 创建软链接</span></div><div class="line">ln <span class="_">-s</span> hadoop-2.6.2 hadoop</div></pre></td></tr></table></figure>
+<h5 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">vi /etc/profile</div><div class="line"></div><div class="line"><span class="comment"># set hadoop env</span></div><div class="line"><span class="built_in">export</span> HADOOP_HOME=/<span class="built_in">export</span>/servers/hadoop</div><div class="line"><span class="built_in">export</span> PATH=<span class="variable">$&#123;HADOOP_HOME&#125;</span>/bin:<span class="variable">$&#123;HADOOP_HOME&#125;</span>/bin:<span class="variable">$PATH</span></div></pre></td></tr></table></figure>
+<h5 id="修改hadoop配置文件"><a href="#修改hadoop配置文件" class="headerlink" title="修改hadoop配置文件"></a>修改hadoop配置文件</h5><p><em>hadoop-env.sh</em></p>
+<blockquote>
+<p>exiport JAVA_HOME=/export/servers/jdk</p>
+</blockquote>
+<p><em>hdfs-site.xml</em></p>
+<blockquote>
+<property><br>    <name>dfs.replication</name><br>    <value>2</value> //默认为3<br></property>
+
+</blockquote>
+<p><em>mapred-env.sh</em></p>
+<blockquote>
+<p>exiport JAVA_HOME=/export/servers/jdk</p>
+</blockquote>
+<p><em>mapred-site.xml</em></p>
+<blockquote>
+<property><br>    <name>mapreduce.framework.name</name><br>    <value>yarn</value><br></property>
+
+</blockquote>
+<p><em>yarn-site.xml</em></p>
+<blockquote>
+<property><br>    <name>yarn.resourcemanager.hostname</name><br>    <value>hadoop01</value><br></property><br><property><br>    <name>yarn.nodemanager.aux-services</name><br>    <value>mapreduce_shuffle</value><br></property>
+
+</blockquote>
+<p><em>core-site.xml</em></p>
+<blockquote>
+<property><br>    <name>fs.defaultFS</name><br>    <value>hdfs://hadoop01:9000</value><br></property><br><property><br>    <name>hadoop.tmp.dir</name><br>    <value>/export/data/hadoop/tmp</value><br></property>
+
+</blockquote>
+<p><em>slaves</em></p>
+<blockquote>
+<p>hadoop02<br>hadoop03</p>
+</blockquote>
+<p><strong>配置完成之后进行分发</strong></p>
+<h5 id="hadoop启动"><a href="#hadoop启动" class="headerlink" title="hadoop启动"></a>hadoop启动</h5><p><em>启动hdfs</em></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">start-dfs.sh</div><div class="line">jps</div></pre></td></tr></table></figure>
+<p><em>启动mapreduce，即yarn</em></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">start-yarn.sh</div><div class="line">jps</div></pre></td></tr></table></figure>
+<h4 id="hadoop的使用"><a href="#hadoop的使用" class="headerlink" title="hadoop的使用"></a>hadoop的使用</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 将test.txt放入hdfs的根目录</span></div><div class="line">hadoop fs -put test.txt /</div><div class="line"><span class="comment"># 查看hdfs根目录</span></div><div class="line">hadoop fs -ls /</div><div class="line">hadoop jar /<span class="built_in">export</span>/servers/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.6.1.jar wordcount /test.txt /result</div><div class="line">hadoop fs -ls /result</div><div class="line">hadoop fs -cat /result part-r-00000</div></pre></td></tr></table></figure>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ul>
+<li>安装vm软件</li>
+<li>安装一个linux环境</li>
+<li>hadoop<ul>
+<li>关闭防火墙</li>
+<li>hostname修改</li>
+<li>免密码登陆</li>
+<li>创建工作目录</li>
+<li>下载hadoop安装包</li>
+<li>编译</li>
+<li>修改配置文件，修改环境变量</li>
+<li>分发配置文件</li>
+<li>start-dfs.sh start-yarn.sh start-all.sh</li>
+</ul>
+</li>
+</ul>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[1、hadoop简单介绍]]></title>
+      <url>https://ifeelok.github.io/2017/02/10/hadoop-01/</url>
+      <content type="html"><![CDATA[<p>hadoop的简单介绍<br><a id="more"></a></p>
+<h3 id="hadoop是什么"><a href="#hadoop是什么" class="headerlink" title="hadoop是什么"></a>hadoop是什么</h3><ul>
+<li>hadoop是一个由Apache基金会所开发的分布式系统基础框架</li>
+<li>hadoop实现了一个分布式文件系统，hdfs</li>
+<li>hadoop实现了一个分布式计算系统，mapreduce</li>
+<li>hadoop实现了一个资源管理系统，yarn</li>
+</ul>
+<h3 id="hadoop的特点"><a href="#hadoop的特点" class="headerlink" title="hadoop的特点"></a>hadoop的特点</h3><ul>
+<li>高可靠性。hadoop按位存储和处理数据的能力值得人们信赖。</li>
+<li>高扩展性。hadoop是在可用的计算机集群间分配数据并完成计算任务的，这些集群可以方便的扩展到数以千计的节点中</li>
+<li>高效性。hadoop能够在节点之间动态的移动数据，并保证各个节点的动态平衡，因此处理速度非常快。</li>
+<li>高容错性。hadoop能够自动保存数据的多个副本，并且能够自动将失败的任务重新分配。</li>
+<li>低成本。与一体机、商用数据仓库以及QlikView、Yonghong Z-Suite等数据集市相比，hadoop是开源的，项目的软件成本低。</li>
+</ul>
+<h3 id="hadoop-hdfs核心组件"><a href="#hadoop-hdfs核心组件" class="headerlink" title="hadoop hdfs核心组件"></a>hadoop hdfs核心组件</h3><p><strong> hdfs有两个核心角色：name node、data node </strong></p>
+<p>Name Node仅有一个，提供元数据服务；Data Node为hdfs提供存储块。</p>
+<p><em>Name Node的职责：</em></p>
+<ul>
+<li>管理文件系统名称空间和控制外部客户机的访问</li>
+<li>负责元数据的信息管理</li>
+</ul>
+<p><em>Name Node的职责：</em></p>
+<ul>
+<li>负责数据存储</li>
+<li>定期向Name Node汇报存储的文件信息</li>
+</ul>
+<h3 id="mapreduce核心组件"><a href="#mapreduce核心组件" class="headerlink" title="mapreduce核心组件"></a>mapreduce核心组件</h3><h4 id="mapreduce是什么"><a href="#mapreduce是什么" class="headerlink" title="mapreduce是什么"></a>mapreduce是什么</h4><p>MapReduce是一种编程模型，用于大规模数据集（大于1T）的并行运算。</p>
+<h4 id="mapreduce能解决什么问题"><a href="#mapreduce能解决什么问题" class="headerlink" title="mapreduce能解决什么问题"></a>mapreduce能解决什么问题</h4><p>逐渐消亡，被cloud dataflow代替</p>
+<h4 id="mapreduce计算模型"><a href="#mapreduce计算模型" class="headerlink" title="mapreduce计算模型"></a>mapreduce计算模型</h4><p>job tracker 和 task tracker</p>
+<h3 id="大数据技术生态体系"><a href="#大数据技术生态体系" class="headerlink" title="大数据技术生态体系"></a>大数据技术生态体系</h3><ul>
+<li>hadoop(hdfs, mapreduce, yarn)：最基础的数据处理框架，擅长离线数据分析。</li>
+<li>zookeeper： 分布式协调服务基础组件</li>
+<li>hbase：分布式海量数据库，基于hdfs，离线分析和在线业务</li>
+<li>hive sql：数据仓库工具，使用方便，功能丰富，基于MR，延迟大</li>
+<li>sqoop：数据导入导出工具，关系数据库和hdfs的数据桥梁</li>
+<li>flume：数据采集框架</li>
+<li><em>storm：</em>实时流式计算框架</li>
+<li>spark：基于内存的分布式运算框架，一站式处理。</li>
+</ul>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[4、scrapy内置服务]]></title>
+      <url>https://ifeelok.github.io/2017/02/09/scrapy-04/</url>
+      <content type="html"><![CDATA[<p>本篇介绍scrapy的Logging模块、Stats Collections模块和Sending-email模块。</p>
+<a id="more"></a>
+<h3 id="Logging"><a href="#Logging" class="headerlink" title="Logging"></a>Logging</h3><h4 id="简单使用方法"><a href="#简单使用方法" class="headerlink" title="简单使用方法"></a>简单使用方法</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> logging</div><div class="line"></div><div class="line"></div><div class="line">logging.warning(<span class="string">"This is a Warning"</span>)</div></pre></td></tr></table></figure>
+<p>执行结果为：</p>
+<blockquote>
+<p>WARNING:root:This is a Warning</p>
+</blockquote>
+<h4 id="通用的记录日志的方法，可加入日志的级别"><a href="#通用的记录日志的方法，可加入日志的级别" class="headerlink" title="通用的记录日志的方法，可加入日志的级别"></a>通用的记录日志的方法，可加入日志的级别</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> logging</div><div class="line"></div><div class="line"></div><div class="line">logging.log(logging.WARNING, <span class="string">"This is a Warning"</span>)</div></pre></td></tr></table></figure>
+<h4 id="通用logger记录日志"><a href="#通用logger记录日志" class="headerlink" title="通用logger记录日志"></a>通用logger记录日志</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> logging</div><div class="line"></div><div class="line"></div><div class="line">logger = logging.getLogger(__name__)</div><div class="line">logger.warning(<span class="string">"This is a Warning"</span>)</div></pre></td></tr></table></figure>
+<p>运行结果:</p>
+<blockquote>
+<p>WARNING:<strong>main</strong>:This is a warning</p>
+</blockquote>
+<h4 id="在scrapy中使用logging"><a href="#在scrapy中使用logging" class="headerlink" title="在scrapy中使用logging"></a>在scrapy中使用logging</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> scrapy</div><div class="line"></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MySpider</span><span class="params">(scrapy.Spider)</span>:</span></div><div class="line"></div><div class="line">	name = <span class="string">'myspider'</span></div><div class="line">	start_urls = [<span class="string">'http://scrapyinghub.com'</span>]</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">def</span> <span class="title">parse</span><span class="params">(self, response)</span>:</span></div><div class="line">		self.logger.info(<span class="string">'Parse function called on %s'</span> % response.url)</div></pre></td></tr></table></figure>
+<h4 id="settings中设置log"><a href="#settings中设置log" class="headerlink" title="settings中设置log"></a>settings中设置log</h4><ul>
+<li>LOG_FILE</li>
+<li>LOG_ENABLE</li>
+<li>LOG_ENCODING</li>
+<li>LOG_LEVEL</li>
+<li>LOG_FORMAT</li>
+<li>lOG_DATEFORMAT</li>
+<li>lOG_STDOUT</li>
+</ul>
+<h3 id="Stats-Collections"><a href="#Stats-Collections" class="headerlink" title="Stats Collections"></a>Stats Collections</h3><h4 id="使用方法（待学习）"><a href="#使用方法（待学习）" class="headerlink" title="使用方法（待学习）"></a>使用方法（待学习）</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ExtensionThatAccessStats</span><span class="params">(object)</span>:</span></div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, stats)</span>:</span></div><div class="line">		self.stats = stats</div><div class="line"></div><div class="line"><span class="meta">	@classmethod</span></div><div class="line">	<span class="function"><span class="keyword">def</span> <span class="title">from_crawler</span><span class="params">(cls, crawler)</span>:</span></div><div class="line">		<span class="keyword">return</span> cls(crawler.stats)</div></pre></td></tr></table></figure>
+<h4 id="scrapy内置的stats-Collections"><a href="#scrapy内置的stats-Collections" class="headerlink" title="scrapy内置的stats Collections"></a>scrapy内置的stats Collections</h4><ul>
+<li>class scrapy.statscollectors.MemoryStatsCollector(linux)</li>
+<li>class scrapy.statscollectors.DummyStatsCollector</li>
+</ul>
+<h3 id="Sending-email"><a href="#Sending-email" class="headerlink" title="Sending-email"></a>Sending-email</h3><h4 id="通用使用方法"><a href="#通用使用方法" class="headerlink" title="通用使用方法"></a>通用使用方法</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> scrapy.mail <span class="keyword">import</span> MailSender</div><div class="line"></div><div class="line"></div><div class="line">mailer = MailSender()</div><div class="line"><span class="comment"># mailer = MailSender.from_settings(settins)</span></div><div class="line"></div><div class="line">mailer.send(to=[<span class="string">"someone@example.com"</span>], subject=<span class="string">"Some subject"</span>, body=<span class="string">"Some body"</span>, cc=[<span class="string">"another.example.com"</span>])</div></pre></td></tr></table></figure>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[归并排序和插入排序]]></title>
+      <url>https://ifeelok.github.io/2017/02/08/algorithms-01/</url>
+      <content type="html"><![CDATA[<p>今天试了一下<strong>归并排序</strong>，顺便写了插入排序。</p>
+<a id="more"></a>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># -*- coding: utf-8 -*-</span></div><div class="line"><span class="keyword">import</span> random</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment"># Generate Data</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">generate_number</span><span class="params">(x)</span>:</span></div><div class="line">    sample = []</div><div class="line">    i = <span class="number">0</span></div><div class="line">    <span class="keyword">while</span> i &lt; x:</div><div class="line">        sample.append(random.randint(<span class="number">0</span>, <span class="number">100</span>))</div><div class="line">        i += <span class="number">1</span></div><div class="line">    <span class="keyword">return</span> sample</div><div class="line"></div><div class="line"><span class="comment"># Insert sort</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">insert_sort</span><span class="params">(data)</span>:</span></div><div class="line">	<span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">1</span>, len(data)):</div><div class="line">		key = data[j]</div><div class="line">		i = j - <span class="number">1</span></div><div class="line"></div><div class="line">		<span class="keyword">while</span> i&gt;=<span class="number">0</span> <span class="keyword">and</span> data[i]&gt;key:</div><div class="line">			data[i+<span class="number">1</span>] = data[i]</div><div class="line">			i -= <span class="number">1</span></div><div class="line">		data[i+<span class="number">1</span>] = key</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">merge</span><span class="params">(data, start, middle, end)</span>:</span></div><div class="line">	former_len = middle - start + <span class="number">1</span></div><div class="line">	after_len = end - middle</div><div class="line">	former_arr = []</div><div class="line">	after_arr = []</div><div class="line"></div><div class="line">	<span class="keyword">for</span> i <span class="keyword">in</span> range(former_len):</div><div class="line">		former_arr.append(data[start+i])</div><div class="line">	<span class="keyword">for</span> i <span class="keyword">in</span> range(after_len):</div><div class="line">		after_arr.append(data[middle+i+<span class="number">1</span>])</div><div class="line">	former_arr.append(float(<span class="string">'inf'</span>))</div><div class="line">	after_arr.append(float(<span class="string">'inf'</span>))</div><div class="line"></div><div class="line">	i = <span class="number">0</span></div><div class="line">	j = <span class="number">0</span></div><div class="line">	<span class="keyword">for</span> k <span class="keyword">in</span> range(start, end+<span class="number">1</span>):</div><div class="line">		<span class="keyword">if</span> former_arr[i] &lt; after_arr[j]:</div><div class="line">			data[k] = former_arr[i]</div><div class="line">			i += <span class="number">1</span></div><div class="line">		<span class="keyword">else</span>:</div><div class="line">			data[k] = after_arr[j]</div><div class="line">			j += <span class="number">1</span></div><div class="line"></div><div class="line"><span class="comment"># Merge Sort</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">merge_sort</span><span class="params">(data, start, end)</span>:</span></div><div class="line">	<span class="keyword">if</span> start &lt; end:</div><div class="line">		middle = (start + end) / <span class="number">2</span></div><div class="line">		merge_sort(data, start, middle)</div><div class="line">		merge_sort(data, middle+<span class="number">1</span>, end)</div><div class="line">		merge(data, start, middle, end)</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</div><div class="line"></div><div class="line">    sample = generate_number(<span class="number">10</span>)</div><div class="line">    start1 = sample[:]</div><div class="line">    <span class="keyword">print</span> sample</div><div class="line">    insert_sort(start1)</div><div class="line">    merge_sort(sample, <span class="number">0</span>, len(sample)<span class="number">-1</span>)</div><div class="line">    <span class="keyword">print</span> sample</div><div class="line">    <span class="keyword">print</span> start1</div></pre></td></tr></table></figure>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[3、scrapy基本概念介绍]]></title>
+      <url>https://ifeelok.github.io/2017/02/07/scrapy-03/</url>
+      <content type="html"><![CDATA[<p>本篇介绍scrapy的命令行工具、重要组件和重要对象。</p>
+<a id="more"></a>
+<h3 id="scrapy-命令行工具"><a href="#scrapy-命令行工具" class="headerlink" title="scrapy 命令行工具"></a>scrapy 命令行工具</h3><ul>
+<li>help：帮助信息（scrapy –help）</li>
+<li>version：版本信息，可以添加-v查看scrapy各个组件的信息（scrapy version -v）</li>
+<li>startproject：新建一个工程（scrapy startproject example）</li>
+<li>genspider：产生一个spider（scrapy genspider example example.com）</li>
+<li>list：查看本工程中包含的spiders</li>
+<li>view：在浏览器中打开网页，这个网页就是scrapy处理的网页（scrapy view <a href="http://example.com）" target="_blank" rel="external">http://example.com）</a></li>
+<li>parse：解析一个URL（使用对应的spider），打印结果</li>
+<li>shell：可交互的scrapy爬取控制台</li>
+<li>runspider：运行一个自包含的爬虫，即没有创建工程</li>
+<li>bench：基准测试</li>
+</ul>
+<h3 id="scrapy的重要组件"><a href="#scrapy的重要组件" class="headerlink" title="scrapy的重要组件"></a>scrapy的重要组件</h3><h4 id="Spider"><a href="#Spider" class="headerlink" title="Spider"></a>Spider</h4><h5 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h5><p>Spider是一个类，它定义了怎样爬取一个网站，包括怎样跟踪链接、怎样提取数据。</p>
+<p>执行流程：</p>
+<ul>
+<li>根据start_urls产生初始Requests</li>
+<li>解析responce</li>
+<li>使用selector</li>
+<li>存储items</li>
+</ul>
+<p><strong>zaobao Spider</strong></p>
+<p><img src="/pictures/scrapy/scrapy-0301.png" alt="example spider"></p>
+<h6 id="基类介绍-scrapy-Spider"><a href="#基类介绍-scrapy-Spider" class="headerlink" title="基类介绍(scrapy.Spider)"></a>基类介绍(scrapy.Spider)</h6><ul>
+<li>属性<ul>
+<li>name：spider的名称，同一工程中唯一</li>
+<li>allowed_domains：允许的域名</li>
+<li>start_urls：初始urls</li>
+<li>custom_settings：个性化设置，覆盖全局设置（settings.py）</li>
+<li>crawler：抓取器，spider将绑定到它上面</li>
+<li>settings：配置实例，包含工程中所有的配置变量</li>
+<li>logger：日志实例</li>
+</ul>
+</li>
+<li>方法<ul>
+<li>from_crawler(crawler, *args, **kwargs)：类方法，用于创建spiders</li>
+<li>start_requests()：生成初始的requests</li>
+<li>make_requests_from_url(url)：根据url生成一个request</li>
+<li>parse(response)：解析网页内容</li>
+<li>log(message[, level, component])：兼容老版本</li>
+<li>self.logger.info(“log内容”)</li>
+<li>closed(reason)：当spider关闭的时候调用的方法</li>
+</ul>
+</li>
+</ul>
+<h5 id="子类介绍"><a href="#子类介绍" class="headerlink" title="子类介绍"></a>子类介绍</h5><h6 id="CrawlerSpider"><a href="#CrawlerSpider" class="headerlink" title="CrawlerSpider"></a>CrawlerSpider</h6><ul>
+<li>最常用的spider，用于抓取普通网页</li>
+<li>和基类比较增加了两个成员<ul>
+<li>rules：定义了一些抓取规则（链接怎么跟踪、使用哪一个parse函数解析此链接）</li>
+<li>parse_start_url(response)：解析初始url产生的response</li>
+</ul>
+</li>
+</ul>
+<p><strong>示例</strong></p>
+<p><img src="/pictures/scrapy/scrapy-0302.png" alt="CrawlerSpider"></p>
+<h6 id="XMLFeedSpider"><a href="#XMLFeedSpider" class="headerlink" title="XMLFeedSpider"></a>XMLFeedSpider</h6><h6 id="CSVFeedSpider"><a href="#CSVFeedSpider" class="headerlink" title="CSVFeedSpider"></a>CSVFeedSpider</h6><h6 id="SitemapSpider"><a href="#SitemapSpider" class="headerlink" title="SitemapSpider"></a>SitemapSpider</h6><h4 id="Selector"><a href="#Selector" class="headerlink" title="Selector"></a>Selector</h4><p>scrapy默认使用<em>Selector</em>作为网页解析工具</p>
+<h5 id="实例化"><a href="#实例化" class="headerlink" title="实例化"></a>实例化</h5><p><img src="/pictures/scrapy/scrapy-0303.png" alt="selector construct"></p>
+<h5 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h5><ol>
+<li>xpath</li>
+<li>css</li>
+<li>re</li>
+<li>extract</li>
+<li>extract_first</li>
+</ol>
+<h4 id="Item"><a href="#Item" class="headerlink" title="Item"></a>Item</h4><p><strong>示例</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> scrapy</div><div class="line"></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Product</span><span class="params">(scrapy.Item)</span>:</span></div><div class="line">	name = scrapy.Field()</div><div class="line">	price = scrapy.Field()</div><div class="line">	stock = scrapy.Field()</div></pre></td></tr></table></figure>
+<h4 id="Item-Pipeline"><a href="#Item-Pipeline" class="headerlink" title="Item Pipeline"></a>Item Pipeline</h4><h5 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h5><ol>
+<li>清洗HTML数据</li>
+<li>验证抓取到的数据（检查是否有数据）</li>
+<li>检查是否重复（然后丢弃重复数据）</li>
+<li>存储数据到数据库中</li>
+</ol>
+<h5 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> scrapy.exceptions <span class="keyword">import</span> DropItem</div><div class="line"></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">PricePipeline</span><span class="params">(object)</span>:</span></div><div class="line">	vat_factor = <span class="number">1.15</span></div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">def</span> <span class="title">process_item</span><span class="params">(self, item, spider)</span>:</span></div><div class="line">		<span class="keyword">if</span> item[<span class="string">'price'</span>]:</div><div class="line">			<span class="keyword">if</span> item[<span class="string">'price_excludes_vat'</span>]:</div><div class="line">				item[<span class="string">'price'</span>] = item[<span class="string">'price'</span>] * self.vat_factor</div><div class="line">				<span class="keyword">return</span> item</div><div class="line">		<span class="keyword">else</span>:</div><div class="line">			<span class="keyword">raise</span> DropItem(<span class="string">"Missing price in %s"</span> % item)</div></pre></td></tr></table></figure>
+<h5 id="激活pipeline"><a href="#激活pipeline" class="headerlink" title="激活pipeline"></a>激活pipeline</h5><p>在<code>settings.py</code>里面设置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ITEM_PIPELINES = &#123;</div><div class="line">	&apos;myproject.pipelines.PricePipeline&apos;: 300</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><em>优先级0-1000，越小越优先</em></p>
+<h4 id="Feed-exports"><a href="#Feed-exports" class="headerlink" title="Feed exports"></a>Feed exports</h4><p>存储抓取到的数据</p>
+<ul>
+<li>json</li>
+<li>json lines</li>
+<li>csv</li>
+<li>xml</li>
+</ul>
+<h3 id="scrapy的重要对象"><a href="#scrapy的重要对象" class="headerlink" title="scrapy的重要对象"></a>scrapy的重要对象</h3><h4 id="Request"><a href="#Request" class="headerlink" title="Request"></a>Request</h4><ul>
+<li>scrapy.http.Request的初始化参数<ul>
+<li>url：必须</li>
+<li>callback</li>
+<li>method=‘GET’</li>
+<li>headers</li>
+<li>body</li>
+<li>cookies</li>
+<li>meta</li>
+<li>encoding=’utf-8’</li>
+<li>priority=0</li>
+<li>don’t_filter=False</li>
+<li>errback</li>
+</ul>
+</li>
+<li>其它属性<ul>
+<li>url</li>
+<li>method</li>
+<li>headers</li>
+<li>body</li>
+<li>cookies</li>
+<li>meta</li>
+<li>copy()</li>
+<li>replace()</li>
+</ul>
+</li>
+</ul>
+<p><strong>示例</strong></p>
+<p><img src="/pictures/scrapy/scrapy-0304.png" alt="mate example"></p>
+<ul>
+<li><p>子类<br><strong>FormRequest</strong>实现登陆功能</p>
+<p>class scrapy.http.FormRequest(url[, formdata…])</p>
+<p><strong>示例</strong></p>
+<p><img src="/pictures/scrapy/scrapy-0305.png" alt="FormRequest example"></p>
+</li>
+</ul>
+<h4 id="Response"><a href="#Response" class="headerlink" title="Response"></a>Response</h4><ol>
+<li>scrapy.http.Response的初始化参数<ul>
+<li>url：必须参数</li>
+<li>status=200</li>
+<li>headers</li>
+<li>body</li>
+<li>flags</li>
+</ul>
+</li>
+<li>其他成员<ul>
+<li>url</li>
+<li>status</li>
+<li>headers</li>
+<li>body</li>
+<li>resquest</li>
+<li>meta</li>
+<li>flags</li>
+<li>copy()</li>
+<li>replace()</li>
+<li>urljoin(url)</li>
+</ul>
+</li>
+<li>子类<ul>
+<li>scrapy.http.TextResponse(它有两个子类)</li>
+<li>scrapy.http.HtmlResponse</li>
+<li>scrapy.http.XmlResponse</li>
+</ul>
+</li>
+</ol>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[2、scrapy使用步骤]]></title>
+      <url>https://ifeelok.github.io/2017/02/07/scrapy-02/</url>
+      <content type="html"><![CDATA[<p>本篇介绍scrapy的使用步骤。scrapy是python的一个框架，可以通过安装python包的形式安装，必须先安装python。<br><a id="more"></a></p>
+<h3 id="scrapy安装步骤"><a href="#scrapy安装步骤" class="headerlink" title="scrapy安装步骤"></a>scrapy安装步骤</h3><ol>
+<li>安装python2.7</li>
+<li>安装pip</li>
+<li>安装lxml（抽取数据）</li>
+<li>安装OpenSSL（网页访问认证）</li>
+<li>安装Scrapy</li>
+</ol>
+<h3 id="使用步骤"><a href="#使用步骤" class="headerlink" title="使用步骤"></a>使用步骤</h3><ol>
+<li>create a project</li>
+<li>define items</li>
+<li>write a spider</li>
+<li>write and configure an item pipeline</li>
+<li>execute crawler</li>
+</ol>
+<h3 id="现在通过通过第一、三、五步创建一个爬虫，代码如下。"><a href="#现在通过通过第一、三、五步创建一个爬虫，代码如下。" class="headerlink" title="现在通过通过第一、三、五步创建一个爬虫，代码如下。"></a>现在通过通过第一、三、五步创建一个爬虫，代码如下。</h3><h4 id="创建工程"><a href="#创建工程" class="headerlink" title="创建工程"></a>创建工程</h4><blockquote>
+<p>scrapy startproject tutorial</p>
+</blockquote>
+<p>目录结构如下：</p>
+<p><img src="/pictures/scrapy/scrapy-0201.png" alt="工程结构图"></p>
+<h4 id="创建一个爬虫"><a href="#创建一个爬虫" class="headerlink" title="创建一个爬虫"></a>创建一个爬虫</h4><blockquote>
+<p>cd tutorial</p>
+<p>scrapy genspider dmoz dmoz.org</p>
+</blockquote>
+<p>此时目录结构如下：</p>
+<p><img src="/pictures/scrapy/scrapy-0202.png" alt="工程结构图"></p>
+<p><strong>dmoz.py</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># -*- coding: utf-8 -*-</span></div><div class="line"><span class="keyword">import</span> scrapy</div><div class="line"></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">DmozSpider</span><span class="params">(scrapy.Spider)</span>:</span></div><div class="line">    name = <span class="string">"dmoz"</span></div><div class="line">    allowed_domains = [<span class="string">"dmoz.org"</span>]</div><div class="line">    start_urls = [<span class="string">'http://dmoz.org/'</span>]</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">parse</span><span class="params">(self, response)</span>:</span></div><div class="line">        <span class="keyword">pass</span></div></pre></td></tr></table></figure></p>
+<p><strong>修改dmoz.py</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># -*- coding: utf-8 -*-</span></div><div class="line"><span class="keyword">import</span> scrapy</div><div class="line"></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">DmozSpider</span><span class="params">(scrapy.Spider)</span>:</span></div><div class="line">    name = <span class="string">"dmoz"</span></div><div class="line">    allowed_domains = [<span class="string">"dmoz.org"</span>]</div><div class="line">    start_urls = [</div><div class="line">    <span class="string">'http://dmoz.org/Computers/Programming/Languages/Python/Books/'</span>,</div><div class="line">    <span class="string">'http://dmoz.org/Computers/Programming/Languages/Python/Resources/'</span></div><div class="line">    ]</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">parse</span><span class="params">(self, response)</span>:</span></div><div class="line">    	<span class="comment"># 保存start_urls中网页的内容</span></div><div class="line">        filename = response.url.split(<span class="string">'/'</span>)[<span class="number">-2</span>] + <span class="string">'.html'</span></div><div class="line">        <span class="keyword">with</span> open(filename, <span class="string">'w'</span>) <span class="keyword">as</span> fp:</div><div class="line">        	fp.write(response.body)</div></pre></td></tr></table></figure></p>
+<p><strong>运行爬虫</strong></p>
+<p><code>scrapy crawl dmoz</code></p>
+<p><em>此时，爬虫将爬取两个网页的内容</em></p>
+<h3 id="修改爬虫，加入第二步"><a href="#修改爬虫，加入第二步" class="headerlink" title="修改爬虫，加入第二步"></a>修改爬虫，加入第二步</h3><p><strong>修改items.py</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> scrapy</div><div class="line"></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">TutorialItem</span><span class="params">(scrapy.Item)</span>:</span></div><div class="line">    <span class="comment"># define the fields for your item here like:</span></div><div class="line">    <span class="comment"># name = scrapy.Field()</span></div><div class="line">    title = scrapy.Field()</div><div class="line">    desc = scrapy.Field()</div><div class="line">    link = scrapy.Field()</div></pre></td></tr></table></figure></p>
+<p><strong>再次修改dmoz.py</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># -*- coding: utf-8 -*-</span></div><div class="line"><span class="keyword">import</span> scrapy</div><div class="line"><span class="keyword">from</span> tutorial.items <span class="keyword">import</span> TutorialItem</div><div class="line"></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">DmozSpider</span><span class="params">(scrapy.Spider)</span>:</span></div><div class="line">    name = <span class="string">"dmoz"</span></div><div class="line">    allowed_domains = [<span class="string">"dmoz.org"</span>]</div><div class="line">    start_urls = [</div><div class="line">    <span class="string">'http://dmoz.org/Computers/Programming/Languages/Python/Books/'</span>,</div><div class="line">    <span class="string">'http://dmoz.org/Computers/Programming/Languages/Python/Resources/'</span></div><div class="line">    ]</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">parse</span><span class="params">(self, response)</span>:</span></div><div class="line">    	<span class="comment"># 获取li标签。通过firefox浏览器的firebug插件很容易获取元素的xpath</span></div><div class="line">    	lis = response.xpath(<span class="string">'/html/body/div[2]/div[3]/fieldset[3]/ul/li'</span>)</div><div class="line">    	<span class="keyword">for</span> li <span class="keyword">in</span> lis:</div><div class="line">    		item = TutorialItem()</div><div class="line">    		item[<span class="string">'title'</span>] = li.xpath(<span class="string">'a/text()'</span>).extract()</div><div class="line">    		item[<span class="string">'link'</span>] = li.xpath(<span class="string">'a/@href'</span>).extract()</div><div class="line">    		item[<span class="string">'desc'</span>] = li.xpath(<span class="string">'text()'</span>)</div><div class="line">    		<span class="keyword">yield</span> item</div></pre></td></tr></table></figure></p>
+<p><strong>运行爬虫</strong></p>
+<p><code>scrapy crawl dmoz</code></p>
+<p><em>此时，爬虫将爬取网页中的书籍名称、链接和描述信息</em></p>
+<p>在实际应用中，还应该编写pipelines.py文件，将数据保存到数据库中。</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[1、初识scrapy]]></title>
+      <url>https://ifeelok.github.io/2017/02/07/scrapy-01/</url>
+      <content type="html"><![CDATA[<p>Scrapy是一个从网上爬取数据的开源的、友好的框架。</p>
+<blockquote>
+<p>An open source and collaborative framework for extracting the data from website.</p>
+</blockquote>
+<p><strong>scrapy具有以下优点：</strong></p>
+<ol>
+<li>快速强大</li>
+<li>容易扩展</li>
+<li>适应于多平台</li>
+</ol>
+<a id="more"></a>
+<h3 id="一个简单的爬虫"><a href="#一个简单的爬虫" class="headerlink" title="一个简单的爬虫"></a>一个简单的爬虫</h3><p>下面这个爬虫爬取了<em>stackoverflow</em>问题页中的内容。</p>
+<p><strong>stackoverflow_spider.py</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> scrapy</div><div class="line"></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">StackoverflowSpider</span><span class="params">(scrapy.Spider)</span>:</span></div><div class="line">		name = <span class="string">'stackoverflow'</span></div><div class="line">		start_urls=[<span class="string">'http://stackoverflow.com/questions?sort=votes'</span>]</div><div class="line"></div><div class="line">		<span class="function"><span class="keyword">def</span> <span class="title">parse</span><span class="params">(self, response)</span>:</span></div><div class="line">			<span class="keyword">for</span> href <span class="keyword">in</span> response.css(<span class="string">'.question-summary h3 a::attr(href)'</span>):</div><div class="line">				full_url = response.urljoin(href.extract())</div><div class="line">				<span class="keyword">yield</span> scrapy.Request(full_url, callback=self.parse_question)</div><div class="line"></div><div class="line">		<span class="function"><span class="keyword">def</span> <span class="title">parse_question</span><span class="params">(self, response)</span>:</span></div><div class="line">			<span class="keyword">yield</span> &#123;</div><div class="line">				<span class="string">'title'</span>: response.css(<span class="string">'h1 a::text'</span>).extract()[<span class="number">0</span>],</div><div class="line">				<span class="string">'votes'</span>: response.css(<span class="string">'.question .vote-count-post::text'</span>).extract()[<span class="number">0</span>],</div><div class="line">				<span class="string">'body'</span>: response.css(<span class="string">'.question .post-text'</span>).extract()[<span class="number">0</span>],</div><div class="line">				<span class="string">'tags'</span>: response.css(<span class="string">'.question .post-tag::text'</span>).extract(),</div><div class="line">				<span class="string">'link'</span>: response.url</div><div class="line">			&#125;</div></pre></td></tr></table></figure></p>
+<p>运行命令<code>scrapy runspider stackoverflow_spider.py -o result.csv</code>，将爬虫爬取结果保存到result.csv中。</p>
+<p>该爬虫的运行过程：</p>
+<ol>
+<li>使用start_urls作为初始url生成Request，并默认把parse作为它的回调函数。</li>
+<li>在parse中采用css选择器获得目标URL，并注册parse_question作为目标URL的回调函数。</li>
+</ol>
+<h3 id="scrapy的高级特性"><a href="#scrapy的高级特性" class="headerlink" title="scrapy的高级特性"></a>scrapy的高级特性</h3><ul>
+<li>内置css/xpath/re数据抽取器</li>
+<li>交互式控制台用于调试数据抽取方法（scrapy shell）</li>
+<li>内置对爬取结果的输出支持，可以将结果保存为json/csv/xml等</li>
+<li>自动处理编码</li>
+<li>支持自定义扩展</li>
+<li>丰富的内置扩展，可用于处理：<ul>
+<li>cookies and session</li>
+<li>http features like compression, authentication,caching</li>
+<li>user-agent spoofing</li>
+<li>robots.txt</li>
+<li>crawl depth restriction</li>
+</ul>
+</li>
+</ul>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[建立了一个博客]]></title>
       <url>https://ifeelok.github.io/2016/08/06/myfirstblog/</url>
       <content type="html"><![CDATA[<p>今天搭建了第一个博客，现在就来测试一下吧</p>

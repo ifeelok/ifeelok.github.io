@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="hadoop," />
 
 
 
@@ -84,19 +84,16 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="description" content="hadoop集群安装">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="https://ifeelok.github.io/2016/08/06/hello-world/index.html">
+<meta property="og:title" content="2、hadoop的安装">
+<meta property="og:url" content="https://ifeelok.github.io/2017/02/11/hadoop-02/index.html">
 <meta property="og:site_name" content="I FEEL OK">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
-<meta property="og:updated_time" content="2016-08-06T07:42:21.935Z">
+<meta property="og:description" content="hadoop集群安装">
+<meta property="og:updated_time" content="2017-02-11T08:48:49.731Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="twitter:title" content="2、hadoop的安装">
+<meta name="twitter:description" content="hadoop集群安装">
 
 
 
@@ -117,9 +114,9 @@ Quick">
 
 
 
-  <link rel="canonical" href="https://ifeelok.github.io/2016/08/06/hello-world/"/>
+  <link rel="canonical" href="https://ifeelok.github.io/2017/02/11/hadoop-02/"/>
 
-  <title> Hello World | I FEEL OK </title>
+  <title> 2、hadoop的安装 | I FEEL OK </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -272,7 +269,7 @@ Quick">
             
             
               
-                Hello World
+                2、hadoop的安装
               
             
           </h1>
@@ -284,19 +281,38 @@ Quick">
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-06T15:42:21+08:00" content="2016-08-06">
-              2016-08-06
+            <time itemprop="dateCreated" datetime="2017-02-11T15:26:27+08:00" content="2017-02-11">
+              2017-02-11
             </time>
           </span>
 
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/编程/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
           
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/08/06/hello-world/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/06/hello-world/" itemprop="commentsCount"></span>
+                <a href="/2017/02/11/hadoop-02/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/11/hadoop-02/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -306,7 +322,7 @@ Quick">
 
           
           
-             <span id="/2016/08/06/hello-world/" class="leancloud_visitors" data-flag-title="Hello World">
+             <span id="/2017/02/11/hadoop-02/" class="leancloud_visitors" data-flag-title="2、hadoop的安装">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -328,15 +344,89 @@ Quick">
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <p>hadoop集群安装</p>
+<a id="more"></a>
+<h3 id="虚拟机的安装"><a href="#虚拟机的安装" class="headerlink" title="虚拟机的安装"></a>虚拟机的安装</h3><ul>
+<li>安装centos 选中server版本</li>
+<li>虚拟机复制三份，删除目录中的*.lck文件</li>
+</ul>
+<p><strong>配置网卡步骤：</strong></p>
+<p>第一步：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ifconfig <span class="_">-a</span></div></pre></td></tr></table></figure></p>
+<p>找到网卡的硬件地址</p>
+<p>第二步：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /etc/sysconfig/network-scripts/</div><div class="line">cp ifcfg-eth0 ifcfg-eth1</div><div class="line"><span class="comment"># 修改DEVICE和HWADDR</span></div><div class="line">vi ifcfg-eth1</div><div class="line">service network restart</div></pre></td></tr></table></figure></p>
+<p><strong>修改yum源</strong></p>
+<p><strong>关闭防火墙</strong></p>
+<p>1、永久生效</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">chkconfig iptables on</div><div class="line">chkconfig iptables off</div></pre></td></tr></table></figure>
+<p>2、临时生效</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">service iptables start</div><div class="line">service iptables stop</div></pre></td></tr></table></figure>
+<h3 id="hadoop集群安装"><a href="#hadoop集群安装" class="headerlink" title="hadoop集群安装"></a>hadoop集群安装</h3><h4 id="编译hadoop源代码"><a href="#编译hadoop源代码" class="headerlink" title="编译hadoop源代码"></a>编译hadoop源代码</h4><p>因为hadoop为32位，生产环境服务器为64位，需要在本地编译使用。使用maven编译。</p>
+<h4 id="修改hostname"><a href="#修改hostname" class="headerlink" title="修改hostname"></a>修改hostname</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vi /etc/sysconfig/network</div></pre></td></tr></table></figure>
+<p>修改HOSTNAME=hadoop01</p>
+<p>三台机器都要修改，分别位hadoop01/02/03</p>
+<p><em>修改之后要重启</em></p>
+<p><code>reboot</code></p>
+<h4 id="修改hosts"><a href="#修改hosts" class="headerlink" title="修改hosts"></a>修改hosts</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vi /etc/hosts</div></pre></td></tr></table></figure>
+<blockquote>
+<p>192.168.0.1 hadoop-node-01 hadoop01<br>192.168.0.2 hadoop-node-02 hadoop02<br>192.168.0.3 hadoop-node-03 hadoop03</p>
+</blockquote>
+<h4 id="配置免密码登陆"><a href="#配置免密码登陆" class="headerlink" title="配置免密码登陆"></a>配置免密码登陆</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 生成id_rsa-私钥，id_rsa.pub-公钥</span></div><div class="line">ssh-keygen -t rsa</div><div class="line"><span class="comment"># 拷贝公钥到别的机器上</span></div><div class="line">ssh-copy-id hadoop02</div><div class="line">ssh-copy-id hadoop03</div></pre></td></tr></table></figure>
+<h4 id="hadoop安装"><a href="#hadoop安装" class="headerlink" title="hadoop安装"></a>hadoop安装</h4><h5 id="目录划分"><a href="#目录划分" class="headerlink" title="目录划分"></a>目录划分</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 数据</span></div><div class="line">/<span class="built_in">export</span>/data</div><div class="line"><span class="comment"># 解压包</span></div><div class="line">/<span class="built_in">export</span>/servers</div><div class="line"><span class="comment"># 安装包</span></div><div class="line">/<span class="built_in">export</span>/software</div><div class="line"></div><div class="line">mv hadoop-2.6.2.tar.gz /<span class="built_in">export</span>/software</div><div class="line"><span class="built_in">cd</span> /<span class="built_in">export</span>/software</div><div class="line">tar -zxvf hadoop-2.6.2.tar.gz -C /<span class="built_in">export</span>/servers/</div><div class="line"><span class="built_in">cd</span> /<span class="built_in">export</span>/servers</div><div class="line"><span class="comment"># 创建软链接</span></div><div class="line">ln <span class="_">-s</span> hadoop-2.6.2 hadoop</div></pre></td></tr></table></figure>
+<h5 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">vi /etc/profile</div><div class="line"></div><div class="line"><span class="comment"># set hadoop env</span></div><div class="line"><span class="built_in">export</span> HADOOP_HOME=/<span class="built_in">export</span>/servers/hadoop</div><div class="line"><span class="built_in">export</span> PATH=<span class="variable">$&#123;HADOOP_HOME&#125;</span>/bin:<span class="variable">$&#123;HADOOP_HOME&#125;</span>/bin:<span class="variable">$PATH</span></div></pre></td></tr></table></figure>
+<h5 id="修改hadoop配置文件"><a href="#修改hadoop配置文件" class="headerlink" title="修改hadoop配置文件"></a>修改hadoop配置文件</h5><p><em>hadoop-env.sh</em></p>
+<blockquote>
+<p>exiport JAVA_HOME=/export/servers/jdk</p>
+</blockquote>
+<p><em>hdfs-site.xml</em></p>
+<blockquote>
+<property><br>    <name>dfs.replication</name><br>    <value>2</value> //默认为3<br></property>
+
+</blockquote>
+<p><em>mapred-env.sh</em></p>
+<blockquote>
+<p>exiport JAVA_HOME=/export/servers/jdk</p>
+</blockquote>
+<p><em>mapred-site.xml</em></p>
+<blockquote>
+<property><br>    <name>mapreduce.framework.name</name><br>    <value>yarn</value><br></property>
+
+</blockquote>
+<p><em>yarn-site.xml</em></p>
+<blockquote>
+<property><br>    <name>yarn.resourcemanager.hostname</name><br>    <value>hadoop01</value><br></property><br><property><br>    <name>yarn.nodemanager.aux-services</name><br>    <value>mapreduce_shuffle</value><br></property>
+
+</blockquote>
+<p><em>core-site.xml</em></p>
+<blockquote>
+<property><br>    <name>fs.defaultFS</name><br>    <value>hdfs://hadoop01:9000</value><br></property><br><property><br>    <name>hadoop.tmp.dir</name><br>    <value>/export/data/hadoop/tmp</value><br></property>
+
+</blockquote>
+<p><em>slaves</em></p>
+<blockquote>
+<p>hadoop02<br>hadoop03</p>
+</blockquote>
+<p><strong>配置完成之后进行分发</strong></p>
+<h5 id="hadoop启动"><a href="#hadoop启动" class="headerlink" title="hadoop启动"></a>hadoop启动</h5><p><em>启动hdfs</em></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">start-dfs.sh</div><div class="line">jps</div></pre></td></tr></table></figure>
+<p><em>启动mapreduce，即yarn</em></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">start-yarn.sh</div><div class="line">jps</div></pre></td></tr></table></figure>
+<h4 id="hadoop的使用"><a href="#hadoop的使用" class="headerlink" title="hadoop的使用"></a>hadoop的使用</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 将test.txt放入hdfs的根目录</span></div><div class="line">hadoop fs -put test.txt /</div><div class="line"><span class="comment"># 查看hdfs根目录</span></div><div class="line">hadoop fs -ls /</div><div class="line">hadoop jar /<span class="built_in">export</span>/servers/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.6.1.jar wordcount /test.txt /result</div><div class="line">hadoop fs -ls /result</div><div class="line">hadoop fs -cat /result part-r-00000</div></pre></td></tr></table></figure>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ul>
+<li>安装vm软件</li>
+<li>安装一个linux环境</li>
+<li>hadoop<ul>
+<li>关闭防火墙</li>
+<li>hostname修改</li>
+<li>免密码登陆</li>
+<li>创建工作目录</li>
+<li>下载hadoop安装包</li>
+<li>编译</li>
+<li>修改配置文件，修改环境变量</li>
+<li>分发配置文件</li>
+<li>start-dfs.sh start-yarn.sh start-all.sh</li>
+</ul>
+</li>
+</ul>
 
       
     </div>
@@ -378,17 +468,27 @@ Quick">
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/hadoop/" rel="tag">#hadoop</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/02/10/hadoop-01/" rel="next" title="1、hadoop简单介绍">
+                <i class="fa fa-chevron-left"></i> 1、hadoop简单介绍
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/08/06/myfirstblog/" rel="prev" title="建立了一个博客">
-                建立了一个博客 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/02/11/hadoop-03/" rel="prev" title="3、hdfs的简单学习">
+                3、hdfs的简单学习 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -404,10 +504,10 @@ Quick">
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/08/06/hello-world/"
-     data-title="Hello World"
+        <div class="ds-share flat" data-thread-key="2017/02/11/hadoop-02/"
+     data-title="2、hadoop的安装"
      data-content=""
-     data-url="https://ifeelok.github.io/2016/08/06/hello-world/">
+     data-url="https://ifeelok.github.io/2017/02/11/hadoop-02/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -434,8 +534,8 @@ Quick">
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/08/06/hello-world/"
-           data-title="Hello World" data-url="https://ifeelok.github.io/2016/08/06/hello-world/">
+      <div class="ds-thread" data-thread-key="2017/02/11/hadoop-02/"
+           data-title="2、hadoop的安装" data-url="https://ifeelok.github.io/2017/02/11/hadoop-02/">
       </div>
     
   </div>
@@ -546,7 +646,7 @@ Quick">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#虚拟机的安装"><span class="nav-number">1.</span> <span class="nav-text">虚拟机的安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hadoop集群安装"><span class="nav-number">2.</span> <span class="nav-text">hadoop集群安装</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#编译hadoop源代码"><span class="nav-number">2.1.</span> <span class="nav-text">编译hadoop源代码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改hostname"><span class="nav-number">2.2.</span> <span class="nav-text">修改hostname</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改hosts"><span class="nav-number">2.3.</span> <span class="nav-text">修改hosts</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置免密码登陆"><span class="nav-number">2.4.</span> <span class="nav-text">配置免密码登陆</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#hadoop安装"><span class="nav-number">2.5.</span> <span class="nav-text">hadoop安装</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#目录划分"><span class="nav-number">2.5.1.</span> <span class="nav-text">目录划分</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#配置环境变量"><span class="nav-number">2.5.2.</span> <span class="nav-text">配置环境变量</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#修改hadoop配置文件"><span class="nav-number">2.5.3.</span> <span class="nav-text">修改hadoop配置文件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#hadoop启动"><span class="nav-number">2.5.4.</span> <span class="nav-text">hadoop启动</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#hadoop的使用"><span class="nav-number">2.6.</span> <span class="nav-text">hadoop的使用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
           </div>
         </section>

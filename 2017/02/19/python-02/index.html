@@ -1,0 +1,1222 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Python," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="python内置的string类。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2、string模块">
+<meta property="og:url" content="https://ifeelok.github.io/2017/02/19/python-02/index.html">
+<meta property="og:site_name" content="I FEEL OK">
+<meta property="og:description" content="python内置的string类。">
+<meta property="og:updated_time" content="2017-02-19T09:23:12.973Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2、string模块">
+<meta name="twitter:description" content="python内置的string类。">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"hide"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="https://ifeelok.github.io/2017/02/19/python-02/"/>
+
+  <title> 2、string模块 | I FEEL OK </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">I FEEL OK</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">I'm sure I feel OK</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                2、string模块
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-02-19T16:01:27+08:00" content="2017-02-19">
+              2017-02-19
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/编程/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/02/19/python-02/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/19/python-02/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/02/19/python-02/" class="leancloud_visitors" data-flag-title="2、string模块">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>python内置的string类。</p>
+<a id="more"></a>
+<h3 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h3><p>string.ascii_letters</p>
+<blockquote>
+<p>The concatenation of the ascii_lowercase and ascii_uppercase constants described below. This value is not locale-dependent.</p>
+</blockquote>
+<p>string.ascii_lowercase</p>
+<blockquote>
+<p>The lowercase letters ‘abcdefghijklmnopqrstuvwxyz’. This value is not locale-dependent and will not change.</p>
+</blockquote>
+<p>string.ascii_uppercase</p>
+<blockquote>
+<p>The uppercase letters ‘ABCDEFGHIJKLMNOPQRSTUVWXYZ’. This value is not locale-dependent and will not change.</p>
+</blockquote>
+<p>string.digits</p>
+<blockquote>
+<p>The string ‘0123456789’.</p>
+</blockquote>
+<p>string.hexdigits</p>
+<blockquote>
+<p>The string ‘0123456789abcdefABCDEF’.</p>
+</blockquote>
+<p>string.letters</p>
+<blockquote>
+<p>The concatenation of the strings lowercase and uppercase described below. The specific value is locale-dependent, and will be updated when locale.setlocale() is called.</p>
+</blockquote>
+<p>string.lowercase</p>
+<blockquote>
+<p>A string containing all the characters that are considered lowercase letters. On most systems this is the string ‘abcdefghijklmnopqrstuvwxyz’. The specific value is locale-dependent, and will be updated when locale.setlocale() is called.</p>
+</blockquote>
+<p>string.octdigits</p>
+<blockquote>
+<p>The string ‘01234567’.</p>
+</blockquote>
+<p>string.punctuation</p>
+<blockquote>
+<p>String of ASCII characters which are considered punctuation characters in the C locale.</p>
+</blockquote>
+<p>string.printable</p>
+<blockquote>
+<p>String of characters which are considered printable. This is a combination of digits, letters, punctuation, and whitespace.</p>
+</blockquote>
+<p>string.uppercase</p>
+<blockquote>
+<p>A string containing all the characters that are considered uppercase letters. On most systems this is the string ‘ABCDEFGHIJKLMNOPQRSTUVWXYZ’. The specific value is locale-dependent, and will be updated when locale.setlocale() is called.</p>
+</blockquote>
+<p>string.whitespace</p>
+<blockquote>
+<p>A string containing all characters that are considered whitespace. On most systems this includes the characters space, tab, linefeed, return, formfeed, and vertical tab.</p>
+</blockquote>
+<h3 id="format的使用方法"><a href="#format的使用方法" class="headerlink" title="format的使用方法"></a>format的使用方法</h3><p>str.format()方法和Formatter类公用一套语法。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">replacement_field ::=  &quot;&#123;&quot; [field_name] [&quot;!&quot; conversion] [&quot;:&quot; format_spec] &quot;&#125;&quot;</div><div class="line">field_name        ::=  arg_name (&quot;.&quot; attribute_name | &quot;[&quot; element_index &quot;]&quot;)*</div><div class="line">arg_name          ::=  [identifier | integer]</div><div class="line">attribute_name    ::=  identifier</div><div class="line">element_index     ::=  integer | index_string</div><div class="line">index_string      ::=  &lt;any source character except &quot;]&quot;&gt; +</div><div class="line">conversion        ::=  &quot;r&quot; | &quot;s&quot;</div><div class="line">format_spec       ::=  &lt;described in the next section&gt;</div></pre></td></tr></table></figure>
+<hr>
+<p>In most of the cases the syntax is similar to the old %-formatting, with the addition of the {} and with : used instead of %. For example, <code>&#39;%03.2f&#39;</code> can be translated to <code>&#39;{:03.2f}&#39;</code>.</p>
+<p>Accessing arguments by position:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; &apos;&#123;0&#125;, &#123;1&#125;, &#123;2&#125;&apos;.format(&apos;a&apos;, &apos;b&apos;, &apos;c&apos;)</div><div class="line">&apos;a, b, c&apos;</div><div class="line">&gt;&gt;&gt; &apos;&#123;&#125;, &#123;&#125;, &#123;&#125;&apos;.format(&apos;a&apos;, &apos;b&apos;, &apos;c&apos;)  # 2.7+ only</div><div class="line">&apos;a, b, c&apos;</div><div class="line">&gt;&gt;&gt; &apos;&#123;2&#125;, &#123;1&#125;, &#123;0&#125;&apos;.format(&apos;a&apos;, &apos;b&apos;, &apos;c&apos;)</div><div class="line">&apos;c, b, a&apos;</div><div class="line">&gt;&gt;&gt; &apos;&#123;2&#125;, &#123;1&#125;, &#123;0&#125;&apos;.format(*&apos;abc&apos;)      # unpacking argument sequence</div><div class="line">&apos;c, b, a&apos;</div><div class="line">&gt;&gt;&gt; &apos;&#123;0&#125;&#123;1&#125;&#123;0&#125;&apos;.format(&apos;abra&apos;, &apos;cad&apos;)   # arguments&apos; indices can be repeated</div><div class="line">&apos;abracadabra&apos;</div></pre></td></tr></table></figure></p>
+<p>Accessing arguments by name:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; &apos;Coordinates: &#123;latitude&#125;, &#123;longitude&#125;&apos;.format(latitude=&apos;37.24N&apos;, longitude=&apos;-115.81W&apos;)</div><div class="line">&apos;Coordinates: 37.24N, -115.81W&apos;</div><div class="line">&gt;&gt;&gt; coord = &#123;&apos;latitude&apos;: &apos;37.24N&apos;, &apos;longitude&apos;: &apos;-115.81W&apos;&#125;</div><div class="line">&gt;&gt;&gt; &apos;Coordinates: &#123;latitude&#125;, &#123;longitude&#125;&apos;.format(**coord)</div><div class="line">&apos;Coordinates: 37.24N, -115.81W&apos;</div></pre></td></tr></table></figure></p>
+<p>Accessing arguments’ attributes:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; c = 3-5j</div><div class="line">&gt;&gt;&gt; (&apos;The complex number &#123;0&#125; is formed from the real part &#123;0.real&#125; &apos;</div><div class="line">...  &apos;and the imaginary part &#123;0.imag&#125;.&apos;).format(c)</div><div class="line">&apos;The complex number (3-5j) is formed from the real part 3.0 and the imaginary part -5.0.&apos;</div><div class="line">&gt;&gt;&gt; class Point(object):</div><div class="line">...     def __init__(self, x, y):</div><div class="line">...         self.x, self.y = x, y</div><div class="line">...     def __str__(self):</div><div class="line">...         return &apos;Point(&#123;self.x&#125;, &#123;self.y&#125;)&apos;.format(self=self)</div><div class="line">...</div><div class="line">&gt;&gt;&gt; str(Point(4, 2))</div><div class="line">&apos;Point(4, 2)&apos;</div></pre></td></tr></table></figure></p>
+<p>Accessing arguments’ items:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; coord = (3, 5)</div><div class="line">&gt;&gt;&gt; &apos;X: &#123;0[0]&#125;;  Y: &#123;0[1]&#125;&apos;.format(coord)</div><div class="line">&apos;X: 3;  Y: 5&apos;</div></pre></td></tr></table></figure></p>
+<p>Replacing %s and %r(%s不包含引号，%r包含引号):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; &quot;repr() shows quotes: &#123;!r&#125;; str() doesn&apos;t: &#123;!s&#125;&quot;.format(&apos;test1&apos;, &apos;test2&apos;)</div><div class="line">&quot;repr() shows quotes: &apos;test1&apos;; str() doesn&apos;t: test2&quot;</div></pre></td></tr></table></figure></p>
+<p>Aligning the text and specifying a width:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; &apos;&#123;:&lt;30&#125;&apos;.format(&apos;left aligned&apos;)</div><div class="line">&apos;left aligned                  &apos;</div><div class="line">&gt;&gt;&gt; &apos;&#123;:&gt;30&#125;&apos;.format(&apos;right aligned&apos;)</div><div class="line">&apos;                 right aligned&apos;</div><div class="line">&gt;&gt;&gt; &apos;&#123;:^30&#125;&apos;.format(&apos;centered&apos;)</div><div class="line">&apos;           centered           &apos;</div><div class="line">&gt;&gt;&gt; &apos;&#123;:*^30&#125;&apos;.format(&apos;centered&apos;)  # use &apos;*&apos; as a fill char</div><div class="line">&apos;***********centered***********&apos;</div></pre></td></tr></table></figure></p>
+<p>Replacing %+f, %-f, and % f and specifying a sign:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; &apos;&#123;:+f&#125;; &#123;:+f&#125;&apos;.format(3.14, -3.14)  # show it always</div><div class="line">&apos;+3.140000; -3.140000&apos;</div><div class="line">&gt;&gt;&gt; &apos;&#123;: f&#125;; &#123;: f&#125;&apos;.format(3.14, -3.14)  # show a space for positive numbers</div><div class="line">&apos; 3.140000; -3.140000&apos;</div><div class="line">&gt;&gt;&gt; &apos;&#123;:-f&#125;; &#123;:-f&#125;&apos;.format(3.14, -3.14)  # show only the minus -- same as &apos;&#123;:f&#125;; &#123;:f&#125;&apos;</div><div class="line">&apos;3.140000; -3.140000&apos;</div></pre></td></tr></table></figure></p>
+<p>Replacing %x and %o and converting the value to different bases:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; # format also supports binary numbers</div><div class="line">&gt;&gt;&gt; &quot;int: &#123;0:d&#125;;  hex: &#123;0:x&#125;;  oct: &#123;0:o&#125;;  bin: &#123;0:b&#125;&quot;.format(42)</div><div class="line">&apos;int: 42;  hex: 2a;  oct: 52;  bin: 101010&apos;</div><div class="line">&gt;&gt;&gt; # with 0x, 0o, or 0b as prefix:</div><div class="line">&gt;&gt;&gt; &quot;int: &#123;0:d&#125;;  hex: &#123;0:#x&#125;;  oct: &#123;0:#o&#125;;  bin: &#123;0:#b&#125;&quot;.format(42)</div><div class="line">&apos;int: 42;  hex: 0x2a;  oct: 0o52;  bin: 0b101010&apos;</div></pre></td></tr></table></figure></p>
+<p>Using the comma as a thousands separator:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; &apos;&#123;:,&#125;&apos;.format(1234567890)</div><div class="line">&apos;1,234,567,890&apos;</div></pre></td></tr></table></figure></p>
+<p>Expressing a percentage:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; points = 19.5</div><div class="line">&gt;&gt;&gt; total = 22</div><div class="line">&gt;&gt;&gt; &apos;Correct answers: &#123;:.2%&#125;&apos;.format(points/total)</div><div class="line">&apos;Correct answers: 88.64%&apos;</div></pre></td></tr></table></figure></p>
+<p>Using type-specific formatting:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; import datetime</div><div class="line">&gt;&gt;&gt; d = datetime.datetime(2010, 7, 4, 12, 15, 58)</div><div class="line">&gt;&gt;&gt; &apos;&#123;:%Y-%m-%d %H:%M:%S&#125;&apos;.format(d)</div><div class="line">&apos;2010-07-04 12:15:58&apos;</div></pre></td></tr></table></figure></p>
+<p>Nesting arguments and more complex examples:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; for align, text in zip(&apos;&lt;^&gt;&apos;, [&apos;left&apos;, &apos;center&apos;, &apos;right&apos;]):</div><div class="line">...     &apos;&#123;0:&#123;fill&#125;&#123;align&#125;16&#125;&apos;.format(text, fill=align, align=align)</div><div class="line">...</div><div class="line">&apos;left&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&apos;</div><div class="line">&apos;^^^^^center^^^^^&apos;</div><div class="line">&apos;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;right&apos;</div><div class="line">&gt;&gt;&gt;</div><div class="line">&gt;&gt;&gt; octets = [192, 168, 0, 1]</div><div class="line">&gt;&gt;&gt; &apos;&#123;:02X&#125;&#123;:02X&#125;&#123;:02X&#125;&#123;:02X&#125;&apos;.format(*octets)</div><div class="line">&apos;C0A80001&apos;</div><div class="line">&gt;&gt;&gt; int(_, 16)</div><div class="line">3232235521</div><div class="line">&gt;&gt;&gt;</div><div class="line">&gt;&gt;&gt; width = 5</div><div class="line">&gt;&gt;&gt; for num in range(5,12):</div><div class="line">...     for base in &apos;dXob&apos;:</div><div class="line">...         print &apos;&#123;0:&#123;width&#125;&#123;base&#125;&#125;&apos;.format(num, base=base, width=width),</div><div class="line">...     print</div><div class="line">...</div><div class="line">    5     5     5   101</div><div class="line">    6     6     6   110</div><div class="line">    7     7     7   111</div><div class="line">    8     8    10  1000</div><div class="line">    9     9    11  1001</div><div class="line">   10     A    12  1010</div><div class="line">   11     B    13  1011</div></pre></td></tr></table></figure></p>
+<h3 id="Template-strings"><a href="#Template-strings" class="headerlink" title="Template strings"></a>Template strings</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; from string import Template</div><div class="line">&gt;&gt;&gt; s = Template(&apos;$who likes $what&apos;)</div><div class="line">&gt;&gt;&gt; s.substitute(who=&apos;tim&apos;, what=&apos;kung pao&apos;)</div><div class="line">&apos;tim likes kung pao&apos;</div><div class="line">&gt;&gt;&gt; d = dict(who=&apos;tim&apos;)</div><div class="line">&gt;&gt;&gt; Template(&apos;Give $who $100&apos;).substitute(d)</div><div class="line">Traceback (most recent call last):</div><div class="line">...</div><div class="line">ValueError: Invalid placeholder in string: line 1, col 11</div><div class="line">&gt;&gt;&gt; Template(&apos;$who likes $what&apos;).substitute(d)</div><div class="line">Traceback (most recent call last):</div><div class="line">...</div><div class="line">KeyError: &apos;what&apos;</div><div class="line">&gt;&gt;&gt; Template(&apos;$who likes $what&apos;).safe_substitute(d)</div><div class="line">&apos;tim likes $what&apos;</div></pre></td></tr></table></figure>
+<h3 id="String-functions"><a href="#String-functions" class="headerlink" title="String functions"></a>String functions</h3><p>The following functions are available to operate on string and Unicode objects. They are not available as string methods.</p>
+<p>string.capwords(s[, sep])</p>
+<blockquote>
+<p>Split the argument into words using str.split(), capitalize each word using str.capitalize(), and join the capitalized words using str.join(). If the optional second argument sep is absent or None, runs of whitespace characters are replaced by a single space and leading and trailing whitespace are removed, otherwise sep is used to split and join the words.</p>
+</blockquote>
+<p>string.maketrans(from, to)</p>
+<blockquote>
+<p>Return a translation table suitable for passing to translate(), that will map each character in from into the character at the same position in to; from and to must have the same length.</p>
+</blockquote>
+<h3 id="String-metheds"><a href="#String-metheds" class="headerlink" title="String metheds"></a>String metheds</h3><p>str.capitalize()</p>
+<blockquote>
+<p>Return a copy of the string with its first character capitalized and the rest lowercased.</p>
+</blockquote>
+<p><em>For 8-bit strings, this method is locale-dependent.</em></p>
+<p>str.center(width[, fillchar])</p>
+<blockquote>
+<p>Return centered in a string of length width. Padding is done using the specified fillchar (default is a space).</p>
+</blockquote>
+<p><em>Changed in version 2.4: Support for the fillchar argument.</em></p>
+<p>str.count(sub[, start[, end]])</p>
+<blockquote>
+<p>Return the number of non-overlapping occurrences of substring sub in the range [start, end]. Optional arguments start and end are interpreted as in slice notation.</p>
+</blockquote>
+<p>str.decode([encoding[, errors]])</p>
+<blockquote>
+<p>Decodes the string using the codec registered for encoding. encoding defaults to the default string encoding. errors may be given to set a different error handling scheme. The default is ‘strict’, meaning that encoding errors raise UnicodeError. Other possible values are ‘ignore’, ‘replace’ and any other name registered via codecs.register_error(), see section Codec Base Classes.</p>
+</blockquote>
+<p><em>Changed in version 2.3: Support for other error handling schemes added.</em></p>
+<p><em>Changed in version 2.7: Support for keyword arguments added.</em></p>
+<p>str.encode([encoding[, errors]])</p>
+<blockquote>
+<p>Return an encoded version of the string. Default encoding is the current default string encoding. errors may be given to set a different error handling scheme. The default for errors is ‘strict’, meaning that encoding errors raise a UnicodeError. Other possible values are ‘ignore’, ‘replace’, ‘xmlcharrefreplace’, ‘backslashreplace’ and any other name registered via codecs.register_error(), see section Codec Base Classes. For a list of possible encodings, see section Standard Encodings.</p>
+</blockquote>
+<p><em>New in version 2.0.</em></p>
+<p><em>Changed in version 2.3: Support for ‘xmlcharrefreplace’ and ‘backslashreplace’ and other error handling schemes added.</em></p>
+<p><em>Changed in version 2.7: Support for keyword arguments added.</em></p>
+<p>str.endswith(suffix[, start[, end]])</p>
+<blockquote>
+<p>Return True if the string ends with the specified suffix, otherwise return False. suffix can also be a tuple of suffixes to look for. With optional start, test beginning at that position. With optional end, stop comparing at that position.</p>
+</blockquote>
+<p><em>Changed in version 2.5: Accept tuples as suffix.</em></p>
+<p>str.expandtabs([tabsize])</p>
+<blockquote>
+<p>Return a copy of the string where all tab characters are replaced by one or more spaces, depending on the current column and the given tab size. Tab positions occur every tabsize characters (default is 8, giving tab positions at columns 0, 8, 16 and so on). To expand the string, the current column is set to zero and the string is examined character by character. If the character is a tab (\t), one or more space characters are inserted in the result until the current column is equal to the next tab position. (The tab character itself is not copied.) If the character is a newline (\n) or return (\r), it is copied and the current column is reset to zero. Any other character is copied unchanged and the current column is incremented by one regardless of how the character is represented when printed.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; &apos;01\t012\t0123\t01234&apos;.expandtabs()</div><div class="line">&apos;01      012     0123    01234&apos;</div><div class="line">&gt;&gt;&gt; &apos;01\t012\t0123\t01234&apos;.expandtabs(4)</div><div class="line">&apos;01  012 0123    01234&apos;</div></pre></td></tr></table></figure></p>
+</blockquote>
+<p>str.find(sub[, start[, end]])</p>
+<blockquote>
+<p>Return the lowest index in the string where substring sub is found, such that sub is contained in the slice s[start:end]. Optional arguments start and end are interpreted as in slice notation. Return -1 if sub is not found.</p>
+</blockquote>
+<p><strong>Note</strong></p>
+<p><em>The find() method should be used only if you need to know the position of sub.</em></p>
+<p><em>To check if sub is a substring or not, use the in operator:</em><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; &apos;Py&apos; in &apos;Python&apos;</div><div class="line">True</div></pre></td></tr></table></figure></p>
+<p>str.format(*args, **kwargs)</p>
+<blockquote>
+<p>Perform a string formatting operation. The string on which this method is called can contain literal text or replacement fields delimited by braces {}. Each replacement field contains either the numeric index of a positional argument, or the name of a keyword argument. Returns a copy of the string where each replacement field is replaced with the string value of the corresponding argument.</p>
+</blockquote>
+<p>str.index(sub[, start[, end]])</p>
+<blockquote>
+<p>Like find(), but raise ValueError when the substring is not found.</p>
+</blockquote>
+<p>str.isalnum()</p>
+<blockquote>
+<p>Return true if all characters in the string are alphanumeric and there is at least one character, false otherwise.</p>
+</blockquote>
+<p><em>For 8-bit strings, this method is locale-dependent.</em></p>
+<p>str.isalpha()</p>
+<blockquote>
+<p>Return true if all characters in the string are alphabetic and there is at least one character, false otherwise.</p>
+</blockquote>
+<p><em>For 8-bit strings, this method is locale-dependent.</em></p>
+<p>str.isdigit()</p>
+<blockquote>
+<p>Return true if all characters in the string are digits and there is at least one character, false otherwise.</p>
+</blockquote>
+<p><em>For 8-bit strings, this method is locale-dependent.</em></p>
+<p>str.islower()</p>
+<blockquote>
+<p>Return true if all cased characters [4] in the string are lowercase and there is at least one cased character, false otherwise.</p>
+</blockquote>
+<p><em>For 8-bit strings, this method is locale-dependent.</em></p>
+<p>str.isspace()</p>
+<blockquote>
+<p>Return true if there are only whitespace characters in the string and there is at least one character, false otherwise.</p>
+</blockquote>
+<p><em>For 8-bit strings, this method is locale-dependent.</em></p>
+<p>str.istitle()</p>
+<blockquote>
+<p>Return true if the string is a titlecased string and there is at least one character, for example uppercase characters may only follow uncased characters and lowercase characters only cased ones. Return false otherwise.</p>
+</blockquote>
+<p><em>For 8-bit strings, this method is locale-dependent.</em></p>
+<p>str.isupper()</p>
+<blockquote>
+<p>Return true if all cased characters [4] in the string are uppercase and there is at least one cased character, false otherwise.</p>
+</blockquote>
+<p><em>For 8-bit strings, this method is locale-dependent.</em></p>
+<p>str.join(iterable)</p>
+<blockquote>
+<p>Return a string which is the concatenation of the strings in the iterable iterable. The separator between elements is the string providing this method.</p>
+</blockquote>
+<p>str.ljust(width[, fillchar])</p>
+<blockquote>
+<p>Return the string left justified in a string of length width. Padding is done using the specified fillchar (default is a space). The original string is returned if width is less than or equal to len(s).</p>
+</blockquote>
+<p><em>Changed in version 2.4: Support for the fillchar argument.</em></p>
+<p>str.lower()</p>
+<blockquote>
+<p>Return a copy of the string with all the cased characters [4] converted to lowercase.</p>
+</blockquote>
+<p><em>For 8-bit strings, this method is locale-dependent.</em></p>
+<p>str.lstrip([chars])</p>
+<blockquote>
+<p>Return a copy of the string with leading characters removed. The chars argument is a string specifying the set of characters to be removed. If omitted or None, the chars argument defaults to removing whitespace. The chars argument is not a prefix; rather, all combinations of its values are stripped:</p>
+</blockquote>
+<p>str.partition(sep)</p>
+<blockquote>
+<p>Split the string at the first occurrence of sep, and return a 3-tuple containing the part before the separator, the separator itself, and the part after the separator. If the separator is not found, return a 3-tuple containing the string itself, followed by two empty strings.</p>
+</blockquote>
+<p>str.replace(old, new[, count])</p>
+<blockquote>
+<p>Return a copy of the string with all occurrences of substring old replaced by new. If the optional argument count is given, only the first count occurrences are replaced.</p>
+</blockquote>
+<p>str.rfind(sub[, start[, end]])</p>
+<blockquote>
+<p>Return the highest index in the string where substring sub is found, such that sub is contained within s[start:end]. Optional arguments start and end are interpreted as in slice notation. Return -1 on failure.</p>
+</blockquote>
+<p>str.rindex(sub[, start[, end]])</p>
+<blockquote>
+<p>Like rfind() but raises ValueError when the substring sub is not found.</p>
+</blockquote>
+<p>str.rjust(width[, fillchar])</p>
+<blockquote>
+<p>Return the string right justified in a string of length width. Padding is done using the specified fillchar (default is a space). The original string is returned if width is less than or equal to len(s).</p>
+</blockquote>
+<p>str.rpartition(sep)</p>
+<blockquote>
+<p>Split the string at the last occurrence of sep, and return a 3-tuple containing the part before the separator, the separator itself, and the part after the separator. If the separator is not found, return a 3-tuple containing two empty strings, followed by the string itself.</p>
+</blockquote>
+<p>str.rsplit([sep[, maxsplit]])</p>
+<blockquote>
+<p>Return a list of the words in the string, using sep as the delimiter string. If maxsplit is given, at most maxsplit splits are done, the rightmost ones. If sep is not specified or None, any whitespace string is a separator. Except for splitting from the right, rsplit() behaves like split() which is described in detail below.</p>
+</blockquote>
+<p>str.rstrip([chars])</p>
+<blockquote>
+<p>Return a copy of the string with trailing characters removed. The chars argument is a string specifying the set of characters to be removed. If omitted or None, the chars argument defaults to removing whitespace. The chars argument is not a suffix; rather, all combinations of its values are stripped:</p>
+</blockquote>
+<p>str.split([sep[, maxsplit]])</p>
+<blockquote>
+<p>Return a list of the words in the string, using sep as the delimiter string. If maxsplit is given, at most maxsplit splits are done (thus, the list will have at most maxsplit+1 elements). If maxsplit is not specified or -1, then there is no limit on the number of splits (all possible splits are made).</p>
+<p>If sep is given, consecutive delimiters are not grouped together and are deemed to delimit empty strings (for example, ‘1,,2’.split(‘,’) returns [‘1’, ‘’, ‘2’]). The sep argument may consist of multiple characters (for example, ‘1&lt;&gt;2&lt;&gt;3’.split(‘&lt;&gt;’) returns [‘1’, ‘2’, ‘3’]). Splitting an empty string with a specified separator returns [‘’].</p>
+<p>If sep is not specified or is None, a different splitting algorithm is applied: runs of consecutive whitespace are regarded as a single separator, and the result will contain no empty strings at the start or end if the string has leading or trailing whitespace. Consequently, splitting an empty string or a string consisting of just whitespace with a None separator returns [].</p>
+<p>For example, ‘ 1  2   3  ‘.split() returns [‘1’, ‘2’, ‘3’], and ‘  1  2   3  ‘.split(None, 1) returns [‘1’, ‘2   3  ‘].</p>
+</blockquote>
+<p>str.splitlines([keepends])</p>
+<blockquote>
+<p>Return a list of the lines in the string, breaking at line boundaries. This method uses the universal newlines approach to splitting lines. Line breaks are not included in the resulting list unless keepends is given and true.</p>
+<p>For example, ‘ab c\n\nde fg\rkl\r\n’.splitlines() returns [‘ab c’, ‘’, ‘de fg’, ‘kl’], while the same call with splitlines(True) returns [‘ab c\n’, ‘\n’, ‘de fg\r’, ‘kl\r\n’].</p>
+<p>Unlike split() when a delimiter string sep is given, this method returns an empty list for the empty string, and a terminal line break does not result in an extra line.</p>
+</blockquote>
+<p>str.startswith(prefix[, start[, end]])</p>
+<blockquote>
+<p>Return True if string starts with the prefix, otherwise return False. prefix can also be a tuple of prefixes to look for. With optional start, test string beginning at that position. With optional end, stop comparing string at that position.</p>
+</blockquote>
+<p>str.strip([chars])</p>
+<blockquote>
+<p>Return a copy of the string with the leading and trailing characters removed. The chars argument is a string specifying the set of characters to be removed. If omitted or None, the chars argument defaults to removing whitespace. The chars argument is not a prefix or suffix; rather, all combinations of its values are stripped:</p>
+</blockquote>
+<p>str.swapcase()</p>
+<blockquote>
+<p>Return a copy of the string with uppercase characters converted to lowercase and vice versa.</p>
+</blockquote>
+<p><em>For 8-bit strings, this method is locale-dependent.</em></p>
+<p>str.title()</p>
+<blockquote>
+<p>Return a titlecased version of the string where words start with an uppercase character and the remaining characters are lowercase.</p>
+<p>The algorithm uses a simple language-independent definition of a word as groups of consecutive letters. The definition works in many contexts but it means that apostrophes in contractions and possessives form word boundaries, which may not be the desired result:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; &quot;they&apos;re bill&apos;s friends from the UK&quot;.title()</div><div class="line">&quot;They&apos;Re Bill&apos;S Friends From The Uk&quot;</div><div class="line">A workaround for apostrophes can be constructed using regular expressions:</div><div class="line"></div><div class="line">&gt;&gt;&gt; import re</div><div class="line">&gt;&gt;&gt; def titlecase(s):</div><div class="line">...     return re.sub(r&quot;[A-Za-z]+(&apos;[A-Za-z]+)?&quot;,</div><div class="line">...                   lambda mo: mo.group(0)[0].upper() +</div><div class="line">...                              mo.group(0)[1:].lower(),</div><div class="line">...                   s)</div><div class="line">...</div><div class="line">&gt;&gt;&gt; titlecase(&quot;they&apos;re bill&apos;s friends.&quot;)</div><div class="line">&quot;They&apos;re Bill&apos;s Friends.&quot;</div></pre></td></tr></table></figure></p>
+</blockquote>
+<p><em>For 8-bit strings, this method is locale-dependent.</em></p>
+<p>str.translate(table[, deletechars])</p>
+<blockquote>
+<p>Return a copy of the string where all characters occurring in the optional argument deletechars are removed, and the remaining characters have been mapped through the given translation table, which must be a string of length 256.</p>
+<p>You can use the maketrans() helper function in the string module to create a translation table. For string objects, set the table argument to None for translations that only delete characters:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; &apos;read this short text&apos;.translate(None, &apos;aeiou&apos;)</div><div class="line">&apos;rd ths shrt txt&apos;</div></pre></td></tr></table></figure></p>
+<p>For Unicode objects, the translate() method does not accept the optional deletechars argument. Instead, it returns a copy of the s where all characters have been mapped through the given translation table which must be a mapping of Unicode ordinals to Unicode ordinals, Unicode strings or None. Unmapped characters are left untouched. Characters mapped to None are deleted. Note, a more flexible approach is to create a custom character mapping codec using the codecs module (see encodings.cp1251 for an example).</p>
+</blockquote>
+<p>str.upper()</p>
+<blockquote>
+<p>Return a copy of the string with all the cased characters [4] converted to uppercase. Note that str.upper().isupper() might be False if s contains uncased characters or if the Unicode category of the resulting character(s) is not “Lu” (Letter, uppercase), but e.g. “Lt” (Letter, titlecase).</p>
+</blockquote>
+<p><em>For 8-bit strings, this method is locale-dependent.</em></p>
+<p>str.zfill(width)</p>
+<blockquote>
+<p>Return the numeric string left filled with zeros in a string of length width. A sign prefix is handled correctly. The original string is returned if width is less than or equal to len(s).</p>
+</blockquote>
+<p><strong>The following methods are present only on unicode objects:</strong></p>
+<p>unicode.isnumeric()</p>
+<blockquote>
+<p>Return True if there are only numeric characters in S, False otherwise. Numeric characters include digit characters, and all characters that have the Unicode numeric value property, e.g. U+2155, VULGAR FRACTION ONE FIFTH.</p>
+</blockquote>
+<p>unicode.isdecimal()</p>
+<blockquote>
+<p>Return True if there are only decimal characters in S, False otherwise. Decimal characters include digit characters, and all characters that can be used to form decimal-radix numbers, e.g. U+0660, ARABIC-INDIC DIGIT ZERO.</p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>生活不止眼前的苟且，还有远方的诗和田野。</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechat.png" alt="ifeelok WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay.png" alt="ifeelok Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag">#Python</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/02/19/python-01/" rel="next" title="1、python关键词和标识符">
+                <i class="fa fa-chevron-left"></i> 1、python关键词和标识符
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/02/19/python-03/" rel="prev" title="3、python内置类型">
+                3、python内置类型 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2017/02/19/python-02/"
+     data-title="2、string模块"
+     data-content=""
+     data-url="https://ifeelok.github.io/2017/02/19/python-02/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/02/19/python-02/"
+           data-title="2、string模块" data-url="https://ifeelok.github.io/2017/02/19/python-02/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/myavatar.jpg"
+               alt="ifeelok" />
+          <p class="site-author-name" itemprop="name">ifeelok</p>
+          <p class="site-description motion-element" itemprop="description">有志者事竟成</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/">
+              <span class="site-state-item-count">18</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ifeelok" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/ifeelok" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#常量"><span class="nav-number">1.</span> <span class="nav-text">常量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#format的使用方法"><span class="nav-number">2.</span> <span class="nav-text">format的使用方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Template-strings"><span class="nav-number">3.</span> <span class="nav-text">Template strings</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#String-functions"><span class="nav-number">4.</span> <span class="nav-text">String functions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#String-metheds"><span class="nav-number">5.</span> <span class="nav-text">String metheds</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ifeelok</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"ifeelok"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("NC0On0k4emJ5gIe1bWKPRCfw-gzGzoHsz", "aUw9StjQhH2XbT6eoq4D9q6v");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+</body>
+</html>

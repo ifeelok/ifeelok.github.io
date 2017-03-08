@@ -1,0 +1,1683 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Python," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="基本的内置类型为：numerics、sequences、mappings、files、classes、instances、exceptions">
+<meta property="og:type" content="article">
+<meta property="og:title" content="3、python内置类型">
+<meta property="og:url" content="https://ifeelok.github.io/2017/02/19/python-03/index.html">
+<meta property="og:site_name" content="I FEEL OK">
+<meta property="og:description" content="基本的内置类型为：numerics、sequences、mappings、files、classes、instances、exceptions">
+<meta property="og:updated_time" content="2017-02-19T14:50:21.255Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="3、python内置类型">
+<meta name="twitter:description" content="基本的内置类型为：numerics、sequences、mappings、files、classes、instances、exceptions">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"hide"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="https://ifeelok.github.io/2017/02/19/python-03/"/>
+
+  <title> 3、python内置类型 | I FEEL OK </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">I FEEL OK</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">I'm sure I feel OK</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                3、python内置类型
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-02-19T20:30:06+08:00" content="2017-02-19">
+              2017-02-19
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/编程/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/02/19/python-03/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/19/python-03/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/02/19/python-03/" class="leancloud_visitors" data-flag-title="3、python内置类型">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>基本的内置类型为：numerics、sequences、mappings、files、classes、instances、exceptions</p>
+<a id="more"></a>
+<h3 id="Numeric-Types-—-int-float-long-complex"><a href="#Numeric-Types-—-int-float-long-complex" class="headerlink" title="Numeric Types — int, float, long, complex"></a>Numeric Types — int, float, long, complex</h3><p><strong>All built-in numeric types support the following operations.</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Operation</th>
+<th style="text-align:left">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">x + y</td>
+<td style="text-align:left">sum of x and y</td>
+</tr>
+<tr>
+<td style="text-align:left">x - y</td>
+<td style="text-align:left">difference of x and y</td>
+</tr>
+<tr>
+<td style="text-align:left">x * y</td>
+<td style="text-align:left">product of x and y</td>
+</tr>
+<tr>
+<td style="text-align:left">x / y</td>
+<td style="text-align:left">quotient of x and y (1)</td>
+</tr>
+<tr>
+<td style="text-align:left">x // y</td>
+<td style="text-align:left">(floored) quotient of x and y</td>
+</tr>
+<tr>
+<td style="text-align:left">x % y</td>
+<td style="text-align:left">remainder of x / y</td>
+</tr>
+<tr>
+<td style="text-align:left">-x</td>
+<td style="text-align:left">x negated</td>
+</tr>
+<tr>
+<td style="text-align:left">+x</td>
+<td style="text-align:left">x unchanged</td>
+</tr>
+<tr>
+<td style="text-align:left">abs(x)</td>
+<td style="text-align:left">absolute value or magnitude of x</td>
+</tr>
+<tr>
+<td style="text-align:left">int(x)</td>
+<td style="text-align:left">x converted to integer</td>
+</tr>
+<tr>
+<td style="text-align:left">long(x)</td>
+<td style="text-align:left">x converted to long integer</td>
+</tr>
+<tr>
+<td style="text-align:left">float(x)</td>
+<td style="text-align:left">x converted to floating point</td>
+</tr>
+<tr>
+<td style="text-align:left">complex(re,im)</td>
+<td style="text-align:left">a complex number with real part re, imaginary part im. im defaults to zero.</td>
+</tr>
+<tr>
+<td style="text-align:left">c.conjugate()</td>
+<td style="text-align:left">conjugate of the complex number c. (Identity on real numbers)</td>
+</tr>
+<tr>
+<td style="text-align:left">divmod(x, y)</td>
+<td style="text-align:left">the pair (x // y, x % y)</td>
+</tr>
+<tr>
+<td style="text-align:left">pow(x, y)</td>
+<td style="text-align:left">x to the power y</td>
+</tr>
+<tr>
+<td style="text-align:left">x ** y</td>
+<td style="text-align:left">x to the power y</td>
+</tr>
+</tbody>
+</table>
+<p><em>Deprecated since version 2.3: The floor division operator, the modulo operator, and the divmod() function are no longer defined for complex numbers. Instead, convert to a floating point number using the abs() function if appropriate.</em></p>
+<p><strong>All numbers.Real types (int, long, and float) also include the following operations:</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Operation</th>
+<th style="text-align:left">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Item One</td>
+<td style="text-align:left">Item Two</td>
+</tr>
+<tr>
+<td style="text-align:left">math.trunc(x)</td>
+<td style="text-align:left">x truncated to Integral</td>
+</tr>
+<tr>
+<td style="text-align:left">round(x[, n])</td>
+<td style="text-align:left">x rounded to n digits, rounding ties away from zero. If n is omitted, it defaults to 0.</td>
+</tr>
+<tr>
+<td style="text-align:left">math.floor(x)</td>
+<td style="text-align:left">the greatest integral float &lt;= x</td>
+</tr>
+<tr>
+<td style="text-align:left">math.ceil(x)</td>
+<td style="text-align:left">the least integral float &gt;= x</td>
+</tr>
+</tbody>
+</table>
+<h4 id="Bitwise-Operations-on-Integer-Types"><a href="#Bitwise-Operations-on-Integer-Types" class="headerlink" title="Bitwise Operations on Integer Types"></a>Bitwise Operations on Integer Types</h4><table>
+<thead>
+<tr>
+<th style="text-align:left">Operation</th>
+<th style="text-align:left">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">x &#124; y</td>
+<td style="text-align:left">bitwise or of x and y</td>
+</tr>
+<tr>
+<td style="text-align:left">x ^ y</td>
+<td style="text-align:left">bitwise exclusive or of x and y</td>
+</tr>
+<tr>
+<td style="text-align:left">x &amp; y</td>
+<td style="text-align:left">bitwise and of x and y</td>
+</tr>
+<tr>
+<td style="text-align:left">x &lt;&lt; n</td>
+<td style="text-align:left">x shifted left by n bits</td>
+</tr>
+<tr>
+<td style="text-align:left">x &gt;&gt; n</td>
+<td style="text-align:left">x shifted right by n bits</td>
+</tr>
+<tr>
+<td style="text-align:left">~x</td>
+<td style="text-align:left">the bits of x inverted</td>
+</tr>
+</tbody>
+</table>
+<h4 id="Additional-Methods-on-Integer-Types"><a href="#Additional-Methods-on-Integer-Types" class="headerlink" title="Additional Methods on Integer Types"></a>Additional Methods on Integer Types</h4><ul>
+<li>int.bit_length()</li>
+<li>long.bit_length()</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; n = -37</div><div class="line">&gt;&gt;&gt; bin(n)</div><div class="line">&apos;-0b100101&apos;</div><div class="line">&gt;&gt;&gt; n.bit_length()</div><div class="line">6</div></pre></td></tr></table></figure>
+<h4 id="Additional-Methods-on-Float"><a href="#Additional-Methods-on-Float" class="headerlink" title="Additional Methods on Float"></a>Additional Methods on Float</h4><ul>
+<li><p>float.as_integer_ratio()</p>
+<blockquote>
+<p>Return a pair of integers whose ratio is exactly equal to the original float and with a positive denominator. Raises OverflowError on infinities and a ValueError on NaNs.</p>
+</blockquote>
+</li>
+<li><p>float.is_integer()</p>
+<blockquote>
+<p>Return True if the float instance is finite with integral value, and False otherwise</p>
+</blockquote>
+</li>
+<li><p>float.hex()</p>
+<blockquote>
+<p>Return a representation of a floating-point number as a hexadecimal string. For finite floating-point numbers, this representation will always include a leading 0x and a trailing p and exponent.</p>
+</blockquote>
+</li>
+<li><p>float.fromhex(s)</p>
+<blockquote>
+<p>Class method to return the float represented by a hexadecimal string s. The string s may have leading and trailing whitespace.</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="Iterator-Types"><a href="#Iterator-Types" class="headerlink" title="Iterator Types"></a>Iterator Types</h3><p>Python supports a concept of iteration over containers. This is implemented using two distinct methods; these are used to allow user-defined classes to support iteration. <strong>Sequences</strong>, described below in more detail, always support the iteration methods.</p>
+<p><em>One method needs to be defined for container objects to provide iteration support:</em></p>
+<p><code>container.__iter__()</code></p>
+<p><em>The iterator objects themselves are required to support the following two methods, which together form the iterator protocol:</em></p>
+<p><code>iterator.__iter__()</code></p>
+<blockquote>
+<p>Return the iterator object itself. This is required to allow both containers and iterators to be used with the for and in statements. This method corresponds to the tp_iter slot of the type structure for Python objects in the Python/C API.</p>
+</blockquote>
+<p><code>iterator.next()</code></p>
+<blockquote>
+<p>Return the next item from the container. If there are no further items, raise the StopIteration exception. This method corresponds to the tp_iternext slot of the type structure for Python objects in the Python/C API.</p>
+</blockquote>
+<h3 id="Sequence-Types-—-str-unicode-list-tuple-bytearray-buffer-xrange"><a href="#Sequence-Types-—-str-unicode-list-tuple-bytearray-buffer-xrange" class="headerlink" title="Sequence Types — str, unicode, list, tuple, bytearray, buffer, xrange"></a>Sequence Types — str, unicode, list, tuple, bytearray, buffer, xrange</h3><p><em>This table lists the sequence operations sorted in ascending priority. In the table, s and t are sequences of the same type; n, i and j are integers:</em></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Operation</th>
+<th style="text-align:left">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">x in s</td>
+<td style="text-align:left">True if an item of s is equal to x, else False</td>
+</tr>
+<tr>
+<td style="text-align:left">x not in s</td>
+<td style="text-align:left">False if an item of s is equal to x, else True</td>
+</tr>
+<tr>
+<td style="text-align:left">s + t</td>
+<td style="text-align:left">the concatenation of s and t</td>
+</tr>
+<tr>
+<td style="text-align:left">s <em> n, n </em> s</td>
+<td style="text-align:left">equivalent to adding s to itself n times</td>
+</tr>
+<tr>
+<td style="text-align:left">s[i]</td>
+<td style="text-align:left">ith item of s, origin 0</td>
+</tr>
+<tr>
+<td style="text-align:left">s[i:j]</td>
+<td style="text-align:left">slice of s from i to j</td>
+</tr>
+<tr>
+<td style="text-align:left">s[i:j:k]</td>
+<td style="text-align:left">slice of s from i to j with step k</td>
+</tr>
+<tr>
+<td style="text-align:left">len(s)</td>
+<td style="text-align:left">length of s</td>
+</tr>
+<tr>
+<td style="text-align:left">min(s)</td>
+<td style="text-align:left">smallest item of s</td>
+</tr>
+<tr>
+<td style="text-align:left">max(s)</td>
+<td style="text-align:left">largest item of s</td>
+</tr>
+<tr>
+<td style="text-align:left">s.index(x)</td>
+<td style="text-align:left">index of the first occurrence of x in s</td>
+</tr>
+<tr>
+<td style="text-align:left">s.count(x)</td>
+<td style="text-align:left">total number of occurrences of x in s</td>
+</tr>
+</tbody>
+</table>
+<h3 id="String-Methods"><a href="#String-Methods" class="headerlink" title="String Methods"></a>String Methods</h3><p><a href="/2017/02/19/python-02/#more">String Methods</a></p>
+<h3 id="XRange-Type"><a href="#XRange-Type" class="headerlink" title="XRange Type"></a>XRange Type</h3><p>The xrange type is an immutable sequence which is commonly used for looping. The advantage of the xrange type is that an xrange object will always take the same amount of memory, no matter the size of the range it represents. There are no consistent performance advantages.</p>
+<p>XRange objects have very little behavior: they only support indexing, iteration, and the len() function</p>
+<h3 id="Mutable-Sequence-Types"><a href="#Mutable-Sequence-Types" class="headerlink" title="Mutable Sequence Types"></a>Mutable Sequence Types</h3><p><em>List and bytearray objects support additional operations that allow in-place modification of the object. Other mutable sequence types (when added to the language) should also support these operations. Strings and tuples are immutable sequence types: such objects cannot be modified once created. The following operations are defined on mutable sequence types (where x is an arbitrary object):</em></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">operations</th>
+<th style="text-align:left">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Item One</td>
+<td style="text-align:left">Item Two</td>
+</tr>
+<tr>
+<td style="text-align:left">s[i] = x</td>
+<td style="text-align:left">item i of s is replaced by x</td>
+</tr>
+<tr>
+<td style="text-align:left">s[i:j] = t</td>
+<td style="text-align:left">slice of s from i to j is replaced by the contents of the iterable t</td>
+</tr>
+<tr>
+<td style="text-align:left">del s[i:j]</td>
+<td style="text-align:left">same as s[i:j] = []</td>
+</tr>
+<tr>
+<td style="text-align:left">s[i:j:k] = t</td>
+<td style="text-align:left">the elements of s[i:j:k] are replaced by those of t</td>
+</tr>
+<tr>
+<td style="text-align:left">del s[i:j:k]</td>
+<td style="text-align:left">removes the elements of s[i:j:k] from the list</td>
+</tr>
+<tr>
+<td style="text-align:left">s.append(x)</td>
+<td style="text-align:left">same as s[len(s):len(s)] = [x]</td>
+</tr>
+<tr>
+<td style="text-align:left">s.extend(x)</td>
+<td style="text-align:left">or s += t for the most part the same as s[len(s):len(s)] = x</td>
+</tr>
+<tr>
+<td style="text-align:left">s *= n</td>
+<td style="text-align:left">updates s with its contents repeated n times</td>
+</tr>
+<tr>
+<td style="text-align:left">s.count(x)</td>
+<td style="text-align:left">return number of i‘s for which s[i] == x</td>
+</tr>
+<tr>
+<td style="text-align:left">s.index(x[, i[, j]])</td>
+<td style="text-align:left">return smallest k such that s[k] == x and i &lt;= k &lt; j</td>
+</tr>
+<tr>
+<td style="text-align:left">s.insert(i, x)</td>
+<td style="text-align:left">same as s[i:i] = [x]</td>
+</tr>
+<tr>
+<td style="text-align:left">s.pop([i])</td>
+<td style="text-align:left">same as x = s[i]; del s[i]; return x</td>
+</tr>
+<tr>
+<td style="text-align:left">s.remove(x)</td>
+<td style="text-align:left">same as del s[s.index(x)]</td>
+</tr>
+<tr>
+<td style="text-align:left">s.reverse()</td>
+<td style="text-align:left">reverses the items of s in place</td>
+</tr>
+<tr>
+<td style="text-align:left">s.sort([cmp[, key[, reverse]]])</td>
+<td style="text-align:left">sort the items of s in place</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Set-Types-—-set-frozenset"><a href="#Set-Types-—-set-frozenset" class="headerlink" title="Set Types — set, frozenset"></a>Set Types — set, frozenset</h3><p>A set object is an unordered collection of distinct hashable objects.</p>
+<p>There are currently two built-in set types, set and frozenset. The set type is mutable — the contents can be changed using methods like add() and remove(). Since it is mutable, it has no hash value and cannot be used as either a dictionary key or as an element of another set. The frozenset type is immutable and hashable — its contents cannot be altered after it is created; it can therefore be used as a dictionary key or as an element of another set.</p>
+<p><em>Instances of set and frozenset provide the following operations:</em></p>
+<p>len(s)</p>
+<blockquote>
+<p>Return the cardinality of set s.</p>
+</blockquote>
+<p>x in s</p>
+<blockquote>
+<p>Test x for membership in s.</p>
+</blockquote>
+<p>x not in s</p>
+<blockquote>
+<p>Test x for non-membership in s.</p>
+</blockquote>
+<p>isdisjoint(other)</p>
+<blockquote>
+<p>Return True if the set has no elements in common with other. Sets are disjoint if and only if their intersection is the empty set.</p>
+</blockquote>
+<p>issubset(other)</p>
+<blockquote>
+<p>set &lt;= other<br>Test whether every element in the set is in other.</p>
+</blockquote>
+<p>set &lt; other</p>
+<blockquote>
+<p>Test whether the set is a proper subset of other, that is, set &lt;= other and set != other.</p>
+</blockquote>
+<p>issuperset(other)</p>
+<blockquote>
+<p>set &gt;= other<br>Test whether every element in other is in the set.</p>
+</blockquote>
+<p>set &gt; other</p>
+<blockquote>
+<p>Test whether the set is a proper superset of other, that is, set &gt;= other and set != other.</p>
+</blockquote>
+<p>union(other, …)</p>
+<blockquote>
+<p>set | other | …<br>Return a new set with elements from the set and all others.</p>
+</blockquote>
+<p>intersection(other, …)</p>
+<blockquote>
+<p>set &amp; other &amp; …<br>Return a new set with elements common to the set and all others.</p>
+</blockquote>
+<p>difference(other, …)</p>
+<blockquote>
+<p>set - other - …<br>Return a new set with elements in the set that are not in the others.</p>
+</blockquote>
+<p>symmetric_difference(other)</p>
+<blockquote>
+<p>set ^ other<br>Return a new set with elements in either the set or other but not both.</p>
+</blockquote>
+<p>copy()</p>
+<blockquote>
+<p>Return a new set with a shallow copy of s.</p>
+</blockquote>
+<p><em>The following table lists operations available for set that do not apply to immutable instances of frozenset:</em></p>
+<p>update(other, …)</p>
+<blockquote>
+<p>set |= other | …<br>Update the set, adding elements from all others.</p>
+</blockquote>
+<p>intersection_update(other, …)</p>
+<blockquote>
+<p>set &amp;= other &amp; …<br>Update the set, keeping only elements found in it and all others.</p>
+</blockquote>
+<p>difference_update(other, …)</p>
+<blockquote>
+<p>set -= other | …<br>Update the set, removing elements found in others.</p>
+</blockquote>
+<p>symmetric_difference_update(other)</p>
+<blockquote>
+<p>set ^= other<br>Update the set, keeping only elements found in either set, but not in both.</p>
+</blockquote>
+<p>add(elem)</p>
+<blockquote>
+<p>Add element elem to the set.</p>
+</blockquote>
+<p>remove(elem)</p>
+<blockquote>
+<p>Remove element elem from the set. Raises KeyError if elem is not contained in the set.</p>
+</blockquote>
+<p>discard(elem)</p>
+<blockquote>
+<p>Remove element elem from the set if it is present.</p>
+</blockquote>
+<p>pop()</p>
+<blockquote>
+<p>Remove and return an arbitrary element from the set. Raises KeyError if the set is empty.</p>
+</blockquote>
+<p>clear()</p>
+<blockquote>
+<p>Remove all elements from the set.</p>
+</blockquote>
+<h3 id="Mapping-Types-—-dict"><a href="#Mapping-Types-—-dict" class="headerlink" title="Mapping Types — dict"></a>Mapping Types — dict</h3><p>A mapping object maps hashable values to arbitrary objects. Mappings are mutable objects. There is currently only one standard mapping type, the dictionary.</p>
+<p><em>These are the operations that dictionaries support:</em></p>
+<p>len(d)</p>
+<blockquote>
+<p>Return the number of items in the dictionary d.</p>
+</blockquote>
+<p>d[key]</p>
+<blockquote>
+<p>Return the item of d with key key. Raises a KeyError if key is not in the map.</p>
+</blockquote>
+<p><strong>If a subclass of dict defines a method <strong>missing</strong>() and key is not present, the d[key] operation calls that method with the key key as argument.</strong></p>
+<p>d[key] = value</p>
+<blockquote>
+<p>Set d[key] to value.</p>
+</blockquote>
+<p>del d[key]</p>
+<blockquote>
+<p>Remove d[key] from d. Raises a KeyError if key is not in the map.</p>
+</blockquote>
+<p>key in d</p>
+<blockquote>
+<p>Return True if d has a key key, else False.</p>
+</blockquote>
+<p>key not in d</p>
+<blockquote>
+<p>Equivalent to not key in d.</p>
+</blockquote>
+<p>iter(d)</p>
+<blockquote>
+<p>Return an iterator over the keys of the dictionary. This is a shortcut for iterkeys().</p>
+</blockquote>
+<p>clear()</p>
+<blockquote>
+<p>Remove all items from the dictionary.</p>
+</blockquote>
+<p>copy()</p>
+<blockquote>
+<p>Return a shallow copy of the dictionary.</p>
+</blockquote>
+<p>fromkeys(seq[, value])</p>
+<blockquote>
+<p>Create a new dictionary with keys from seq and values set to value.</p>
+</blockquote>
+<p><strong>fromkeys() is a class method that returns a new dictionary. value defaults to None.</strong></p>
+<p>get(key[, default])</p>
+<blockquote>
+<p>Return the value for key if key is in the dictionary, else default. If default is not given, it defaults to None, so that this method never raises a KeyError.</p>
+</blockquote>
+<p>has_key(key)</p>
+<blockquote>
+<p>Test for the presence of key in the dictionary. has_key() is deprecated in favor of key in d.</p>
+</blockquote>
+<p>items()</p>
+<blockquote>
+<p>Return a copy of the dictionary’s list of (key, value) pairs.</p>
+</blockquote>
+<p>iteritems()</p>
+<blockquote>
+<p>Return an iterator over the dictionary’s (key, value) pairs. See the note for dict.items().</p>
+</blockquote>
+<p><strong>Using iteritems() while adding or deleting entries in the dictionary may raise a RuntimeError or fail to iterate over all entries.</strong></p>
+<p>iterkeys()</p>
+<blockquote>
+<p>Return an iterator over the dictionary’s keys. See the note for dict.items().</p>
+</blockquote>
+<p><strong>Using iterkeys() while adding or deleting entries in the dictionary may raise a RuntimeError or fail to iterate over all entries.</strong></p>
+<p>itervalues()</p>
+<blockquote>
+<p>Return an iterator over the dictionary’s values. See the note for dict.items().</p>
+</blockquote>
+<p><strong>Using itervalues() while adding or deleting entries in the dictionary may raise a RuntimeError or fail to iterate over all entries.</strong></p>
+<p>keys()</p>
+<blockquote>
+<p>Return a copy of the dictionary’s list of keys. See the note for dict.items().</p>
+</blockquote>
+<p>pop(key[, default])</p>
+<blockquote>
+<p>If key is in the dictionary, remove it and return its value, else return default. If default is not given and key is not in the dictionary, a KeyError is raised.</p>
+</blockquote>
+<p>popitem()</p>
+<blockquote>
+<p>Remove and return an arbitrary (key, value) pair from the dictionary.</p>
+</blockquote>
+<p><strong>popitem() is useful to destructively iterate over a dictionary, as often used in set algorithms. If the dictionary is empty, calling popitem() raises a KeyError.</strong></p>
+<p>setdefault(key[, default])</p>
+<blockquote>
+<p>If key is in the dictionary, return its value. If not, insert key with a value of default and return default. default defaults to None.</p>
+</blockquote>
+<p>update([other])</p>
+<blockquote>
+<p>Update the dictionary with the key/value pairs from other, overwriting existing keys. Return None.</p>
+</blockquote>
+<p><strong>update() accepts either another dictionary object or an iterable of key/value pairs (as tuples or other iterables of length two). If keyword arguments are specified, the dictionary is then updated with those key/value pairs: d.update(red=1, blue=2).</strong></p>
+<p>values()</p>
+<blockquote>
+<p>Return a copy of the dictionary’s list of values. See the note for dict.items().</p>
+</blockquote>
+<p>viewitems()</p>
+<blockquote>
+<p>Return a new view of the dictionary’s items ((key, value) pairs). See below for documentation of view objects.</p>
+</blockquote>
+<p>viewkeys()</p>
+<blockquote>
+<p>Return a new view of the dictionary’s keys. See below for documentation of view objects.</p>
+</blockquote>
+<p>viewvalues()</p>
+<blockquote>
+<p>Return a new view of the dictionary’s values. See below for documentation of view objects.</p>
+</blockquote>
+<h4 id="Dictionary-view-objects"><a href="#Dictionary-view-objects" class="headerlink" title="Dictionary view objects"></a>Dictionary view objects</h4><p>The objects returned by dict.viewkeys(), dict.viewvalues() and dict.viewitems() are view objects. They provide a dynamic view on the dictionary’s entries, which means that when the dictionary changes, the view reflects these changes.</p>
+<p><em>Dictionary views can be iterated over to yield their respective data, and support membership tests:</em></p>
+<p>len(dictview)</p>
+<blockquote>
+<p>Return the number of entries in the dictionary.</p>
+</blockquote>
+<p>iter(dictview)</p>
+<blockquote>
+<p>Return an iterator over the keys, values or items (represented as tuples of (key, value)) in the dictionary.</p>
+</blockquote>
+<p><strong>Keys and values are iterated over in an arbitrary order which is non-random, varies across Python implementations, and depends on the dictionary’s history of insertions and deletions. If keys, values and items views are iterated over with no intervening modifications to the dictionary, the order of items will directly correspond. This allows the creation of (value, key) pairs using zip(): pairs = zip(d.values(), d.keys()). Another way to create the same list is pairs = [(v, k) for (k, v) in d.items()].</strong></p>
+<p><strong>Iterating views while adding or deleting entries in the dictionary may raise a RuntimeError or fail to iterate over all entries.</strong></p>
+<p>x in dictview</p>
+<blockquote>
+<p>Return True if x is in the underlying dictionary’s keys, values or items (in the latter case, x should be a (key, value) tuple).</p>
+</blockquote>
+<p><em>Keys views are set-like since their entries are unique and hashable. If all values are hashable, so that (key, value) pairs are unique and hashable, then the items view is also set-like. (Values views are not treated as set-like since the entries are generally not unique.) Then these set operations are available (“other” refers either to another view or a set):</em></p>
+<p>dictview &amp; other</p>
+<blockquote>
+<p>Return the intersection of the dictview and the other object as a new set.</p>
+</blockquote>
+<p>dictview | other</p>
+<blockquote>
+<p>Return the union of the dictview and the other object as a new set.</p>
+</blockquote>
+<p>dictview - other</p>
+<blockquote>
+<p>Return the difference between the dictview and the other object (all elements in dictview that aren’t in other) as a new set.</p>
+</blockquote>
+<p>dictview ^ other</p>
+<blockquote>
+<p>Return the symmetric difference (all elements either in dictview or other, but not in both) of the dictview and the other object as a new set.</p>
+</blockquote>
+<h3 id="File-Objects"><a href="#File-Objects" class="headerlink" title="File Objects"></a>File Objects</h3><p>File objects are implemented using C’s <strong>stdio</strong> package and can be created with the built-in open() function. File objects are also returned by some other built-in functions and methods, such as <strong>os.popen()</strong> and <strong>os.fdopen()</strong> and the <strong>makefile()</strong> method of socket objects. Temporary files can be created using the <strong>tempfile</strong> module, and high-level file operations such as copying, moving, and deleting files and directories can be achieved with the <strong>shutil</strong> module.</p>
+<p><em>Files have the following methods:</em></p>
+<p>file.close()</p>
+<blockquote>
+<p>Close the file. A closed file cannot be read or written any more. Any operation which requires that the file be open will raise a ValueError after the file has been closed. Calling close() more than once is allowed.</p>
+</blockquote>
+<p><em>As of Python 2.5, you can avoid having to call this method explicitly if you use the with statement. For example, the following code will automatically close f when the with block is exited:</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">with open(&quot;hello.txt&quot;) as f:</div><div class="line">    for line in f:</div><div class="line">        print line,</div></pre></td></tr></table></figure>
+<p>file.flush()</p>
+<blockquote>
+<p>Flush the internal buffer, like stdio‘s fflush(). This may be a no-op on some file-like objects.</p>
+</blockquote>
+<p><strong>flush() does not necessarily write the file’s data to disk. Use flush() followed by os.fsync() to ensure this behavior.</strong></p>
+<p>file.fileno()</p>
+<blockquote>
+<p>Return the integer “file descriptor” that is used by the underlying implementation to request I/O operations from the operating system. This can be useful for other, lower level interfaces that use file descriptors, such as the fcntl module or os.read() and friends.</p>
+</blockquote>
+<p><strong>File-like objects which do not have a real file descriptor should not provide this method!</strong></p>
+<p>file.isatty()</p>
+<blockquote>
+<p>Return True if the file is connected to a tty(-like) device, else False.</p>
+</blockquote>
+<p><strong>If a file-like object is not associated with a real file, this method should not be implemented.</strong></p>
+<p>file.next()</p>
+<blockquote>
+<p>A file object is its own iterator, for example iter(f) returns f (unless f is closed). When a file is used as an iterator, typically in a for loop (for example, for line in f: print line.strip()), the next() method is called repeatedly. This method returns the next input line, or raises StopIteration when EOF is hit when the file is open for reading (behavior is undefined when the file is open for writing). In order to make a for loop the most efficient way of looping over the lines of a file (a very common operation), the next() method uses a hidden read-ahead buffer. As a consequence of using a read-ahead buffer, combining next() with other file methods (like readline()) does not work right. However, using seek() to reposition the file to an absolute position will flush the read-ahead buffer.</p>
+</blockquote>
+<p>file.read([size])</p>
+<blockquote>
+<p>Read at most size bytes from the file (less if the read hits EOF before obtaining size bytes). If the size argument is negative or omitted, read all data until EOF is reached. The bytes are returned as a string object. An empty string is returned when EOF is encountered immediately. (For certain files, like ttys, it makes sense to continue reading after an EOF is hit.) Note that this method may call the underlying C function fread() more than once in an effort to acquire as close to size bytes as possible. Also note that when in non-blocking mode, less data than was requested may be returned, even if no size parameter was given.</p>
+</blockquote>
+<p><strong>This function is simply a wrapper for the underlying fread() C function, and will behave the same in corner cases, such as whether the EOF value is cached.</strong></p>
+<p>file.readline([size])</p>
+<blockquote>
+<p>Read one entire line from the file. A trailing newline character is kept in the string (but may be absent when a file ends with an incomplete line). [6] If the size argument is present and non-negative, it is a maximum byte count (including the trailing newline) and an incomplete line may be returned. When size is not 0, an empty string is returned only when EOF is encountered immediately.</p>
+</blockquote>
+<p><strong>Unlike stdio‘s fgets(), the returned string contains null characters (‘\0’) if they occurred in the input.</strong></p>
+<p>file.readlines([sizehint])</p>
+<blockquote>
+<p>Read until EOF using readline() and return a list containing the lines thus read. If the optional sizehint argument is present, instead of reading up to EOF, whole lines totalling approximately sizehint bytes (possibly after rounding up to an internal buffer size) are read. Objects implementing a file-like interface may choose to ignore sizehint if it cannot be implemented, or cannot be implemented efficiently.</p>
+</blockquote>
+<p>file.seek(offset[, whence])</p>
+<blockquote>
+<p>Set the file’s current position, like stdio‘s fseek(). The whence argument is optional and defaults to os.SEEK_SET or 0 (absolute file positioning); other values are os.SEEK_CUR or 1 (seek relative to the current position) and os.SEEK_END or 2 (seek relative to the file’s end). There is no return value.</p>
+<p>For example, f.seek(2, os.SEEK_CUR) advances the position by two and f.seek(-3, os.SEEK_END) sets the position to the third to last.</p>
+<p>Note that if the file is opened for appending (mode ‘a’ or ‘a+’), any seek() operations will be undone at the next write. If the file is only opened for writing in append mode (mode ‘a’), this method is essentially a no-op, but it remains useful for files opened in append mode with reading enabled (mode ‘a+’). If the file is opened in text mode (without ‘b’), only offsets returned by tell() are legal. Use of other offsets causes undefined behavior.</p>
+<p>Note that not all file objects are seekable.</p>
+</blockquote>
+<p>file.tell()</p>
+<blockquote>
+<p>Return the file’s current position, like stdio‘s ftell().</p>
+</blockquote>
+<p><strong>On Windows, tell() can return illegal values (after an fgets()) when reading files with Unix-style line-endings. Use binary mode (‘rb’) to circumvent this problem.</strong></p>
+<p>file.truncate([size])</p>
+<blockquote>
+<p>Truncate the file’s size. If the optional size argument is present, the file is truncated to (at most) that size. The size defaults to the current position. The current file position is not changed. Note that if a specified size exceeds the file’s current size, the result is platform-dependent: possibilities include that the file may remain unchanged, increase to the specified size as if zero-filled, or increase to the specified size with undefined new content. Availability: Windows, many Unix variants.</p>
+</blockquote>
+<p>file.write(str)</p>
+<blockquote>
+<p>Write a string to the file. There is no return value. Due to buffering, the string may not actually show up in the file until the flush() or close() method is called.</p>
+</blockquote>
+<p>file.writelines(sequence)</p>
+<blockquote>
+<p>Write a sequence of strings to the file. The sequence can be any iterable object producing strings, typically a list of strings. There is no return value. (The name is intended to match readlines(); writelines() does not add line separators.)</p>
+</blockquote>
+<p><em>File objects also offer a number of other interesting attributes. These are not required for file-like objects, but should be implemented if they make sense for the particular object.</em></p>
+<p>file.closed</p>
+<blockquote>
+<p>bool indicating the current state of the file object. This is a read-only attribute; the close() method changes the value. It may not be available on all file-like objects.</p>
+</blockquote>
+<p>file.encoding</p>
+<blockquote>
+<p>The encoding that this file uses. When Unicode strings are written to a file, they will be converted to byte strings using this encoding. In addition, when the file is connected to a terminal, the attribute gives the encoding that the terminal is likely to use (that information might be incorrect if the user has misconfigured the terminal). The attribute is read-only and may not be present on all file-like objects. It may also be None, in which case the file uses the system default encoding for converting Unicode strings.</p>
+</blockquote>
+<p>file.errors</p>
+<blockquote>
+<p>The Unicode error handler used along with the encoding.</p>
+</blockquote>
+<p>file.mode</p>
+<blockquote>
+<p>The I/O mode for the file. If the file was created using the open() built-in function, this will be the value of the mode parameter. This is a read-only attribute and may not be present on all file-like objects.</p>
+</blockquote>
+<p>file.name</p>
+<blockquote>
+<p>If the file object was created using open(), the name of the file. Otherwise, some string that indicates the source of the file object, of the form &lt;…&gt;. This is a read-only attribute and may not be present on all file-like objects.</p>
+</blockquote>
+<p>file.newlines</p>
+<blockquote>
+<p>If Python was built with universal newlines enabled (the default) this read-only attribute exists, and for files opened in universal newline read mode it keeps track of the types of newlines encountered while reading the file. The values it can take are ‘\r’, ‘\n’, ‘\r\n’, None (unknown, no newlines read yet) or a tuple containing all the newline types seen, to indicate that multiple newline conventions were encountered. For files not opened in universal newlines read mode the value of this attribute will be None.</p>
+</blockquote>
+<p>file.softspace</p>
+<blockquote>
+<p>Boolean that indicates whether a space character needs to be printed before another value when using the print statement. Classes that are trying to simulate a file object should also have a writable softspace attribute, which should be initialized to zero. This will be automatic for most classes implemented in Python (care may be needed for objects that override attribute access); types implemented in C will have to provide a writable softspace attribute.</p>
+</blockquote>
+<p><strong>This attribute is not used to control the print statement, but to allow the implementation of print to keep track of its internal state.</strong></p>
+<h3 id="memoryview-type"><a href="#memoryview-type" class="headerlink" title="memoryview type"></a>memoryview type</h3><p>memoryview objects allow Python code to access the internal data of an object that supports the buffer protocol without copying. Memory is generally interpreted as simple bytes.</p>
+<p>Create a memoryview that references obj. obj must support the buffer protocol. Built-in objects that support the buffer protocol include str and bytearray (but not unicode).</p>
+<p>A memoryview has the notion of an element, which is the atomic memory unit handled by the originating object obj. For many simple types such as str and bytearray, an element is a single byte, but other third-party types may expose larger elements.</p>
+<p>len(view) returns the total number of elements in the memoryview, view. The itemsize attribute will give you the number of bytes in a single element.</p>
+<p><em>A memoryview supports slicing to expose its data. Taking a single index will return a single element as a str object. Full slicing will result in a subview:</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; v = memoryview(&apos;abcefg&apos;)</div><div class="line">&gt;&gt;&gt; v[1]</div><div class="line">&apos;b&apos;</div><div class="line">&gt;&gt;&gt; v[-1]</div><div class="line">&apos;g&apos;</div><div class="line">&gt;&gt;&gt; v[1:4]</div><div class="line">&lt;memory at 0x77ab28&gt;</div><div class="line">&gt;&gt;&gt; v[1:4].tobytes()</div><div class="line">&apos;bce&apos;</div></pre></td></tr></table></figure>
+<p><em>If the object the memoryview is over supports changing its data, the memoryview supports slice assignment:</em><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; data = bytearray(&apos;abcefg&apos;)</div><div class="line">&gt;&gt;&gt; v = memoryview(data)</div><div class="line">&gt;&gt;&gt; v.readonly</div><div class="line">False</div><div class="line">&gt;&gt;&gt; v[0] = &apos;z&apos;</div><div class="line">&gt;&gt;&gt; data</div><div class="line">bytearray(b&apos;zbcefg&apos;)</div><div class="line">&gt;&gt;&gt; v[1:4] = &apos;123&apos;</div><div class="line">&gt;&gt;&gt; data</div><div class="line">bytearray(b&apos;z123fg&apos;)</div><div class="line">&gt;&gt;&gt; v[2] = &apos;spam&apos;</div><div class="line">Traceback (most recent call last):</div><div class="line">  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;</div><div class="line">ValueError: cannot modify size of memoryview object</div></pre></td></tr></table></figure></p>
+<p><em>memoryview has two methods:</em></p>
+<p>tobytes()</p>
+<blockquote>
+<p>Return the data in the buffer as a bytestring (an object of class str).<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; m = memoryview(&quot;abc&quot;)</div><div class="line">&gt;&gt;&gt; m.tobytes()</div><div class="line">&apos;abc&apos;</div></pre></td></tr></table></figure></p>
+</blockquote>
+<p>tolist()</p>
+<blockquote>
+<p>Return the data in the buffer as a list of integers.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; memoryview(&quot;abc&quot;).tolist()</div><div class="line">[97, 98, 99]</div></pre></td></tr></table></figure></p>
+</blockquote>
+<p><em>There are also several readonly attributes available:</em></p>
+<p>format</p>
+<blockquote>
+<p>A string containing the format (in struct module style) for each element in the view. This defaults to ‘B’, a simple bytestring.</p>
+</blockquote>
+<p>itemsize</p>
+<blockquote>
+<p>The size in bytes of each element of the memoryview.</p>
+</blockquote>
+<p>shape</p>
+<blockquote>
+<p>A tuple of integers the length of ndim giving the shape of the memory as a N-dimensional array.</p>
+</blockquote>
+<p>ndim</p>
+<blockquote>
+<p>An integer indicating how many dimensions of a multi-dimensional array the memory represents.</p>
+</blockquote>
+<p>strides</p>
+<blockquote>
+<p>A tuple of integers the length of ndim giving the size in bytes to access each element for each dimension of the array.</p>
+</blockquote>
+<p>readonly</p>
+<blockquote>
+<p>A bool indicating whether the memory is read only.</p>
+</blockquote>
+<h3 id="Context-Manager-Types"><a href="#Context-Manager-Types" class="headerlink" title="Context Manager Types"></a>Context Manager Types</h3><p>Python’s with statement supports the concept of a runtime context defined by a context manager. This is implemented using two separate methods that allow user-defined classes to define a runtime context that is entered before the statement body is executed and exited when the statement ends.</p>
+<h3 id="Other-Built-in-Types"><a href="#Other-Built-in-Types" class="headerlink" title="Other Built-in Types"></a>Other Built-in Types</h3><h4 id="Modules"><a href="#Modules" class="headerlink" title="Modules"></a>Modules</h4><h4 id="Classes-and-Class-Instances"><a href="#Classes-and-Class-Instances" class="headerlink" title="Classes and Class Instances"></a>Classes and Class Instances</h4><h4 id="Functions"><a href="#Functions" class="headerlink" title="Functions"></a>Functions</h4><h4 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h4><h4 id="Code-Objects"><a href="#Code-Objects" class="headerlink" title="Code Objects"></a>Code Objects</h4><h4 id="Type-Objects"><a href="#Type-Objects" class="headerlink" title="Type Objects"></a>Type Objects</h4><h4 id="The-Null-Object"><a href="#The-Null-Object" class="headerlink" title="The Null Object"></a>The Null Object</h4><h4 id="The-Ellipsis-Object"><a href="#The-Ellipsis-Object" class="headerlink" title="The Ellipsis Object"></a>The Ellipsis Object</h4><p>This object is used by extended slice notation (see Slicings). It supports no special operations. There is exactly one ellipsis object, named Ellipsis (a built-in name).</p>
+<h4 id="The-NotImplemented-Object"><a href="#The-NotImplemented-Object" class="headerlink" title="The NotImplemented Object"></a>The NotImplemented Object</h4><h4 id="Boolean-Values"><a href="#Boolean-Values" class="headerlink" title="Boolean Values"></a>Boolean Values</h4><h4 id="Internal-Objects"><a href="#Internal-Objects" class="headerlink" title="Internal Objects"></a>Internal Objects</h4><h4 id="Special-Attributes"><a href="#Special-Attributes" class="headerlink" title="Special Attributes"></a>Special Attributes</h4><p>The implementation adds a few special read-only attributes to several object types, where they are relevant. Some of these are not reported by the dir() built-in function.</p>
+<p><code>object.__dict__</code></p>
+<blockquote>
+<p>A dictionary or other mapping object used to store an object’s (writable) attributes.</p>
+</blockquote>
+<p><code>object.__methods__</code></p>
+<blockquote>
+<p>Deprecated since version 2.2: Use the built-in function dir() to get a list of an object’s attributes. This attribute is no longer available.</p>
+</blockquote>
+<p><code>object.__members__</code></p>
+<blockquote>
+<p>Deprecated since version 2.2: Use the built-in function dir() to get a list of an object’s attributes. This attribute is no longer available.</p>
+</blockquote>
+<p><code>instance.__class__</code></p>
+<blockquote>
+<p>The class to which a class instance belongs.</p>
+</blockquote>
+<p><code>class.__bases__</code></p>
+<blockquote>
+<p>The tuple of base classes of a class object.</p>
+</blockquote>
+<p><code>class.__name__</code></p>
+<blockquote>
+<p>The name of the class or type.</p>
+</blockquote>
+<p><em>The following attributes are only supported by new-style classes.</em></p>
+<p><code>class.__mro__</code></p>
+<blockquote>
+<p>This attribute is a tuple of classes that are considered when looking for base classes during method resolution.</p>
+</blockquote>
+<p><code>class.mro()</code></p>
+<blockquote>
+<p>This method can be overridden by a metaclass to customize the method resolution order for its instances. It is called at class instantiation, and its result is stored in __mro__.</p>
+</blockquote>
+<p><code>class.__subclasses__()</code></p>
+<blockquote>
+<p>Each new-style class keeps a list of weak references to its immediate subclasses. This method returns a list of all those references still alive.</p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>生活不止眼前的苟且，还有远方的诗和田野。</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechat.png" alt="ifeelok WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay.png" alt="ifeelok Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag">#Python</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/02/19/python-02/" rel="next" title="2、string模块">
+                <i class="fa fa-chevron-left"></i> 2、string模块
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2017/02/19/python-03/"
+     data-title="3、python内置类型"
+     data-content=""
+     data-url="https://ifeelok.github.io/2017/02/19/python-03/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/02/19/python-03/"
+           data-title="3、python内置类型" data-url="https://ifeelok.github.io/2017/02/19/python-03/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/myavatar.jpg"
+               alt="ifeelok" />
+          <p class="site-author-name" itemprop="name">ifeelok</p>
+          <p class="site-description motion-element" itemprop="description">有志者事竟成</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/">
+              <span class="site-state-item-count">18</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ifeelok" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/ifeelok" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Numeric-Types-—-int-float-long-complex"><span class="nav-number">1.</span> <span class="nav-text">Numeric Types — int, float, long, complex</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Bitwise-Operations-on-Integer-Types"><span class="nav-number">1.1.</span> <span class="nav-text">Bitwise Operations on Integer Types</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Additional-Methods-on-Integer-Types"><span class="nav-number">1.2.</span> <span class="nav-text">Additional Methods on Integer Types</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Additional-Methods-on-Float"><span class="nav-number">1.3.</span> <span class="nav-text">Additional Methods on Float</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Iterator-Types"><span class="nav-number">2.</span> <span class="nav-text">Iterator Types</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sequence-Types-—-str-unicode-list-tuple-bytearray-buffer-xrange"><span class="nav-number">3.</span> <span class="nav-text">Sequence Types — str, unicode, list, tuple, bytearray, buffer, xrange</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#String-Methods"><span class="nav-number">4.</span> <span class="nav-text">String Methods</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#XRange-Type"><span class="nav-number">5.</span> <span class="nav-text">XRange Type</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Mutable-Sequence-Types"><span class="nav-number">6.</span> <span class="nav-text">Mutable Sequence Types</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Set-Types-—-set-frozenset"><span class="nav-number">7.</span> <span class="nav-text">Set Types — set, frozenset</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Mapping-Types-—-dict"><span class="nav-number">8.</span> <span class="nav-text">Mapping Types — dict</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Dictionary-view-objects"><span class="nav-number">8.1.</span> <span class="nav-text">Dictionary view objects</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#File-Objects"><span class="nav-number">9.</span> <span class="nav-text">File Objects</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#memoryview-type"><span class="nav-number">10.</span> <span class="nav-text">memoryview type</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Context-Manager-Types"><span class="nav-number">11.</span> <span class="nav-text">Context Manager Types</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Other-Built-in-Types"><span class="nav-number">12.</span> <span class="nav-text">Other Built-in Types</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Modules"><span class="nav-number">12.1.</span> <span class="nav-text">Modules</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Classes-and-Class-Instances"><span class="nav-number">12.2.</span> <span class="nav-text">Classes and Class Instances</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Functions"><span class="nav-number">12.3.</span> <span class="nav-text">Functions</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Methods"><span class="nav-number">12.4.</span> <span class="nav-text">Methods</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Code-Objects"><span class="nav-number">12.5.</span> <span class="nav-text">Code Objects</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Type-Objects"><span class="nav-number">12.6.</span> <span class="nav-text">Type Objects</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#The-Null-Object"><span class="nav-number">12.7.</span> <span class="nav-text">The Null Object</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#The-Ellipsis-Object"><span class="nav-number">12.8.</span> <span class="nav-text">The Ellipsis Object</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#The-NotImplemented-Object"><span class="nav-number">12.9.</span> <span class="nav-text">The NotImplemented Object</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Boolean-Values"><span class="nav-number">12.10.</span> <span class="nav-text">Boolean Values</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Internal-Objects"><span class="nav-number">12.11.</span> <span class="nav-text">Internal Objects</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Special-Attributes"><span class="nav-number">12.12.</span> <span class="nav-text">Special Attributes</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ifeelok</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"ifeelok"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("NC0On0k4emJ5gIe1bWKPRCfw-gzGzoHsz", "aUw9StjQhH2XbT6eoq4D9q6v");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+</body>
+</html>

@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Python,Scrapy," />
 
 
 
@@ -84,19 +84,22 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="description" content="本篇介绍scrapy的命令行工具、重要组件和重要对象。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="https://ifeelok.github.io/2016/08/06/hello-world/index.html">
+<meta property="og:title" content="3、scrapy基本概念介绍">
+<meta property="og:url" content="https://ifeelok.github.io/2017/02/07/scrapy-03/index.html">
 <meta property="og:site_name" content="I FEEL OK">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
-<meta property="og:updated_time" content="2016-08-06T07:42:21.935Z">
+<meta property="og:description" content="本篇介绍scrapy的命令行工具、重要组件和重要对象。">
+<meta property="og:image" content="https://ifeelok.github.io/pictures/scrapy/scrapy-0301.png">
+<meta property="og:image" content="https://ifeelok.github.io/pictures/scrapy/scrapy-0302.png">
+<meta property="og:image" content="https://ifeelok.github.io/pictures/scrapy/scrapy-0303.png">
+<meta property="og:image" content="https://ifeelok.github.io/pictures/scrapy/scrapy-0304.png">
+<meta property="og:image" content="https://ifeelok.github.io/pictures/scrapy/scrapy-0305.png">
+<meta property="og:updated_time" content="2017-02-09T09:23:06.557Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="twitter:title" content="3、scrapy基本概念介绍">
+<meta name="twitter:description" content="本篇介绍scrapy的命令行工具、重要组件和重要对象。">
+<meta name="twitter:image" content="https://ifeelok.github.io/pictures/scrapy/scrapy-0301.png">
 
 
 
@@ -117,9 +120,9 @@ Quick">
 
 
 
-  <link rel="canonical" href="https://ifeelok.github.io/2016/08/06/hello-world/"/>
+  <link rel="canonical" href="https://ifeelok.github.io/2017/02/07/scrapy-03/"/>
 
-  <title> Hello World | I FEEL OK </title>
+  <title> 3、scrapy基本概念介绍 | I FEEL OK </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -272,7 +275,7 @@ Quick">
             
             
               
-                Hello World
+                3、scrapy基本概念介绍
               
             
           </h1>
@@ -284,19 +287,38 @@ Quick">
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-06T15:42:21+08:00" content="2016-08-06">
-              2016-08-06
+            <time itemprop="dateCreated" datetime="2017-02-07T17:38:16+08:00" content="2017-02-07">
+              2017-02-07
             </time>
           </span>
 
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/爬虫/" itemprop="url" rel="index">
+                    <span itemprop="name">爬虫</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
           
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/08/06/hello-world/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/06/hello-world/" itemprop="commentsCount"></span>
+                <a href="/2017/02/07/scrapy-03/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/07/scrapy-03/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -306,7 +328,7 @@ Quick">
 
           
           
-             <span id="/2016/08/06/hello-world/" class="leancloud_visitors" data-flag-title="Hello World">
+             <span id="/2017/02/07/scrapy-03/" class="leancloud_visitors" data-flag-title="3、scrapy基本概念介绍">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -328,15 +350,155 @@ Quick">
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <p>本篇介绍scrapy的命令行工具、重要组件和重要对象。</p>
+<a id="more"></a>
+<h3 id="scrapy-命令行工具"><a href="#scrapy-命令行工具" class="headerlink" title="scrapy 命令行工具"></a>scrapy 命令行工具</h3><ul>
+<li>help：帮助信息（scrapy –help）</li>
+<li>version：版本信息，可以添加-v查看scrapy各个组件的信息（scrapy version -v）</li>
+<li>startproject：新建一个工程（scrapy startproject example）</li>
+<li>genspider：产生一个spider（scrapy genspider example example.com）</li>
+<li>list：查看本工程中包含的spiders</li>
+<li>view：在浏览器中打开网页，这个网页就是scrapy处理的网页（scrapy view <a href="http://example.com）" target="_blank" rel="external">http://example.com）</a></li>
+<li>parse：解析一个URL（使用对应的spider），打印结果</li>
+<li>shell：可交互的scrapy爬取控制台</li>
+<li>runspider：运行一个自包含的爬虫，即没有创建工程</li>
+<li>bench：基准测试</li>
+</ul>
+<h3 id="scrapy的重要组件"><a href="#scrapy的重要组件" class="headerlink" title="scrapy的重要组件"></a>scrapy的重要组件</h3><h4 id="Spider"><a href="#Spider" class="headerlink" title="Spider"></a>Spider</h4><h5 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h5><p>Spider是一个类，它定义了怎样爬取一个网站，包括怎样跟踪链接、怎样提取数据。</p>
+<p>执行流程：</p>
+<ul>
+<li>根据start_urls产生初始Requests</li>
+<li>解析responce</li>
+<li>使用selector</li>
+<li>存储items</li>
+</ul>
+<p><strong>zaobao Spider</strong></p>
+<p><img src="/pictures/scrapy/scrapy-0301.png" alt="example spider"></p>
+<h6 id="基类介绍-scrapy-Spider"><a href="#基类介绍-scrapy-Spider" class="headerlink" title="基类介绍(scrapy.Spider)"></a>基类介绍(scrapy.Spider)</h6><ul>
+<li>属性<ul>
+<li>name：spider的名称，同一工程中唯一</li>
+<li>allowed_domains：允许的域名</li>
+<li>start_urls：初始urls</li>
+<li>custom_settings：个性化设置，覆盖全局设置（settings.py）</li>
+<li>crawler：抓取器，spider将绑定到它上面</li>
+<li>settings：配置实例，包含工程中所有的配置变量</li>
+<li>logger：日志实例</li>
+</ul>
+</li>
+<li>方法<ul>
+<li>from_crawler(crawler, *args, **kwargs)：类方法，用于创建spiders</li>
+<li>start_requests()：生成初始的requests</li>
+<li>make_requests_from_url(url)：根据url生成一个request</li>
+<li>parse(response)：解析网页内容</li>
+<li>log(message[, level, component])：兼容老版本</li>
+<li>self.logger.info(“log内容”)</li>
+<li>closed(reason)：当spider关闭的时候调用的方法</li>
+</ul>
+</li>
+</ul>
+<h5 id="子类介绍"><a href="#子类介绍" class="headerlink" title="子类介绍"></a>子类介绍</h5><h6 id="CrawlerSpider"><a href="#CrawlerSpider" class="headerlink" title="CrawlerSpider"></a>CrawlerSpider</h6><ul>
+<li>最常用的spider，用于抓取普通网页</li>
+<li>和基类比较增加了两个成员<ul>
+<li>rules：定义了一些抓取规则（链接怎么跟踪、使用哪一个parse函数解析此链接）</li>
+<li>parse_start_url(response)：解析初始url产生的response</li>
+</ul>
+</li>
+</ul>
+<p><strong>示例</strong></p>
+<p><img src="/pictures/scrapy/scrapy-0302.png" alt="CrawlerSpider"></p>
+<h6 id="XMLFeedSpider"><a href="#XMLFeedSpider" class="headerlink" title="XMLFeedSpider"></a>XMLFeedSpider</h6><h6 id="CSVFeedSpider"><a href="#CSVFeedSpider" class="headerlink" title="CSVFeedSpider"></a>CSVFeedSpider</h6><h6 id="SitemapSpider"><a href="#SitemapSpider" class="headerlink" title="SitemapSpider"></a>SitemapSpider</h6><h4 id="Selector"><a href="#Selector" class="headerlink" title="Selector"></a>Selector</h4><p>scrapy默认使用<em>Selector</em>作为网页解析工具</p>
+<h5 id="实例化"><a href="#实例化" class="headerlink" title="实例化"></a>实例化</h5><p><img src="/pictures/scrapy/scrapy-0303.png" alt="selector construct"></p>
+<h5 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h5><ol>
+<li>xpath</li>
+<li>css</li>
+<li>re</li>
+<li>extract</li>
+<li>extract_first</li>
+</ol>
+<h4 id="Item"><a href="#Item" class="headerlink" title="Item"></a>Item</h4><p><strong>示例</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> scrapy</div><div class="line"></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Product</span><span class="params">(scrapy.Item)</span>:</span></div><div class="line">	name = scrapy.Field()</div><div class="line">	price = scrapy.Field()</div><div class="line">	stock = scrapy.Field()</div></pre></td></tr></table></figure>
+<h4 id="Item-Pipeline"><a href="#Item-Pipeline" class="headerlink" title="Item Pipeline"></a>Item Pipeline</h4><h5 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h5><ol>
+<li>清洗HTML数据</li>
+<li>验证抓取到的数据（检查是否有数据）</li>
+<li>检查是否重复（然后丢弃重复数据）</li>
+<li>存储数据到数据库中</li>
+</ol>
+<h5 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> scrapy.exceptions <span class="keyword">import</span> DropItem</div><div class="line"></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">PricePipeline</span><span class="params">(object)</span>:</span></div><div class="line">	vat_factor = <span class="number">1.15</span></div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">def</span> <span class="title">process_item</span><span class="params">(self, item, spider)</span>:</span></div><div class="line">		<span class="keyword">if</span> item[<span class="string">'price'</span>]:</div><div class="line">			<span class="keyword">if</span> item[<span class="string">'price_excludes_vat'</span>]:</div><div class="line">				item[<span class="string">'price'</span>] = item[<span class="string">'price'</span>] * self.vat_factor</div><div class="line">				<span class="keyword">return</span> item</div><div class="line">		<span class="keyword">else</span>:</div><div class="line">			<span class="keyword">raise</span> DropItem(<span class="string">"Missing price in %s"</span> % item)</div></pre></td></tr></table></figure>
+<h5 id="激活pipeline"><a href="#激活pipeline" class="headerlink" title="激活pipeline"></a>激活pipeline</h5><p>在<code>settings.py</code>里面设置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ITEM_PIPELINES = &#123;</div><div class="line">	&apos;myproject.pipelines.PricePipeline&apos;: 300</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><em>优先级0-1000，越小越优先</em></p>
+<h4 id="Feed-exports"><a href="#Feed-exports" class="headerlink" title="Feed exports"></a>Feed exports</h4><p>存储抓取到的数据</p>
+<ul>
+<li>json</li>
+<li>json lines</li>
+<li>csv</li>
+<li>xml</li>
+</ul>
+<h3 id="scrapy的重要对象"><a href="#scrapy的重要对象" class="headerlink" title="scrapy的重要对象"></a>scrapy的重要对象</h3><h4 id="Request"><a href="#Request" class="headerlink" title="Request"></a>Request</h4><ul>
+<li>scrapy.http.Request的初始化参数<ul>
+<li>url：必须</li>
+<li>callback</li>
+<li>method=‘GET’</li>
+<li>headers</li>
+<li>body</li>
+<li>cookies</li>
+<li>meta</li>
+<li>encoding=’utf-8’</li>
+<li>priority=0</li>
+<li>don’t_filter=False</li>
+<li>errback</li>
+</ul>
+</li>
+<li>其它属性<ul>
+<li>url</li>
+<li>method</li>
+<li>headers</li>
+<li>body</li>
+<li>cookies</li>
+<li>meta</li>
+<li>copy()</li>
+<li>replace()</li>
+</ul>
+</li>
+</ul>
+<p><strong>示例</strong></p>
+<p><img src="/pictures/scrapy/scrapy-0304.png" alt="mate example"></p>
+<ul>
+<li><p>子类<br><strong>FormRequest</strong>实现登陆功能</p>
+<p>class scrapy.http.FormRequest(url[, formdata…])</p>
+<p><strong>示例</strong></p>
+<p><img src="/pictures/scrapy/scrapy-0305.png" alt="FormRequest example"></p>
+</li>
+</ul>
+<h4 id="Response"><a href="#Response" class="headerlink" title="Response"></a>Response</h4><ol>
+<li>scrapy.http.Response的初始化参数<ul>
+<li>url：必须参数</li>
+<li>status=200</li>
+<li>headers</li>
+<li>body</li>
+<li>flags</li>
+</ul>
+</li>
+<li>其他成员<ul>
+<li>url</li>
+<li>status</li>
+<li>headers</li>
+<li>body</li>
+<li>resquest</li>
+<li>meta</li>
+<li>flags</li>
+<li>copy()</li>
+<li>replace()</li>
+<li>urljoin(url)</li>
+</ul>
+</li>
+<li>子类<ul>
+<li>scrapy.http.TextResponse(它有两个子类)</li>
+<li>scrapy.http.HtmlResponse</li>
+<li>scrapy.http.XmlResponse</li>
+</ul>
+</li>
+</ol>
 
       
     </div>
@@ -378,17 +540,29 @@ Quick">
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag">#Python</a>
+          
+            <a href="/tags/Scrapy/" rel="tag">#Scrapy</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/02/07/scrapy-02/" rel="next" title="2、scrapy使用步骤">
+                <i class="fa fa-chevron-left"></i> 2、scrapy使用步骤
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/08/06/myfirstblog/" rel="prev" title="建立了一个博客">
-                建立了一个博客 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/02/08/algorithms-01/" rel="prev" title="归并排序和插入排序">
+                归并排序和插入排序 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -404,10 +578,10 @@ Quick">
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/08/06/hello-world/"
-     data-title="Hello World"
+        <div class="ds-share flat" data-thread-key="2017/02/07/scrapy-03/"
+     data-title="3、scrapy基本概念介绍"
      data-content=""
-     data-url="https://ifeelok.github.io/2016/08/06/hello-world/">
+     data-url="https://ifeelok.github.io/2017/02/07/scrapy-03/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -434,8 +608,8 @@ Quick">
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/08/06/hello-world/"
-           data-title="Hello World" data-url="https://ifeelok.github.io/2016/08/06/hello-world/">
+      <div class="ds-thread" data-thread-key="2017/02/07/scrapy-03/"
+           data-title="3、scrapy基本概念介绍" data-url="https://ifeelok.github.io/2017/02/07/scrapy-03/">
       </div>
     
   </div>
@@ -546,7 +720,7 @@ Quick">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#scrapy-命令行工具"><span class="nav-number">1.</span> <span class="nav-text">scrapy 命令行工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#scrapy的重要组件"><span class="nav-number">2.</span> <span class="nav-text">scrapy的重要组件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Spider"><span class="nav-number">2.1.</span> <span class="nav-text">Spider</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#基本介绍"><span class="nav-number">2.1.1.</span> <span class="nav-text">基本介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#基类介绍-scrapy-Spider"><span class="nav-number">2.1.1.1.</span> <span class="nav-text">基类介绍(scrapy.Spider)</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#子类介绍"><span class="nav-number">2.1.2.</span> <span class="nav-text">子类介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#CrawlerSpider"><span class="nav-number">2.1.2.1.</span> <span class="nav-text">CrawlerSpider</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#XMLFeedSpider"><span class="nav-number">2.1.2.2.</span> <span class="nav-text">XMLFeedSpider</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#CSVFeedSpider"><span class="nav-number">2.1.2.3.</span> <span class="nav-text">CSVFeedSpider</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#SitemapSpider"><span class="nav-number">2.1.2.4.</span> <span class="nav-text">SitemapSpider</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Selector"><span class="nav-number">2.2.</span> <span class="nav-text">Selector</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#实例化"><span class="nav-number">2.2.1.</span> <span class="nav-text">实例化</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#常用方法"><span class="nav-number">2.2.2.</span> <span class="nav-text">常用方法</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Item"><span class="nav-number">2.3.</span> <span class="nav-text">Item</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Item-Pipeline"><span class="nav-number">2.4.</span> <span class="nav-text">Item Pipeline</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#作用"><span class="nav-number">2.4.1.</span> <span class="nav-text">作用</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#示例"><span class="nav-number">2.4.2.</span> <span class="nav-text">示例</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#激活pipeline"><span class="nav-number">2.4.3.</span> <span class="nav-text">激活pipeline</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Feed-exports"><span class="nav-number">2.5.</span> <span class="nav-text">Feed exports</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#scrapy的重要对象"><span class="nav-number">3.</span> <span class="nav-text">scrapy的重要对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Request"><span class="nav-number">3.1.</span> <span class="nav-text">Request</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Response"><span class="nav-number">3.2.</span> <span class="nav-text">Response</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
